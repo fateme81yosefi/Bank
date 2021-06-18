@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="342.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.entehalvajhA_Controller">
+   <children>
+      <Label layoutX="102.0" layoutY="81.0" text="انتقال وجه میان حساب ها:" textFill="#bc0d0d">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="157.0" text="کد ملی و رمز حساب مبدا را وارد کنید:" />
+      <Label layoutX="144.0" layoutY="233.0" text="کد ملی و رمز حساب مقصد را وارد کنید:" />
+      <TextField fx:id="codeMabda" alignment="CENTER" layoutX="14.0" layoutY="176.0" onAction="#setCodeMabda" promptText="کدملی مبدا" />
+      <TextField fx:id="codeMaghsad" alignment="CENTER" layoutX="14.0" layoutY="255.0" onAction="#setCodeMaghsad" promptText="کدملی مقصد" />
+      <PasswordField fx:id="passMabda" alignment="CENTER" layoutX="14.0" layoutY="205.0" onAction="#setPassMabda" promptText="رمز مبدا" />
+      <PasswordField fx:id="passMaghsad" alignment="CENTER" layoutX="14.0" layoutY="285.0" onAction="#setPassMaghsad" promptText="رمز مقصد" />
+      <Button fx:id="conti" layoutX="20.0" layoutY="448.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Label layoutX="198.0" layoutY="343.0" text="مبلغ مورد نظر را وارد کنید:" />
+      <TextField fx:id="Mablagh" alignment="CENTER" layoutX="16.0" layoutY="339.0" onAction="#setMablagh" promptText="تومان" />
+      <Button fx:id="menuAdmin" layoutX="211.0" layoutY="448.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادامین" />
+   </children>
+</Pane>

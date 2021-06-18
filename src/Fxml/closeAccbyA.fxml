@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.closeAccbyA_Controller">
+   <children>
+      <Label layoutX="133.0" layoutY="77.0" text="بستن حساب:" textFill="#d32525">
+         <font>
+            <Font name="Nirmala UI Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="146.0" opacity="0.84" text="کد ملی و رمز صاحب حساب را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pass" alignment="CENTER" layoutX="74.0" layoutY="220.0" onAction="#setRamz" promptText="password" />
+      <TextField fx:id="codemelli" alignment="CENTER" layoutX="74.0" layoutY="182.0" onAction="#setCodemelli" promptText="کد ملی" />
+      <Label layoutX="10.0" layoutY="274.0" text="یک شماره حساب مقصد جهت واریزی موجودی حساب فعلی وارد کنید:" textFill="#3f89d3">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="shomaremaghsad" layoutX="98.0" layoutY="346.0" onAction="#setShomaremaghsad" />
+      <Label layoutX="227.0" layoutY="317.0" text="شماره حساب مقصد:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="AdminMenu" layoutX="223.0" layoutY="496.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادمین" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="496.0" mnemonicParsing="false" text="ثبت و ادامه" />
+   </children>
+</Pane>

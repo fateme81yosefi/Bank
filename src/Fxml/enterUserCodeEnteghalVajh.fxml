@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.enterUserCode_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.enterUserCodeEnteghalVajh_Controller">
    <children>
       <Label alignment="CENTER" layoutX="130.0" layoutY="76.0" prefHeight="22.0" prefWidth="116.0" text="وارد کردن کاربر:" textFill="#cd0d0d">
          <font>
@@ -14,6 +14,6 @@
       <Label layoutX="224.0" layoutY="146.0" text="کد ملی کاربر را وارد کنید:" />
       <TextField fx:id="codemelli" layoutX="56.0" layoutY="142.0" onAction="#setCodemelli" />
       <Button fx:id="menuAdmin" layoutX="247.0" layoutY="488.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو ادمین" />
-      <Button fx:id="conti" layoutX="18.0" layoutY="487.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="18.0" layoutY="487.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
    </children>
 </Pane>

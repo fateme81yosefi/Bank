@@ -2,21 +2,24 @@ package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class adminkhadamat_Controller {
+public class adminkhadamat_Controller implements Initializable {
     public Button moshahedeEtelaatK;
-    public Button closeAcc;
-    public Button createNewAcc;
+    public Button closeAcc;//
+    public Button createNewAcc;//
     public Button EditInfoUser;//
     public Button editMojodi;//
-    public Button enteghalVajh;
-    public Button creatNewUser;
+    public Button enteghalVajh;//
+    public Button creatNewUser;//
 
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
@@ -34,13 +37,57 @@ public class adminkhadamat_Controller {
         if (event.getSource().equals(editMojodi)) {
             stage = (Stage) editMojodi.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCode.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCodeEditMojod.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
+        if (event.getSource().equals(enteghalVajh)) {
+            stage = (Stage) enteghalVajh.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCodeEnteghalVajh.fxml"));
+            root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (event.getSource().equals(closeAcc)) {
+            stage = (Stage) closeAcc.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCodeClose.fxml"));
+            root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (event.getSource().equals(createNewAcc)) {
+            stage = (Stage) createNewAcc.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/newaccountA.fxml"));
+            root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (event.getSource().equals(creatNewUser)) {
+            stage = (Stage) creatNewUser.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/addUserA.fxml"));
+            root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
     }
 }

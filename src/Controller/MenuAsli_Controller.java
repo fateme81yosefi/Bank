@@ -44,6 +44,16 @@ public class MenuAsli_Controller implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
+        if (event.getSource().equals(about)){
+            stage=(Stage) about.getScene().getWindow();
+            FXMLLoader fxmlLoader=new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/aboutUs.fxml"));
+            root=fxmlLoader.load();
+
+            Scene scene=new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
         if (event.getSource().equals(exit)){
             System.exit(0);
         }

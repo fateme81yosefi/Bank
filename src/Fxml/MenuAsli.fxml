@@ -8,7 +8,7 @@
       <Label fx:id="label" alignment="CENTER" layoutX="40.0" layoutY="93.0" prefHeight="17.0" prefWidth="205.0" text="لطفا نوع دسترسی خود را انتخاب کنید" textAlignment="CENTER" textFill="#000000ca" />
       <Button fx:id="buttenUser" layoutX="117.0" layoutY="140.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="57.0" text="کاربر" />
       <Button fx:id="bettenAdmin" layoutX="117.0" layoutY="181.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="57.0" text="ادمین" />
-      <Button fx:id="about" layoutX="117.0" layoutY="226.0" mnemonicParsing="false" text="درباره ما" />
+      <Button fx:id="about" layoutX="117.0" layoutY="226.0" mnemonicParsing="false" onAction="#setAllButten" text="درباره ما" />
       <Button fx:id="exit" layoutX="117.0" layoutY="271.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="57.0" text="خروج" />
    </children>
 </Pane>

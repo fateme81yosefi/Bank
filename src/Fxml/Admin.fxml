@@ -13,8 +13,8 @@
       </Label>
       <Label layoutX="223.0" layoutY="147.0" text="کد ملی:" />
       <Label layoutX="222.0" layoutY="193.0" text="رمز عبور:" />
-      <TextField fx:id="fieldCode" alignment="CENTER" layoutX="40.0" layoutY="143.0" promptText="کد ملی" />
-      <PasswordField fx:id="fieldPass" alignment="CENTER" layoutX="40.0" layoutY="189.0" promptText="حداقل 8 رقم" />
+      <TextField fx:id="fieldCode" alignment="CENTER" layoutX="40.0" layoutY="143.0" onAction="#validate" promptText="کد ملی" />
+      <PasswordField fx:id="fieldPass" alignment="CENTER" layoutX="40.0" layoutY="189.0" onAction="#validate" promptText="حداقل 8 رقم" />
       <Button fx:id="save" layoutX="14.0" layoutY="395.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
       <Button fx:id="returnToMain" layoutX="155.0" layoutY="396.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به صفحه اصلی" />
    </children>

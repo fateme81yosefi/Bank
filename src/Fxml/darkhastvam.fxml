@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="314.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.dakhastvam_Controller">
+   <children>
+      <Label layoutX="132.0" layoutY="73.0" opacity="0.63" text="درخواست وام:">
+         <font>
+            <Font name="Nirmala UI Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="170.0" layoutY="128.0" opacity="0.53" text="مبلغ مورد نظر را وارد کنید:">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="176.0" layoutY="173.0" opacity="0.63" text="دوره پرداخت را وارد کنید:">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mablagh" alignment="CENTER" layoutX="34.0" layoutY="145.0" onAction="#setMablagh" promptText="مبلغ(تومان)" />
+      <TextField fx:id="dorepardakht" alignment="CENTER" layoutX="34.0" layoutY="193.0" onAction="#setDorepardakht" promptText="(ماه)" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="397.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="khadamatk" layoutX="183.0" layoutY="397.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو خدمات" />
+   </children>
+</Pane>

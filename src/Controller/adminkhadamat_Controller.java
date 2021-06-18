@@ -13,8 +13,8 @@ public class adminkhadamat_Controller {
     public Button moshahedeEtelaatK;
     public Button closeAcc;
     public Button createNewAcc;
-    public Button EditInfoUser;
-    public Button editMojodi;
+    public Button EditInfoUser;//
+    public Button editMojodi;//
     public Button enteghalVajh;
     public Button creatNewUser;
 
@@ -31,5 +31,16 @@ public class adminkhadamat_Controller {
             stage.setScene(scene);
             stage.show();
         }
+        if (event.getSource().equals(editMojodi)) {
+            stage = (Stage) editMojodi.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCode.fxml"));
+            root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
     }
 }

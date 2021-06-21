@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.modiriyatHesab_Controller">
+   <children>
+      <Label layoutX="121.0" layoutY="58.0" opacity="0.58" text="مدیریت حساب">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="214.0" layoutY="136.0" text="نام و نام خانوادگی:" />
+      <Label layoutX="265.0" layoutY="163.0" text="کدملی:" />
+      <Label layoutX="254.0" layoutY="189.0" text="رمز عبور :" />
+      <Label layoutX="217.0" layoutY="217.0" text="شماره تلفن همراه:" />
+      <Label layoutX="227.0" layoutY="243.0" text="موجودی حساب:" />
+      <Label layoutX="182.0" layoutY="107.0" text="مشخصات صاحب حساب:" />
+      <TextField fx:id="codemeli" layoutX="29.0" layoutY="159.0" onAction="#setCodemeli" />
+      <TextField fx:id="phone" layoutX="29.0" layoutY="212.0" onAction="#setPhone" />
+      <TextField fx:id="mojodi" layoutX="29.0" layoutY="239.0" onAction="#setMojodi" />
+      <TextField fx:id="name" layoutX="29.0" layoutY="132.0" onAction="#setName" />
+      <Label layoutX="273.0" layoutY="268.0" text="ایمیل:" />
+      <TextField fx:id="email" layoutX="29.0" layoutY="267.0" onAction="#setEmail" />
+      <TextField fx:id="alias" alignment="CENTER" layoutX="78.0" layoutY="337.0" onAction="#setAlias" promptText="alias" />
+      <Label layoutX="14.0" layoutY="312.0" text="در صورت تمایل میتوانید برای حساب خود نام مستعار انتخاب کنید:" textFill="#bc0a0a">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="192.0" layoutY="380.0" text="باز کردن حساب جدید:" />
+      <Button fx:id="newAcc" layoutX="70.0" layoutY="376.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="103.0" text="ایجاد حساب" />
+      <Button fx:id="conti" layoutX="9.0" layoutY="454.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
+      <Button fx:id="khadamatUser" layoutX="191.0" layoutY="454.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
+      <PasswordField fx:id="ramz" layoutX="29.0" layoutY="185.0" onAction="#setRamz" />
+   </children>
+</Pane>

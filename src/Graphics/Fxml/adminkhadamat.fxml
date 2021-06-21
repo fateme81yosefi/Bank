@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.adminkhadamat_Controller">
+   <children>
+      <Label layoutX="106.0" layoutY="65.0" text="ادمین محترم به اپلیکیشن خوش آمدید:" textFill="#d02525">
+         <font>
+            <Font name="Nirmala UI Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="119.0" text="انتخاب نوع خدمات:" textFill="#b90834">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="moshahedeEtelaatK" layoutX="87.0" layoutY="167.0" mnemonicParsing="false" text="مشاهده اطلاعات حساب های مشتریان" />
+      <Button fx:id="closeAcc" layoutX="29.0" layoutY="272.0" mnemonicParsing="false" text="بستن حساب کاربری" />
+      <Button fx:id="createNewAcc" layoutX="39.0" layoutY="203.0" mnemonicParsing="false" text="ایجاد حساب جدید " />
+      <Button fx:id="EditInfoUser" layoutX="220.0" layoutY="203.0" mnemonicParsing="false" text="تغییر اطلاعات کاربر" />
+      <Button fx:id="editMojodi" layoutX="94.0" layoutY="238.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" text="تغییر موجودی حساب " />
+      <Button fx:id="enteghalVajh" layoutX="220.0" layoutY="272.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="انتقال وجه" />
+      <Button fx:id="creatNewUser" layoutX="94.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" text="ایحاد کاربر جدید" />
+   </children>
+</Pane>

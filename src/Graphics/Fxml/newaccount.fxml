@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.newaccount_Controller">
+   <children>
+      <Label layoutX="131.0" layoutY="115.0" opacity="0.65" text="باز کردن حساب جدید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="noeHesab" layoutX="87.0" layoutY="215.0" mnemonicParsing="false" text="نوع حساب" textOverrun="CENTER_ELLIPSIS">
+        <items>
+          <MenuItem mnemonicParsing="false" text="قرض‌الحسنه جاری" />
+          <MenuItem mnemonicParsing="false" text="قرض‌الحسنه پس‌انداز" />
+            <MenuItem mnemonicParsing="false" text="سپرده کوتاه مدت" />
+            <MenuItem mnemonicParsing="false" text="سپرده بلند مدت" />
+        </items>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </MenuButton>
+      <Label layoutX="202.0" layoutY="212.0" opacity="0.51" text="نوع حساب را انتخاب کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="222.0" layoutY="264.0" opacity="0.57" text="رمز عبور خود را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="conti" layoutX="25.0" layoutY="495.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
+      <Button fx:id="khadamatk" layoutX="236.0" layoutY="495.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات کاربر" />
+      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="43.0" layoutY="260.0" onAction="#setRamz" promptText="password" />
+   </children>
+</Pane>

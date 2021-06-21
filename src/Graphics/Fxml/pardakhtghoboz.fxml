@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.pardakhtghoboz_Controller">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="83.0" opacity="0.66" text="پرداخت قبوض">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="156.0" layoutY="143.0" opacity="0.61" text="شناسه قبض را وارد کنید:" />
+      <Label layoutX="144.0" layoutY="209.0" opacity="0.6" text="شناسه پرداخت را وارد کنید:" />
+      <TextField fx:id="shenaseghabz" layoutX="14.0" layoutY="166.0" onAction="#setShenaseghabz" />
+      <TextField fx:id="shenasePardakht" layoutX="14.0" layoutY="233.0" onAction="#setShenasePardakht" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="417.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="khadamatk" layoutX="163.0" layoutY="418.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به صفحه خدمات" />
+   </children>
+</Pane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.closeacc_Controller">
+   <children>
+      <Label layoutX="146.0" layoutY="67.0" opacity="0.58" text="بستن حساب:">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="148.0" opacity="0.69" text="رمز خود را وارد کنید:" />
+      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="53.0" layoutY="144.0" onAction="#setRamz" promptText="رمز عبور" />
+      <TextField fx:id="mojodiFeli" layoutX="53.0" layoutY="191.0" onAction="#setMojodiFeli" />
+      <Label layoutX="228.0" layoutY="195.0" opacity="0.75" text="موجودی فعلی:" />
+      <Label layoutX="35.0" layoutY="251.0" text="درصورت خالی نبودن حساب شماره حساب مقصد را وارد کنید:" textFill="#b51d1d" />
+      <TextField fx:id="shomareHasabMaghsad" alignment="CENTER" layoutX="107.0" layoutY="291.0" onAction="#setShomareHasabMaghsad" promptText="شماره حساب مقصد" />
+      <Button fx:id="conti" layoutX="17.0" layoutY="456.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="khadamatk" layoutX="228.0" layoutY="456.0" mnemonicParsing="false" text="بازگشت به منو خدمات" />
+   </children>
+</Pane>

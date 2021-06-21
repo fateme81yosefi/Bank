@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="369.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.editUserInfoA_Controller">
+   <children>
+      <Label layoutX="249.0" layoutY="111.0" text="نام و نام خانوادگی" />
+      <Label layoutX="299.0" layoutY="141.0" text="کد ملی" />
+      <Label layoutX="291.0" layoutY="173.0" text="رمز عبور" />
+      <Label layoutX="282.0" layoutY="209.0" text="شماره تفن" />
+      <Label layoutX="302.0" layoutY="247.0" text="ایمیل" />
+      <Label layoutX="256.0" layoutY="280.0" text="موجودی حساب" />
+      <TextField fx:id="name" layoutX="53.0" layoutY="106.0" onAction="#setName" />
+      <TextField fx:id="phone" layoutX="54.0" layoutY="214.0" onAction="#setPhone" />
+      <TextField fx:id="email" layoutX="54.0" layoutY="249.0" onAction="#setEmail" />
+      <TextField fx:id="mojodi" layoutX="54.0" layoutY="282.0" onAction="#setMojodi" />
+      <TextField fx:id="pass" layoutX="54.0" layoutY="178.0" onAction="#setRamz" />
+      <TextField fx:id="codemelli" layoutX="54.0" layoutY="140.0" onAction="#setCodemeli" />
+      <Label layoutX="132.0" layoutY="57.0" text="تغییر اطلاعات کاربر:" textFill="#bc0707">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="conti" layoutX="27.0" layoutY="467.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="adminmenu" layoutX="231.0" layoutY="467.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو ادامین" />
+   </children>
+</Pane>

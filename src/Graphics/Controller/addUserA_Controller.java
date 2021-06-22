@@ -24,6 +24,7 @@ public class addUserA_Controller  implements Initializable {
         public Button conti;
         public PasswordField ramz;
         public Button menuAdmin;
+        public Button adminmenu;
 
     public void setRamz(ActionEvent event) {
         String ramzText = ramz.getText();
@@ -43,8 +44,8 @@ public class addUserA_Controller  implements Initializable {
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        if (event.getSource().equals(menuAdmin)) {
-            stage = (Stage) menuAdmin.getScene().getWindow();
+        if (event.getSource().equals(adminmenu)) {
+            stage = (Stage) adminmenu.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("Fxml/adminkhadamat.fxml"));
             root = fxmlLoader.load();

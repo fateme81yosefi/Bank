@@ -31,7 +31,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(EnteghalVajh)){
             stage=(Stage) EnteghalVajh.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/EnteghalVajh.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/EnteghalVajh.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -41,7 +41,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(ModiriyatHesab)){
             stage=(Stage) ModiriyatHesab.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/EnteghalVajh.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/modiriyatHesab.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -51,7 +51,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(BazKardanHesabJadid)){
             stage=(Stage) BazKardanHesabJadid.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/newaccount.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/newaccount.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -71,7 +71,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(PardakhtGhoboz)){
             stage=(Stage) PardakhtGhoboz.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/moshahedeInfo.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/pardakhtghoboz.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -90,7 +90,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(DarkhastVam)){
             stage=(Stage) DarkhastVam.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/darkhastvam.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -100,7 +100,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(BastanHesab)){
             stage=(Stage) BastanHesab.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/claseacc.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/closeacc.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -110,7 +110,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(AfzodanKarbar)){
             stage=(Stage) AfzodanKarbar.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/claseacc.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/addUser.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -120,7 +120,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(Alias)){
             stage=(Stage) Alias.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/claseacc.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/alias.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

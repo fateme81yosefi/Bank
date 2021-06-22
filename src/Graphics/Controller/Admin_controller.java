@@ -37,6 +37,16 @@ public class Admin_controller implements Initializable{
             stage.setScene(scene);
             stage.show();
         }
+        if (event.getSource().equals(save)){
+            stage=(Stage)save.getScene().getWindow();
+            FXMLLoader fxmlLoader=new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/adminkhadamat.fxml"));//vared kardan ramz by user
+            root=fxmlLoader.load();
+
+            Scene scene=new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
 

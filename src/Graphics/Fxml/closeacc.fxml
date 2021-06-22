@@ -18,6 +18,6 @@
       <Label layoutX="35.0" layoutY="251.0" text="درصورت خالی نبودن حساب شماره حساب مقصد را وارد کنید:" textFill="#b51d1d" />
       <TextField fx:id="shomareHasabMaghsad" alignment="CENTER" layoutX="107.0" layoutY="291.0" onAction="#setShomareHasabMaghsad" promptText="شماره حساب مقصد" />
       <Button fx:id="conti" layoutX="17.0" layoutY="456.0" mnemonicParsing="false" text="ثبت و ادامه" />
-      <Button fx:id="khadamatk" layoutX="228.0" layoutY="456.0" mnemonicParsing="false" text="بازگشت به منو خدمات" />
+      <Button fx:id="khadamatk" layoutX="228.0" layoutY="456.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
    </children>
 </Pane>

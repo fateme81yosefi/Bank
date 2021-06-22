@@ -16,12 +16,12 @@
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="moshahedeEtelaatK" layoutX="87.0" layoutY="167.0" mnemonicParsing="false" text="مشاهده اطلاعات حساب های مشتریان" />
-      <Button fx:id="closeAcc" layoutX="29.0" layoutY="272.0" mnemonicParsing="false" text="بستن حساب کاربری" />
-      <Button fx:id="createNewAcc" layoutX="39.0" layoutY="203.0" mnemonicParsing="false" text="ایجاد حساب جدید " />
-      <Button fx:id="EditInfoUser" layoutX="220.0" layoutY="203.0" mnemonicParsing="false" text="تغییر اطلاعات کاربر" />
-      <Button fx:id="editMojodi" layoutX="94.0" layoutY="238.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" text="تغییر موجودی حساب " />
-      <Button fx:id="enteghalVajh" layoutX="220.0" layoutY="272.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="انتقال وجه" />
-      <Button fx:id="creatNewUser" layoutX="94.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" text="ایحاد کاربر جدید" />
+      <Button fx:id="moshahedeEtelaatK" layoutX="87.0" layoutY="167.0" mnemonicParsing="false" onAction="#setAllButten" text="مشاهده اطلاعات حساب های مشتریان" />
+      <Button fx:id="closeAcc" layoutX="29.0" layoutY="272.0" mnemonicParsing="false" onAction="#setAllButten" text="بستن حساب کاربری" />
+      <Button fx:id="createNewAcc" layoutX="39.0" layoutY="203.0" mnemonicParsing="false" onAction="#setAllButten" text="ایجاد حساب جدید " />
+      <Button fx:id="EditInfoUser" layoutX="220.0" layoutY="203.0" mnemonicParsing="false" onAction="#setAllButten" text="تغییر اطلاعات کاربر" />
+      <Button fx:id="editMojodi" layoutX="94.0" layoutY="238.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="193.0" text="تغییر موجودی حساب " />
+      <Button fx:id="enteghalVajh" layoutX="220.0" layoutY="272.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="111.0" text="انتقال وجه" />
+      <Button fx:id="creatNewUser" layoutX="94.0" layoutY="308.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="193.0" text="ایجاد کاربر جدید" />
    </children>
 </Pane>

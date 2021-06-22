@@ -28,7 +28,7 @@ public class MenuAsli_Controller implements Initializable {
         if (event.getSource().equals(buttenUser)){
             stage=(Stage) buttenUser.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/EnterPage.fxml"));//vared kardan ramz by user
+            fxmlLoader.setLocation(App.class.getResource("Fxml/vorodUser.fxml"));//vared kardan ramz by user
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

@@ -6,7 +6,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.addUserA_Controller">
    <children>
-      <Label layoutX="103.0" layoutY="78.0" opacity="0.7" text="عضویت کاربر جدید توسط ادمین:">
+      <Label layoutX="135.0" layoutY="78.0" opacity="0.7" text="عضویت کاربر جدید:">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -41,7 +41,7 @@
       <TextField fx:id="phone" alignment="CENTER" layoutX="34.0" layoutY="222.0" onAction="#setPhone" promptText="09030000000" />
       <TextField fx:id="email" layoutX="34.0" layoutY="251.0" onAction="#setEmail" promptText="ftm.ysfi8888@gmail.com" />
       <Button fx:id="conti" layoutX="23.0" layoutY="472.0" mnemonicParsing="false" text="ثبت و ادامه" />
-      <Button fx:id="menuAdmin" layoutX="218.0" layoutY="472.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادمین" />
+      <Button fx:id="adminmenu" layoutX="218.0" layoutY="472.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات ادمین" />
       <PasswordField fx:id="ramz" alignment="CENTER" layoutX="34.0" layoutY="191.0" onAction="#setRamz" promptText="رمز عبور" />
    </children>
-</Pane>s
+</Pane>

@@ -23,7 +23,7 @@ public class aboutUs_Controller  implements Initializable {
         if (event.getSource().equals(menuAsli)) {
             stage = (Stage) menuAsli.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/MenuAsli.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

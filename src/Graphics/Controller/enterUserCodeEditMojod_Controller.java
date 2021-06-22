@@ -28,7 +28,7 @@ public class enterUserCodeEditMojod_Controller  implements Initializable {
         if (event.getSource().equals(menuAdmin)) {
             stage = (Stage) menuAdmin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/adminKhadamat.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/adminKhadamat.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -38,7 +38,7 @@ public class enterUserCodeEditMojod_Controller  implements Initializable {
         if (event.getSource().equals(conti)) {
             stage = (Stage) conti.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/editMojoodiPage.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/editMojoodiPage.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

@@ -15,7 +15,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         fxmlLoader=new FXMLLoader();
-        fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/MenuAsli.fxml"));
+        fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));
         try {
             root=fxmlLoader.load();
         }catch (IOException exception){

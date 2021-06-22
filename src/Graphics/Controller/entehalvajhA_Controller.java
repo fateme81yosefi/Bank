@@ -31,7 +31,7 @@ public class entehalvajhA_Controller  implements Initializable {
         if (event.getSource().equals(menuAdmin)) {
             stage = (Stage) menuAdmin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/adminkhadamat.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/adminkhadamat.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

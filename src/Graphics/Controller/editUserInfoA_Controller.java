@@ -49,7 +49,7 @@ public class editUserInfoA_Controller implements Initializable {
         if (event.getSource().equals(adminmenu)) {
             stage = (Stage) adminmenu.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/adminKhadamat.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/adminKhadamat.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

@@ -29,7 +29,7 @@ public class enterUserCodeClose_Controller  implements Initializable {
         if (event.getSource().equals(menuAdmin)) {
             stage = (Stage) menuAdmin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/adminKhadamat.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/adminKhadamat.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -39,7 +39,7 @@ public class enterUserCodeClose_Controller  implements Initializable {
         if (event.getSource().equals(conti)) {
             stage = (Stage) conti.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/closeAccbyA.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/closeAccbyA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

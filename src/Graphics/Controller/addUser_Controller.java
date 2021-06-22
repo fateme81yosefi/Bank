@@ -29,7 +29,7 @@ public class addUser_Controller implements Initializable {
         if (event.getSource().equals(khadamatk)) {
             stage = (Stage) khadamatk.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/EntekhabKhadamatUser.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

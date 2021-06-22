@@ -55,7 +55,7 @@ public class modiriyatHesab_Controller  implements Initializable {
         if (event.getSource().equals(khadamatUser)){
             stage=(Stage) khadamatUser.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/EntekhabKhadamatUser.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -65,7 +65,7 @@ public class modiriyatHesab_Controller  implements Initializable {
         if (event.getSource().equals(newAcc)){
             stage=(Stage) newAcc.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Graphics/Fxml/newaccount.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/newaccount.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

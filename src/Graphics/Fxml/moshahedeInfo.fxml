@@ -4,14 +4,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.moshahedeInfo_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.moshahedeInfo_Controller">
    <children>
-      <Label layoutX="112.0" layoutY="96.0" opacity="0.76" text="مشاهده اطلاعات">
+      <Label layoutX="142.0" layoutY="96.0" opacity="0.76" text="مشاهده اطلاعات">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <MenuButton fx:id="allAcc" alignment="CENTER" contentDisplay="CENTER" layoutX="101.0" layoutY="153.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="حساب های شما">
+      <MenuButton fx:id="allAcc" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="182.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="200.0" text="حساب های شما">
         <items>
           <MenuItem mnemonicParsing="false" text="حساب شماره 1" />
           <MenuItem mnemonicParsing="false" text="حساب شماره 2" />
@@ -24,8 +24,8 @@
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </MenuButton>
-      <Button fx:id="conti" layoutX="14.0" layoutY="425.0" mnemonicParsing="false" text="ادامه" />
-      <Button fx:id="khadamatk" layoutX="183.0" layoutY="425.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="504.0" mnemonicParsing="false" text="ادامه" />
+      <Button fx:id="khadamatk" layoutX="226.0" layoutY="503.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
       
    </children>
 </Pane>

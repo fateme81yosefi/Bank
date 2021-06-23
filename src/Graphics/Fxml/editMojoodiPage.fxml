@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.editMojoodiPage_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.editMojoodiPage_Controller">
    <children>
       <Label layoutX="204.0" layoutY="224.0" text="موجودی جدید را وارد کنید:" />
       <TextField fx:id="mojodiJadid" alignment="CENTER" layoutX="40.0" layoutY="222.0" onAction="#setMojodiJadid" promptText="تومان" />

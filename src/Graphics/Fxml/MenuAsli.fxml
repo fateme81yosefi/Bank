@@ -2,13 +2,17 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="285.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.MenuAsli_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.MenuAsli_Controller">
    <children>
-      <Label fx:id="label" alignment="CENTER" layoutX="40.0" layoutY="93.0" prefHeight="17.0" prefWidth="205.0" text="لطفا نوع دسترسی خود را انتخاب کنید" textAlignment="CENTER" textFill="#000000ca" />
-      <Button fx:id="buttenUser" layoutX="117.0" layoutY="140.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="57.0" text="کاربر" />
-      <Button fx:id="bettenAdmin" layoutX="117.0" layoutY="181.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="57.0" text="ادمین" />
-      <Button fx:id="about" layoutX="117.0" layoutY="226.0" mnemonicParsing="false" onAction="#setAllButten" text="درباره ما" />
-      <Button fx:id="exit" layoutX="117.0" layoutY="271.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="57.0" text="خروج" />
+      <Label fx:id="label" alignment="CENTER" layoutX="91.0" layoutY="77.0" prefHeight="17.0" prefWidth="205.0" text="لطفا نوع دسترسی خود را انتخاب کنید" textAlignment="CENTER" textFill="#c31616c9">
+         <font>
+            <Font name="Nirmala UI Bold" size="13.0" />
+         </font></Label>
+      <Button fx:id="buttenUser" layoutX="93.0" layoutY="140.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="کاربر" />
+      <Button fx:id="bettenAdmin" layoutX="93.0" layoutY="204.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="ادمین" />
+      <Button fx:id="about" layoutX="94.0" layoutY="269.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="درباره ما" />
+      <Button fx:id="exit" layoutX="95.0" layoutY="334.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="خروج" />
    </children>
 </Pane>

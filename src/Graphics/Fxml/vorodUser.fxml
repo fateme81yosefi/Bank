@@ -5,14 +5,14 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="263.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.vorodUser_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.vorodUser_Controller">
    <children>
-      <Label layoutX="23.0" layoutY="53.0" opacity="0.36" text="شما سطح دسترسی کاربر را انتخاب کردید" textAlignment="CENTER">
+      <Label layoutX="68.0" layoutY="79.0" opacity="0.36" text="شما سطح دسترسی کاربر را انتخاب کردید" textAlignment="CENTER">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="22.0" layoutY="100.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.71" text="لطفا کد ملی و رمز عبور خود را وارد کنید:">
+      <Label alignment="TOP_CENTER" layoutX="76.0" layoutY="145.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.71" text="لطفا کد ملی و رمز عبور خود را وارد کنید:">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
@@ -20,13 +20,9 @@
             <Blend mode="DARKEN" />
          </effect>
       </Label>
-      <DialogPane layoutX="58.0" layoutY="137.0">
-         <content>
-            <PasswordField fx:id="codemelli" onAction="#setCodemelli" prefHeight="10.0" prefWidth="155.0" promptText="کدملی             " />
-         </content>
-      </DialogPane>
-      <PasswordField fx:id="ramz" layoutX="58.0" layoutY="182.0" onAction="#setRamz" prefHeight="37.0" prefWidth="155.0" promptText="رمز عبور              " />
-      <Button fx:id="conti" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="54.0" text="ثبت" />
-      <Button fx:id="menuAsli" layoutX="194.0" layoutY="361.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت" />
+      <PasswordField fx:id="ramz" layoutX="114.0" layoutY="263.0" onAction="#setRamz" prefHeight="37.0" prefWidth="155.0" promptText="رمز عبور              " />
+      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="54.0" text="ثبت" />
+      <Button fx:id="menuAsli" layoutX="301.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت" />
+      <PasswordField fx:id="codemelli" layoutX="114.0" layoutY="217.0" onAction="#setCodemelli" prefHeight="37.0" prefWidth="155.0" promptText="کدملی             " />
    </children>
 </Pane>

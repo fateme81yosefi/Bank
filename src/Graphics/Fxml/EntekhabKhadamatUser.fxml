@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.EntekhabKhadamatUser_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.EntekhabKhadamatUser_Controller">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="91.0" prefHeight="46.0" prefWidth="161.0" text="انتخاب نوع خدمات:" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="77.0" prefHeight="46.0" prefWidth="161.0" text="انتخاب نوع خدمات:" textAlignment="CENTER">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
@@ -15,15 +15,15 @@
             <Font name="Nirmala UI Bold" size="17.0" />
          </font>
       </Label>
-      <Button fx:id="BazKardanHesabJadid" layoutX="19.0" layoutY="210.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="123.0" text="باز کردن حساب جدید" />
-      <Button fx:id="ModiriyatHesab" layoutX="19.0" layoutY="171.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="123.0" text="مدیریت حساب" />
-      <Button fx:id="MoshahedeEtelaat" layoutX="157.0" layoutY="210.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="140.0" text="مشاهده اطلاعات" />
-      <Button fx:id="EnteghalVajh" layoutX="158.0" layoutY="171.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="140.0" text="انتقال وجه" />
-      <Button fx:id="DarkhastVam" layoutX="156.0" layoutY="252.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="148.0" text="درخواست وام" />
-      <Button fx:id="PardakhtGhoboz" layoutX="12.0" layoutY="252.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="131.0" text="پرداخت قبوض" />
-      <Button fx:id="BastanHesab" layoutX="154.0" layoutY="293.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="148.0" text="بستن حساب" />
-      <Button fx:id="SafheAsli" layoutX="12.0" layoutY="293.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="131.0" text="صفحه اصلی" />
-      <Button fx:id="AfzodanKarbar" layoutX="14.0" layoutY="329.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="131.0" text="افزودن کاربر جدید" />
-      <Button fx:id="Alias" layoutX="153.0" layoutY="329.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="148.0" text="تعریف حساب های پرکاربرد" />
+      <Button fx:id="BazKardanHesabJadid" layoutX="15.0" layoutY="210.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="باز کردن حساب جدید" />
+      <Button fx:id="ModiriyatHesab" layoutX="16.0" layoutY="171.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="مدیریت حساب" />
+      <Button fx:id="MoshahedeEtelaat" layoutX="202.0" layoutY="210.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="مشاهده اطلاعات" />
+      <Button fx:id="EnteghalVajh" layoutX="202.0" layoutY="171.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="انتقال وجه" />
+      <Button fx:id="DarkhastVam" layoutX="201.0" layoutY="252.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="درخواست وام" />
+      <Button fx:id="PardakhtGhoboz" layoutX="15.0" layoutY="252.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="پرداخت قبوض" />
+      <Button fx:id="BastanHesab" layoutX="202.0" layoutY="292.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="بستن حساب" />
+      <Button fx:id="SafheAsli" layoutX="14.0" layoutY="293.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="صفحه اصلی" />
+      <Button fx:id="AfzodanKarbar" layoutX="14.0" layoutY="329.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="افزودن کاربر جدید" />
+      <Button fx:id="Alias" layoutX="203.0" layoutY="329.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="150.0" text="تعریف حساب های پرکاربرد" />
    </children>
 </Pane>

@@ -8,19 +8,17 @@ public class Tarakonesh {
     double mablagh;
     String time;
 
-    public enum TarakoneshType{
+    public enum TarakoneshType {
         VARIZ,
         BARDASHT,
         VARIZ_VAM;
     }
 
-
-    public Tarakonesh(){
+    public Tarakonesh() {
     }
 
-public static void setSimpleDateFormat(){
-
-        Date date=new Date();
+    public static void setSimpleDateFormat() {
+        Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
     }
 

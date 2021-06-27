@@ -11,6 +11,7 @@ public class Tarakonesh {
     public enum TarakoneshType {
         VARIZ,
         BARDASHT,
+        BARDASHT_MAHANE_VAM,
         VARIZ_VAM;
     }
 

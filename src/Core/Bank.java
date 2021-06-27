@@ -50,9 +50,18 @@ public class Bank {
     public void addAcc(Account account) {
         loginUser.accounts.add(account);
     }
-
-    public void manageAcc() {
+    public void mashahede(long AccNum){
+        for (int i = 0; i < loginUser.accounts.size(); i++) {
+            if (loginUser.accounts.get(i).accNumber==AccNum) {
+                logAcc1=loginUser.accounts.get(i);
+                ///////PRINT INFO /////////
     }
+        }
+    }
+    public void manageAcc(){
+////////////SWITCH CASE /////////
+        }
+
 
     public void setAlias(String alias, long accNum) {
         logAcc.alias=alias;
@@ -75,20 +84,36 @@ public class Bank {
         }
     }
 
-    public void pardakhtGhoboz() {
+    public int pardakhtGhoboz(long shenaseGhabz,long ShenasePardakht,double mablagh) {
+        if (mablagh>logAcc.mojodi)return 0;
+        else{
+            logAcc.mojodi-=mablagh;
+            Date date=new Date();
+            Tarakonesh tarakonesh=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT,date);
+            logAcc.tarakoneshes.add(tarakonesh);
+            return 1;
+    }
     }
 
     public void darkhastVam(double mablagh,int month) {
-        logAcc.mojodi+=mablagh;
-
+             logAcc.mojodi+=mablagh;
         double mablaghBardashtiMahane=mablagh/month;
-        Date dateVamGerefte=new Date();
-        long zamanVam=dateVamGerefte.getTime();
-    }
-    public void mohasebeTimeVam(){
+           Date dateVamGerefte=new Date();
+                Tarakonesh tarakonesh2=new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ_VAM,dateVamGerefte);
+                logAcc1.tarakoneshes.add(tarakonesh2);
 
-      Date dateGozashteShode=new Date();
+
+    }
+    public void checkVamTime(Date date, double mablaghBardashtiMahane){///////////INO CHECK KON BAD/////////
+        Date dateGozashteShode=new Date();
         long zamanGozashte=dateGozashteShode.getTime();
+        long zamanVam=date.getTime();
+        if (((zamanGozashte-zamanVam)*1000)%(3600*24*30)==0){
+            logAcc.mojodi-=mablaghBardashtiMahane;
+            Tarakonesh tarakonesh=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT_MAHANE_VAM,dateGozashteShode);
+            logAcc.tarakoneshes.add(tarakonesh);
+
+        }
     }
 
     public void closeAcc(long accNum,String pass) {

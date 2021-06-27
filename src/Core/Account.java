@@ -6,6 +6,7 @@ public class Account {
     String passwordAcc;
     long accNumber;
     String alias;
+    double mojodi=0;
     public AccType accType;
     private static long createAccNum=1000000;
     public enum AccType {

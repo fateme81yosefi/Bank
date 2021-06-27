@@ -8,6 +8,7 @@ public class Bank {
 
     User loginUser=null;
     Account logAcc=null;
+    Account logAcc1=null;
 
     public void getIndexUser(long codemelli, String pass) {
         for (int i = 0; i < users.size(); i++) {
@@ -22,6 +23,15 @@ public class Bank {
                 logAcc=loginUser.accounts.get(i);
             }
         }
+    }
+
+    public int getIndexAcc1(long accNum) {
+        for (int i = 0; i < loginUser.accounts.size(); i++) {
+            if (loginUser.accounts.get(i).accNumber==accNum ) {
+                logAcc1=loginUser.accounts.get(i);
+                return i;
+            }break;
+        }return -1;
     }
     public void reduce(double mojodi, double mablagh) {
         mojodi -= mablagh;
@@ -47,7 +57,16 @@ public class Bank {
         logAcc.alias=alias;
     }
 
-    public void enteghalVajh() {
+    public int enteghalVajh(double mablagh,long accNum) {
+        if (mablagh>logAcc.mojodi)return 0;
+        else{
+            logAcc.mojodi-=mablagh;
+            int x=getIndexAcc1(accNum);
+            if (x!=-1){
+                (loginUser.accounts.get(x).mojodi)+=mablagh;
+            return 1;
+            }else return -1;
+        }
     }
 
     public void pardakhtGhoboz() {
@@ -56,8 +75,12 @@ public class Bank {
     public void darkhastVam() {
     }
 
-    public void closeAcc() {
-    }
+    public void closeAcc(long accNum,String pass) {
+        for (int i = 0; i < loginUser.accounts.size(); i++) {
+            if (loginUser.accounts.get(i).accNumber==accNum && loginUser.accounts.get(i).passwordAcc==pass) {
+              loginUser.accounts.remove(i);
+            }
+        } }
 
     public void setLogOutUser(){
         this.loginUser=null;

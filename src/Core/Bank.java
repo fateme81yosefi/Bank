@@ -126,4 +126,7 @@ public class Bank {
     public void setLogOutUser(){
         this.loginUser=null;
     }
+    public void setLogOutAcc(){
+        this.logAcc=null;
+    }
 }

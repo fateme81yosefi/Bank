@@ -12,7 +12,8 @@ public class Account {
     }
     ArrayList<Tarakonesh> tarakoneshes = new ArrayList<Tarakonesh>();
 
-    public Account(String passwordAcc){
+    public Account(String passwordAcc,AccType accType){
         this.passwordAcc=passwordAcc;
+
     }
 }

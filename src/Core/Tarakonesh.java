@@ -7,14 +7,15 @@ public class Tarakonesh {
 
     double mablagh;
     String time;
-
+    public TarakoneshType tarakoneshType;
     public enum TarakoneshType {
         VARIZ,
         BARDASHT,
         VARIZ_VAM;
     }
 
-    public Tarakonesh() {
+    public Tarakonesh(TarakoneshType tarakoneshType) {
+        this.tarakoneshType=tarakoneshType;
     }
 
     public static void setSimpleDateFormat() {

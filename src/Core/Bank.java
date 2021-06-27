@@ -1,6 +1,7 @@
 package Core;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Bank {
 
@@ -64,6 +65,11 @@ public class Bank {
             int x=getIndexAcc1(accNum);
             if (x!=-1){
                 (loginUser.accounts.get(x).mojodi)+=mablagh;
+                Date date=new Date();
+                Tarakonesh tarakonesh=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT,date);
+                 logAcc.tarakoneshes.add(tarakonesh);
+                Tarakonesh tarakonesh1=new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ,date);
+                logAcc1.tarakoneshes.add(tarakonesh1);
             return 1;
             }else return -1;
         }
@@ -72,7 +78,17 @@ public class Bank {
     public void pardakhtGhoboz() {
     }
 
-    public void darkhastVam() {
+    public void darkhastVam(double mablagh,int month) {
+        logAcc.mojodi+=mablagh;
+
+        double mablaghBardashtiMahane=mablagh/month;
+        Date dateVamGerefte=new Date();
+        long zamanVam=dateVamGerefte.getTime();
+    }
+    public void mohasebeTimeVam(){
+
+      Date dateGozashteShode=new Date();
+        long zamanGozashte=dateGozashteShode.getTime();
     }
 
     public void closeAcc(long accNum,String pass) {

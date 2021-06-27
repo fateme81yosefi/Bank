@@ -6,7 +6,7 @@ import java.util.Date;
 public class Tarakonesh {
 
     double mablagh;
-    String time;
+    Date time;
     public TarakoneshType tarakoneshType;
     public enum TarakoneshType {
         VARIZ,
@@ -14,8 +14,9 @@ public class Tarakonesh {
         VARIZ_VAM;
     }
 
-    public Tarakonesh(TarakoneshType tarakoneshType) {
+    public Tarakonesh(TarakoneshType tarakoneshType,Date date) {
         this.tarakoneshType=tarakoneshType;
+        this.time=date;
     }
 
     public static void setSimpleDateFormat() {

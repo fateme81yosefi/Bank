@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +35,12 @@ public class closeacc_Controller  implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
+        }else if(Bank.getIndexAcc(accNum1,ramz1)==-1){
+
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("حساب نامعتبراست!!!!");
+                alert.showAndWait();
         }
     }
     public void setRamz(ActionEvent event) {

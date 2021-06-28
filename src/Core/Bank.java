@@ -7,23 +7,25 @@ public class Bank {
 
     ArrayList<User> users = new ArrayList<User>();
 
-    User loginUser=null;
-    Account logAcc=null;
+    static User loginUser=null;
+    static Account logAcc=null;
     Account logAcc1=null;
 
-    public void getIndexUser(long codemelli, String pass) {
+    public int getIndexUser(long codemelli, String pass) {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).password.equals(pass) && users.get(i).codemelli==(codemelli)) {
                loginUser=users.get(i);
+               return 1;
             }
-        }
+        }return -1;
     }
-    public void getIndexAcc(long accNum, String pass) {
+    public static int getIndexAcc(String accNum, String pass) {
         for (int i = 0; i < loginUser.accounts.size(); i++) {
-            if (loginUser.accounts.get(i).accNumber==accNum && loginUser.accounts.get(i).passwordAcc==pass) {
+            if (loginUser.accounts.get(i).equals(accNum) && loginUser.accounts.get(i).passwordAcc==pass) {
                 logAcc=loginUser.accounts.get(i);
+                return 1;
             }
-        }
+        }return -1;
     }
 
     public int getIndexAcc1(long accNum) {

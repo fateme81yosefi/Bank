@@ -37,16 +37,6 @@ public class Admin_controller implements Initializable{
             stage.setScene(scene);
             stage.show();
         }
-        if (event.getSource().equals(save)){
-            stage=(Stage)save.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/adminkhadamat.fxml"));//vared kardan ramz by user
-            root=fxmlLoader.load();
-
-            Scene scene=new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
     }
 
 
@@ -56,23 +46,26 @@ public class Admin_controller implements Initializable{
         if (code.isEmpty()||pass.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("please fill all required fields !");
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else {
-            if (code.equals(admincod)&&pass.equals(adminpass)){
+        }else if(code.equals(admincod)&&pass.equals(adminpass))
                 {
                     Stage stage;
                     Parent root;
                     stage=(Stage)returnToMain.getScene().getWindow();
                     FXMLLoader fxmlLoader=new FXMLLoader();
-                    fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));//vared kardan ramz by user
+                    fxmlLoader.setLocation(App.class.getResource("Fxml/adminkhadamat.fxml"));//vared kardan ramz by user
                     root=fxmlLoader.load();
 
                     Scene scene=new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-            }
+
+            }else {
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("کد یا رمز وارد شده اشتباه است! !");
+            alert.showAndWait();
         }
     }
 

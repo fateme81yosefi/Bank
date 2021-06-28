@@ -15,7 +15,7 @@
       <Label layoutX="267.0" layoutY="275.0" text="رمز عبور:" />
       <TextField fx:id="fieldCode" alignment="CENTER" layoutX="65.0" layoutY="209.0" onAction="#validate" promptText="کد ملی" />
       <PasswordField fx:id="fieldPass" alignment="CENTER" layoutX="65.0" layoutY="271.0" onAction="#validate" promptText="حداقل 8 رقم" />
-      <Button fx:id="save" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
+      <Button fx:id="save" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="returnToMain" layoutX="222.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به صفحه اصلی" />
    </children>
 </Pane>

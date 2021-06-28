@@ -17,21 +17,20 @@ import java.util.ResourceBundle;
 
 public class closeacc_Controller  implements Initializable {
     public PasswordField ramz;
-    public TextField mojodiFeli;
     public TextField shomareHasabMaghsad;
     public Button conti;///////
     public Button khadamatk;
+    public TextField accNum;
 
     public void setRamz(ActionEvent event) {
         String ramzText = ramz.getText();
     }
-    public void setMojodiFeli(ActionEvent event) {
-        String mojodiFeliText = mojodiFeli.getText();
-    }
     public void setShomareHasabMaghsad(ActionEvent event) {
         String shomareHasabMaghsadText = shomareHasabMaghsad.getText();
     }
-
+    public void setAccNum(ActionEvent event){
+        String accNum1=accNum.getText();
+    }
 
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;

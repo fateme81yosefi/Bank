@@ -17,10 +17,10 @@ import java.util.ResourceBundle;
 
 public class closeAccbyA_Controller  implements Initializable {
     public PasswordField pass;
-    public TextField codemelli;
     public TextField shomaremaghsad;
     public Button AdminMenu;//
     public Button conti;
+    public TextField accNum;
 
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
@@ -39,8 +39,8 @@ public class closeAccbyA_Controller  implements Initializable {
     public void setRamz(ActionEvent event) {
         String passText = pass.getText();
     }
-    public void setCodemelli(ActionEvent event) {
-        String codemelliText = codemelli.getText();
+    public void setAccNum(ActionEvent event) {
+        String accNum1=accNum.getText();
     }
     public void setShomaremaghsad(ActionEvent event) {
         String shomaremaghsadText = shomaremaghsad.getText();

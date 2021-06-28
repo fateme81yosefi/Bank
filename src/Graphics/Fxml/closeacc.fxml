@@ -13,8 +13,8 @@
       </Label>
       <Label layoutX="220.0" layoutY="148.0" opacity="0.69" text="رمز خود را وارد کنید:" />
       <PasswordField fx:id="ramz" alignment="CENTER" layoutX="53.0" layoutY="144.0" onAction="#setRamz" promptText="رمز عبور" />
-      <TextField fx:id="mojodiFeli" layoutX="53.0" layoutY="191.0" onAction="#setMojodiFeli" />
-      <Label layoutX="228.0" layoutY="195.0" opacity="0.75" text="موجودی فعلی:" />
+      <TextField fx:id="accNum" layoutX="53.0" layoutY="191.0" onAction="#setAccNum" />
+      <Label layoutX="228.0" layoutY="195.0" opacity="0.75" text="شماره حساب :" />
       <Label layoutX="35.0" layoutY="251.0" text="درصورت خالی نبودن حساب شماره حساب مقصد را وارد کنید:" textFill="#b51d1d" />
       <TextField fx:id="shomareHasabMaghsad" alignment="CENTER" layoutX="107.0" layoutY="291.0" onAction="#setShomareHasabMaghsad" promptText="شماره حساب مقصد" />
       <Button fx:id="conti" layoutX="17.0" layoutY="513.0" mnemonicParsing="false" text="ثبت و ادامه" />

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -25,7 +26,20 @@ public class addUserA_Controller  implements Initializable {
         public PasswordField ramz;
         public Button menuAdmin;
         public Button adminmenu;
+    public void validate(ActionEvent event) throws IOException {
+        String codemeliText=codemeli.getText();
+        String phone1=phone.getText();
+        String name1=name.getText();
+        String email1=email.getText();
+        String ramz1=ramz.getText();
 
+
+        if (codemeliText.isEmpty()||phone1.isEmpty()||name1.isEmpty()||email1.isEmpty()||ramz1.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }}
     public void setRamz(ActionEvent event) {
         String ramzText = ramz.getText();
     }

@@ -23,7 +23,7 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="conti" layoutX="18.0" layoutY="506.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="18.0" layoutY="506.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="adminmenu" layoutX="232.0" layoutY="508.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو ادامین" />
    </children>
 </Pane>

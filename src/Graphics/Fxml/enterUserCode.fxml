@@ -14,6 +14,6 @@
       <Label layoutX="224.0" layoutY="146.0" prefWidth="200.0" text="کد ملی کاربر را وارد کنید:" />
       <TextField fx:id="codemelli" layoutX="56.0" layoutY="142.0" onAction="#setCodemelli" />
       <Button fx:id="menuAdmin" layoutX="247.0" layoutY="512.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو ادمین" />
-      <Button fx:id="conti" layoutX="9.0" layoutY="513.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="9.0" layoutY="513.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
    </children>
 </Pane>

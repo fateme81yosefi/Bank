@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.PasswordField;
@@ -35,7 +36,16 @@ public class newaccount_Controller implements Initializable {
             stage.show();
         }
     }
+    public void validate(ActionEvent event) throws IOException {
+        String ramz1=ramz.getText();
 
+        if (ramz1.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }
+    }
     public void setRamz(ActionEvent event) {
         String ramzText = ramz.getText();
     }

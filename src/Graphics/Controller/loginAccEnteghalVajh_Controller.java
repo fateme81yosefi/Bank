@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -18,7 +19,18 @@ public class loginAccEnteghalVajh_Controller {
     public Button menu;
     public Button login;
     public TextField accNum;
+    public void validate(ActionEvent event) throws IOException {
+        String passText=pass.getText();
+        String accNumText=accNum.getText();
 
+
+        if (passText.isEmpty()||accNumText.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }
+    }
     public void setAccNum(ActionEvent event) {
         String accNumText = accNum.getText();
     }

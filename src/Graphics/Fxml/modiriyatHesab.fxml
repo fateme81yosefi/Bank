@@ -31,7 +31,7 @@
       </Label>
       <Label layoutX="217.0" layoutY="380.0" text="باز کردن حساب جدید:" />
       <Button fx:id="newAcc" layoutX="80.0" layoutY="376.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="103.0" text="ایجاد حساب" />
-      <Button fx:id="conti" layoutX="20.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="20.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="khadamatUser" layoutX="224.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
       <PasswordField fx:id="ramz" layoutX="29.0" layoutY="185.0" onAction="#setRamz" />
    </children>

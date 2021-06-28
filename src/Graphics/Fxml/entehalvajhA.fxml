@@ -17,7 +17,7 @@
       <TextField fx:id="codeMaghsad" alignment="CENTER" layoutX="26.0" layoutY="259.0" onAction="#setCodeMaghsad" promptText="کدملی مقصد" />
       <PasswordField fx:id="passMabda" alignment="CENTER" layoutX="26.0" layoutY="209.0" onAction="#setPassMabda" promptText="رمز مبدا" />
       <PasswordField fx:id="passMaghsad" alignment="CENTER" layoutX="26.0" layoutY="291.0" onAction="#setPassMaghsad" promptText="رمز مقصد" />
-      <Button fx:id="conti" layoutX="14.0" layoutY="499.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="499.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Label layoutX="211.0" layoutY="343.0" text="مبلغ مورد نظر را وارد کنید:" />
       <TextField fx:id="Mablagh" alignment="CENTER" layoutX="28.0" layoutY="341.0" onAction="#setMablagh" promptText="تومان" />
       <Button fx:id="menuAdmin" layoutX="233.0" layoutY="501.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادامین" />

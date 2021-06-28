@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -24,7 +25,20 @@ public class entehalvajhA_Controller  implements Initializable {
     public TextField Mablagh;
     public Button menuAdmin;
 
+    public void validate(ActionEvent event) throws IOException {
+        String codeMabdaText=codeMabda.getText();
+        String codeMaghsadText=codeMaghsad.getText();
+        String passMabdaText=passMabda.getText();
+        String passMaghsadText=passMaghsad.getText();
+        String mablaghText=Mablagh.getText();
 
+
+        if (codeMabdaText.isEmpty()||codeMaghsadText.isEmpty()||passMabdaText.isEmpty()||passMaghsadText.isEmpty()||mablaghText.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }}
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;

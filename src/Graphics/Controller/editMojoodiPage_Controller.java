@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -19,6 +20,17 @@ public class editMojoodiPage_Controller  implements Initializable {
     public Button conti;
     public Button adminMenu;//
 
+    public void validate(ActionEvent event) throws IOException {
+        String mablagh1=mojodiJadid.getText();
+
+        if (mablagh1.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }
+        //ELSE{}
+    }
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,6 +19,18 @@ public class enterUserCodeEnteghalVajh_Controller  implements Initializable {
     public TextField codemelli;
     public Button menuAdmin;
     public Button conti;
+
+    public void validate(ActionEvent event) throws IOException {
+        String codemelli1=codemelli.getText();
+
+
+        if (codemelli1.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }
+    }
 
     public void setCodemelli(ActionEvent event) {
         String codemelliText = codemelli.getText();

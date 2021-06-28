@@ -30,6 +30,6 @@
          </font>
       </Label>
       <Button fx:id="AdminMenu" layoutX="236.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادمین" />
-      <Button fx:id="conti" layoutX="10.0" layoutY="511.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="10.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
    </children>
 </Pane>

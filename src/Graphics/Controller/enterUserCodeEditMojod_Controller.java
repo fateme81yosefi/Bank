@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,12 @@ public class enterUserCodeEditMojod_Controller  implements Initializable {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }else if(Bank.getIndexUser(codemelli1)==-1){
+
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText(";کاربر نامعتبراست!!!!");
             alert.showAndWait();
         }
     }

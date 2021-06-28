@@ -11,9 +11,9 @@ public class Bank {
     static Account logAcc=null;
     Account logAcc1=null;
 
-    public int getIndexUser(long codemelli, String pass) {
+    public static int getIndexUser(String codemelli) {
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).password.equals(pass) && users.get(i).codemelli==(codemelli)) {
+            if (users.get(i).equals(codemelli)) {
                loginUser=users.get(i);
                return 1;
             }

@@ -41,7 +41,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(ModiriyatHesab)){
             stage=(Stage) ModiriyatHesab.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/modiriyatHesab.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAcc.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -71,7 +71,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(PardakhtGhoboz)){
             stage=(Stage) PardakhtGhoboz.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/pardakhtghoboz.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAccGhoboz.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

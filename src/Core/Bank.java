@@ -31,7 +31,7 @@ public class Bank {
             if (loginUser.accounts.get(i).accNumber==accNum ) {
                 logAcc1=loginUser.accounts.get(i);
                 return i;
-            }break;
+            }
         }return -1;
     }
     public void reduce(double mojodi, double mablagh) {

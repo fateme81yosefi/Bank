@@ -90,7 +90,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(DarkhastVam)){
             stage=(Stage) DarkhastVam.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/darkhastvam.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAccVam.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

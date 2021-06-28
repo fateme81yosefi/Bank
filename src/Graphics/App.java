@@ -1,5 +1,6 @@
 package Graphics;
 
+import Core.Client;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,8 +13,11 @@ public class App extends Application {
     public static Pane root=null;
     public static Scene scene =null;
     public static FXMLLoader fxmlLoader=null;
+    Client client;
     @Override
     public void start(Stage primaryStage) throws Exception {
+        client=new Client(this);
+        client.start();
         fxmlLoader=new FXMLLoader();
         fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));
         try {

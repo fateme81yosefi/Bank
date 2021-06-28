@@ -12,7 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class loginAcc_Controller {
+public class loginAccEnteghalVajh_Controller {
+
     public PasswordField pass;
     public Button menu;
     public Button login;
@@ -41,7 +42,7 @@ public class loginAcc_Controller {
         if (event.getSource().equals(login)) {
             stage = (Stage) login.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-          //  fxmlLoader.setLocation(App.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
+            //  fxmlLoader.setLocation(App.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

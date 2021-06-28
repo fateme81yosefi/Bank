@@ -31,7 +31,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(EnteghalVajh)){
             stage=(Stage) EnteghalVajh.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/EnteghalVajh.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAccEnteghalVajh.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

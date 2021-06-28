@@ -23,7 +23,7 @@
       </Label>
       <TextField fx:id="mablagh" alignment="CENTER" layoutX="50.0" layoutY="190.0" onAction="#setMablagh" promptText="مبلغ(تومان)" />
       <TextField fx:id="dorepardakht" alignment="CENTER" layoutX="48.0" layoutY="263.0" onAction="#setDorepardakht" promptText="(ماه)" />
-      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="khadamatk" layoutX="226.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو خدمات" />
    </children>
 </Pane>

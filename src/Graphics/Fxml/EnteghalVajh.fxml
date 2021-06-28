@@ -33,7 +33,7 @@
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="conti" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" onAction="#setAllButten" text="ثبت و ادامه" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="khadamatPage" layoutX="273.0" layoutY="515.0" mnemonicParsing="false" onAction="#setAllButten" text="صفحه خدمات" />
    </children>
 </Pane>

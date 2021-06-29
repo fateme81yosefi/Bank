@@ -32,14 +32,14 @@ public class loginAccEnteghalVajh_Controller {
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else if(Bank.getIndexAcc(accNumText,passText,log)==-1){
-
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("حساب نامعتبراست!!!!");
-            alert.showAndWait();
-        }
-    }
+//        }else if(Bank.getIndexAcc(accNumText,passText,log)==-1){
+//
+//            Alert alert=new Alert(Alert.AlertType.ERROR);
+//            alert.setHeaderText(null);
+//            alert.setContentText("حساب نامعتبراست!!!!");
+//            alert.showAndWait();
+//        }
+    }}
     public void setAccNum(ActionEvent event) {
         String accNumText = accNum.getText();
     }

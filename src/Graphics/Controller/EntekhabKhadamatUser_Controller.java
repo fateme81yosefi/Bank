@@ -31,7 +31,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(EnteghalVajh)){
             stage=(Stage) EnteghalVajh.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAccEnteghalVajh.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/EnteghalVajh.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -41,7 +41,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(ModiriyatHesab)){
             stage=(Stage) ModiriyatHesab.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAcc.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/modiriyatHesab.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -71,7 +71,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(PardakhtGhoboz)){
             stage=(Stage) PardakhtGhoboz.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAccGhoboz.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/pardakhtghoboz.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -90,7 +90,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(DarkhastVam)){
             stage=(Stage) DarkhastVam.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/loginAccVam.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/darkhastvam.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

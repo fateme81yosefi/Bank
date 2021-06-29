@@ -1,6 +1,7 @@
 package Graphics.Controller;
 
 import Core.Bank;
+import Core.User;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +24,7 @@ public class closeacc_Controller  implements Initializable {
     public Button conti;///////
     public Button khadamatk;
     public TextField accNum;
-
+    User login;
     public void validate(ActionEvent event) throws IOException {
         String ramz1=ramz.getText();
         String shomareHasabMaghsadText=shomareHasabMaghsad.getText();
@@ -35,7 +36,7 @@ public class closeacc_Controller  implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else if(Bank.getIndexAcc(accNum1,ramz1)==-1){
+        }else if(Bank.getIndexAcc(accNum1,ramz1,login)==-1){
 
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);

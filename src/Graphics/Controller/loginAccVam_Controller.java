@@ -1,6 +1,7 @@
 package Graphics.Controller;
 
 import Core.Bank;
+import Core.User;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodTextRun;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,6 +22,8 @@ public class loginAccVam_Controller {
     public Button menu;
     public Button login;
     public TextField accNum;
+    User log;
+
     public void validate(ActionEvent event) throws IOException {
         String passText=pass.getText();
         String accNumText=accNum.getText();
@@ -29,7 +34,7 @@ public class loginAccVam_Controller {
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else if(Bank.getIndexAcc(accNumText,passText)==-1){
+        }else if(Bank.getIndexAcc(accNumText,passText,log)==-1){
 
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -37,9 +42,7 @@ public class loginAccVam_Controller {
             alert.showAndWait();
         }
     }
-    public void setAccNum(ActionEvent event) {
-        String accNumText = accNum.getText();
-    }
+
 
     public void setPass(ActionEvent event) {
         String passText = pass.getText();

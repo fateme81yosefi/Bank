@@ -21,7 +21,7 @@
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="accNum" layoutX="43.0" layoutY="160.0" onAction="#setAccNum" />
+      <TextField fx:id="accNum" layoutX="43.0" layoutY="160.0" />
       <Button fx:id="login" layoutX="17.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ورود" />
       <Button fx:id="menu" layoutX="304.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت" />
       <PasswordField fx:id="pass" layoutX="43.0" layoutY="217.0" onAction="#setPass" />

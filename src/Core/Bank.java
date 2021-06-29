@@ -5,21 +5,22 @@ import java.util.Date;
 
 public class Bank {
 
-    ArrayList<User> users = new ArrayList<User>();
+    static ArrayList<User> users = new ArrayList<User>();
 
     static User loginUser=null;
     static Account logAcc=null;
     Account logAcc1=null;
 
     public static int getIndexUser(String codemelli) {
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).equals(codemelli)) {
-               loginUser=users.get(i);
-               return 1;
+        for (User user : users) {
+            if (user.equals(codemelli)) {
+                loginUser = user;
+                return 1;
             }
-        }return -1;
+        }
+        return -1;
     }
-    public static int getIndexAcc(String accNum, String pass) {
+    public static int getIndexAcc(String accNum, String pass,User loginUser) {
         for (int i = 0; i < loginUser.accounts.size(); i++) {
             if (loginUser.accounts.get(i).equals(accNum) && loginUser.accounts.get(i).passwordAcc==pass) {
                 logAcc=loginUser.accounts.get(i);

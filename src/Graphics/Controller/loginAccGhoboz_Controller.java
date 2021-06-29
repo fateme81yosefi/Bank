@@ -1,6 +1,7 @@
 package Graphics.Controller;
 
 import Core.Bank;
+import Core.User;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,7 @@ public class loginAccGhoboz_Controller {
     public Button menu;
     public Button login;
     public TextField accNum;
+    User log;
     public void validate(ActionEvent event) throws IOException {
         String passText=pass.getText();
         String accNumText=accNum.getText();
@@ -29,7 +31,7 @@ public class loginAccGhoboz_Controller {
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else if(Bank.getIndexAcc(accNumText,passText)==-1){
+        }else if(Bank.getIndexAcc(accNumText,passText,log)==-1){
 
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);

@@ -28,7 +28,7 @@ public class App extends Application {
 if (root !=null){
     scene=new Scene(root);
 }
-
+primaryStage.setTitle("Bank System");
 primaryStage.setScene(scene);
 primaryStage.setResizable(false);
 primaryStage.show();

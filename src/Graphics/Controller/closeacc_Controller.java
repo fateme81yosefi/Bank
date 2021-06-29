@@ -36,7 +36,7 @@ public class closeacc_Controller  implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else if(Bank.getIndexAcc(accNum1,ramz1,login)==-1){
+        }else if(Bank.getIndexAcc()){
 
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);

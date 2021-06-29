@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.EnteghalVajh_Controller">
    <children>
-      <Label layoutX="134.0" layoutY="66.0" text="انتقال وجه" textFill="#ba0969">
+      <Label layoutX="134.0" layoutY="56.0" text="انتقال وجه" textFill="#ba0969">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
@@ -15,25 +15,43 @@
             <Font name="Nirmala UI Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="199.0" layoutY="141.0" opacity="0.53" prefHeight="17.0" prefWidth="144.0" text="مبلغ مورد نظر را وارد کنید:">
+      <Label layoutX="210.0" layoutY="289.0" opacity="0.53" prefHeight="17.0" prefWidth="144.0" text="مبلغ مورد نظر را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="mablagh" alignment="CENTER" layoutX="44.0" layoutY="161.0" onAction="#setMablagh" promptText="مبلغ (تومان)" />
-      <TextField fx:id="shomareMaghsad" alignment="CENTER" layoutX="44.0" layoutY="222.0" onAction="#setShomareMaghsad" promptText="مقصد" />
-      <Label layoutX="173.0" layoutY="191.0" opacity="0.57" text="شماره حساب مقصد را وارد کنید:">
+      <TextField fx:id="mablagh" alignment="CENTER" layoutX="37.0" layoutY="284.0" onAction="#setMablagh" prefHeight="25.0" prefWidth="144.0" promptText="مبلغ (تومان)" />
+      <TextField fx:id="shomareMaghsad" alignment="CENTER" layoutX="34.0" layoutY="335.0" onAction="#setShomareMaghsad" prefHeight="25.0" prefWidth="144.0" promptText="شماره حساب مقصد" />
+      <Label layoutX="190.0" layoutY="335.0" opacity="0.57" text="شماره حساب مقصد را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <PasswordField fx:id="password" alignment="CENTER" layoutX="44.0" layoutY="273.0" onAction="#setPassword" promptText="رمز عبور" />
-      <Label layoutX="234.0" layoutY="249.0" opacity="0.61" text="رمز خود را وارد کنید:">
+      <PasswordField fx:id="password" alignment="CENTER" layoutX="39.0" layoutY="233.0" onAction="#setPassword" prefHeight="25.0" prefWidth="144.0" promptText="رمز عبور" />
+      <Label layoutX="242.0" layoutY="238.0" opacity="0.61" text="رمز خود را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
       <Button fx:id="conti" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="khadamatPage" layoutX="273.0" layoutY="515.0" mnemonicParsing="false" onAction="#setAllButten" text="صفحه خدمات" />
+      <Label layoutX="195.0" layoutY="192.0" opacity="0.44" text="شماره حساب خود را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="218.0" layoutY="137.0" opacity="0.52" text="کد ملی خود را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="156.0" layoutY="382.0" opacity="0.48" text="کدملی صاحب حساب مقصد را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codemelliMabda" alignment="CENTER" layoutX="37.0" layoutY="134.0" promptText="کدملی مبدا" />
+      <TextField fx:id="accNumMabda" alignment="CENTER" layoutX="35.0" layoutY="187.0" promptText="شماره حساب مبدا" />
+      <TextField fx:id="codemelliMaghsad" alignment="CENTER" layoutX="39.0" layoutY="413.0" promptText="کد ملی مقصد" />
    </children>
 </Pane>

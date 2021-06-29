@@ -11,25 +11,37 @@
             <Font name="Nirmala UI Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="135.0" layoutY="146.0" opacity="0.84" text="شماره حساب و رمز حساب را وارد کنید:">
+      <Label layoutX="72.0" layoutY="125.0" opacity="0.84" prefHeight="17.0" prefWidth="251.0" text="کد ملی و شماره حساب و رمز حساب را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <PasswordField fx:id="pass" alignment="CENTER" layoutX="74.0" layoutY="220.0" onAction="#setRamz" promptText="password" />
-      <TextField fx:id="accNum" alignment="CENTER" layoutX="74.0" layoutY="182.0" onAction="#setAccNum" promptText="شماره حساب" />
-      <Label layoutX="16.0" layoutY="274.0" text="یک شماره حساب مقصد جهت واریزی موجودی حساب فعلی وارد کنید:" textFill="#3f89d3">
-         <font>
-            <Font name="Nirmala UI Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="shomaremaghsad" layoutX="98.0" layoutY="346.0" onAction="#setShomaremaghsad" />
-      <Label layoutX="227.0" layoutY="317.0" text="شماره حساب مقصد:">
+      <PasswordField fx:id="pass" alignment="CENTER" layoutX="97.0" layoutY="234.0" onAction="#setRamz" promptText="password" />
+      <TextField fx:id="accNum" alignment="CENTER" layoutX="96.0" layoutY="199.0" onAction="#setAccNum" promptText="شماره حساب" />
+      <TextField fx:id="shomaremaghsad" layoutX="98.0" layoutY="360.0" onAction="#setShomaremaghsad" />
+      <Label layoutX="227.0" layoutY="340.0" text="شماره حساب مقصد:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
       <Button fx:id="AdminMenu" layoutX="236.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادمین" />
       <Button fx:id="conti" layoutX="10.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
+      <TextField fx:id="codemelli" alignment="CENTER" layoutX="95.0" layoutY="162.0" promptText="کدملی" />
+      <Label layoutX="80.0" layoutY="272.0" prefHeight="34.0" prefWidth="203.0" text="یک شماره حساب مقصد و کد ملی کاربر " textFill="#c32e2e">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="299.0" text="جهت واریزی موجودی حساب فعلی وارد کنید:" textFill="#c33030">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codemelliMaghsad" layoutX="98.0" layoutY="414.0" />
+      <Label layoutX="193.0" layoutY="390.0" text="کدملی صاحب حساب مقصد:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.alias_Controller">
+   <children>
+      <Label layoutX="107.0" layoutY="91.0" text="تعریف حساب های پرکاربرد:">
+         <font>
+            <Font name="Nirmala UI Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="213.0" layoutY="183.0" text="شماره حساب را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="shomareHesab" layoutX="26.0" layoutY="179.0" onAction="#setShomareHesab" />
+      <TextField fx:id="aliass" layoutX="26.0" layoutY="233.0" onAction="#setAliass" />
+      <Label layoutX="224.0" layoutY="237.0" text="نام مستعار را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="conti" layoutX="10.0" layoutY="516.0" mnemonicParsing="false" text="ثبت" />
+      <Button fx:id="khadamatk" layoutX="232.0" layoutY="510.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
+   </children>
+</Pane>

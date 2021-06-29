@@ -5,46 +5,34 @@ import java.util.Date;
 
 public class Bank {
 
-    static ArrayList<User> users = new ArrayList<User>();
+     static ArrayList<User> users = new ArrayList<User>();
 
-    static User loginUser=null;
-    static Account logAcc=null;
-    Account logAcc1=null;
 
     public static int getIndexUser(String codemelli) {
-        for (User user : users) {
-            if (user.equals(codemelli)) {
-                loginUser = user;
-                return 1;
-            }
+        for (int i = 0; i < users.size(); i++) {
+            if(users.get(i).codemelli==Long.parseLong(codemelli))return i;
         }
         return -1;
     }
-    public static int getIndexAcc(String accNum, String pass,User loginUser) {
-        for (int i = 0; i < loginUser.accounts.size(); i++) {
-            if (loginUser.accounts.get(i).equals(accNum) && loginUser.accounts.get(i).passwordAcc==pass) {
-                logAcc=loginUser.accounts.get(i);
-                return 1;
-            }
-        }return -1;
-    }
 
-    public int getIndexAcc1(long accNum) {
-        for (int i = 0; i < loginUser.accounts.size(); i++) {
-            if (loginUser.accounts.get(i).accNumber==accNum ) {
-                logAcc1=loginUser.accounts.get(i);
+    public static int getIndexAcc(String codemelli,String accNum, String pass) {
+        int g=getIndexUser(codemelli);
+        for (int i = 0; i < users.get(g).accounts.size(); i++) {
+            if (users.get(g).accounts.get(i).accNumber==Long.parseLong(accNum) && users.get(g).accounts.get(i).passwordAcc.equals(pass)) {
                 return i;
             }
         }return -1;
     }
 
-    public void addUser(String name, long codemelli, String password, int phoneNum, String email) {
-        User user = new User(name, codemelli, password, phoneNum, email);
+    public void addUser(String name, String codemelli, String password, String phoneNum, String email) {
+        User user = new User(name, Long.parseLong(codemelli), password, Integer.parseInt(phoneNum), email);
         users.add(user);
     }
 
-    public void addAcc(Account account,User loginUser) {
-        loginUser.accounts.add(account);
+    public void addAcc(String codemelli, Account.AccType type,String pass) {
+        int idex=getIndexUser(codemelli);
+        Account account=new Account(pass,type);
+        users.get(idex).accounts.add(account);
     }
 
 
@@ -137,5 +125,57 @@ public class Bank {
     }
     public void setLogOutAcc(){
         this.logAcc=null;
+    }
+
+///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
+
+    public void printInfoUser(){
+    for(User user:users){
+        System.out.println(user.name+" , "+user.codemelli+" , "+user.password+" , "
+                          +user.email+" , "+user.phoneNum+" , "+user.accounts);
+    }
+    }
+
+    public void editUserInfo(String name,  String codemelli, String password, int phoneNum, String email){
+        int idex=getIndexUser(codemelli);
+        users.get(idex).name=name;
+        users.get(idex).password=password;
+        users.get(idex).phoneNum=phoneNum;
+        users.get(idex).email=email;
+    }
+
+    public void editUserMojodi(String codemelli,String accNum,String newMojodi){
+        long newMojo=Long.parseLong(newMojodi);
+        int idex=getIndexUser(codemelli);
+        int indexAcc1=getIndexAcc1(Long.parseLong(accNum));
+        Date date=new Date();
+        Tarakonesh tarakonesh=new Tarakonesh(Tarakonesh.TarakoneshType.EDIT_MOJODI_BY_ADMIN,date);
+        users.get(idex).accounts.get(indexAcc1).mojodi=newMojo;
+        users.get(idex).accounts.get(indexAcc1).tarakoneshes.add(tarakonesh);
+    }
+
+    public void enteghalVajhByAdmin(String codemelli,String accNumMabda,String accNumMaghsad,String mablagh){
+        int idex=getIndexUser(codemelli);
+        int mabda=getIndexAcc1(Long.parseLong(accNumMabda));
+        int maghsad=getIndexAcc1(Long.parseLong(accNumMaghsad));
+        users.get(idex).accounts.get(mabda).mojodi-=Integer.parseInt(mablagh);
+        users.get(idex).accounts.get(maghsad).mojodi+=Integer.parseInt(mablagh);
+        Date date=new Date();
+        Tarakonesh tarakoneshMaghsad=new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ,date);
+        Tarakonesh tarakoneshMabda=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT,date);
+        users.get(idex).accounts.get(maghsad).tarakoneshes.add(tarakoneshMaghsad);
+        users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
+    }
+    public void clossAccByAdmin(String codemelli,String accNum){
+        int idex=getIndexUser(codemelli);
+        int indexAcc=getIndexAcc1(Long.parseLong(accNum));
+        users.get(idex).accounts.remove(indexAcc);
+    }
+
+    public void creatAccByAdmin(String codemelli, String accNum, String pass, Account.AccType Type){
+        int idex=getIndexUser(codemelli);
+        int indexAcc=getIndexAcc1(Long.parseLong(accNum));
+        Account account=new Account(pass,Type);
+        users.get(idex).accounts.add(account);
     }
 }

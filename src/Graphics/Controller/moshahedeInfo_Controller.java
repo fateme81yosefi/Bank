@@ -6,8 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,11 +14,30 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class moshahedeInfo_Controller  implements Initializable {
-    public MenuButton allAcc;/////////////
-    public Button conti;//////////////
+    public Button conti;
     public Button khadamatk;
+    public TextField codemelli;
+    public TextField accNum;
+    public TextArea PrintInfo;
+    public void validate(ActionEvent event) throws IOException {
 
-    public void setAllButten(ActionEvent event)throws IOException {
+        String accNumTextabdaText=accNum.getText();
+        String codemelliText=codemelli.getText();
+
+        Stage stage;
+        Parent root;
+
+        if (accNumTextabdaText.isEmpty()||codemelliText.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }else {
+////////////////////////////////////////////////////////
+}
+    }
+
+            public void setAllButten(ActionEvent event)throws IOException {
         Stage stage;
         Parent root;
         if (event.getSource().equals(khadamatk)){

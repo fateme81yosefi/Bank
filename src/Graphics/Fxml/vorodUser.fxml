@@ -20,9 +20,9 @@
             <Blend mode="DARKEN" />
          </effect>
       </Label>
-      <PasswordField fx:id="ramz" layoutX="114.0" layoutY="263.0" onAction="#setRamz" prefHeight="37.0" prefWidth="155.0" promptText="رمز عبور              " />
-      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="54.0" text="ثبت" />
+      <PasswordField fx:id="ramz" layoutX="114.0" layoutY="263.0" prefHeight="37.0" prefWidth="155.0" promptText="رمز عبور              " />
+      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" prefHeight="25.0" prefWidth="54.0" text="ثبت" />
       <Button fx:id="menuAsli" layoutX="301.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت" />
-      <PasswordField fx:id="codemelli" layoutX="114.0" layoutY="217.0" onAction="#setCodemelli" prefHeight="37.0" prefWidth="155.0" promptText="کدملی             " />
+      <PasswordField fx:id="codemelli" layoutX="114.0" layoutY="217.0" prefHeight="37.0" prefWidth="155.0" promptText="کدملی             " />
    </children>
 </Pane>

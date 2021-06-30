@@ -14,6 +14,12 @@ public class Bank {
         }
         return -1;
     }
+    public static int getIndexUserByPass(String codemelli,String pass) {
+        for (int i = 0; i < users.size(); i++) {
+            if(users.get(i).codemelli==Long.parseLong(codemelli) && users.get(i).password.equals(pass))return i;
+        }
+        return -1;
+    }
 
     public static int getIndexAcc(String codemelli,String accNum) {
         int g=getIndexUser(codemelli);

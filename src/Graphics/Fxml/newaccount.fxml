@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -12,35 +11,30 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <MenuButton fx:id="noeHesab" layoutX="87.0" layoutY="214.0" mnemonicParsing="false" prefHeight="10.0" text="نوع حساب" textOverrun="CENTER_ELLIPSIS">
-        <items>
-          <MenuItem mnemonicParsing="false" text="قرض‌الحسنه جاری" />
-          <MenuItem mnemonicParsing="false" text="قرض‌الحسنه پس‌انداز" />
-            <MenuItem mnemonicParsing="false" text="سپرده کوتاه مدت" />
-            <MenuItem mnemonicParsing="false" text="سپرده بلند مدت" />
-        </items>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </MenuButton>
-      <Label layoutX="214.0" layoutY="219.0" opacity="0.51" text="نوع حساب را انتخاب کنید:">
+      <Label layoutX="214.0" layoutY="219.0" opacity="0.51" text="نوع حساب را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="216.0" layoutY="275.0" opacity="0.57" text="رمز عبور خود را وارد کنید:">
+      <Label layoutX="216.0" layoutY="295.0" opacity="0.57" text="رمز عبور خود را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
       <Button fx:id="conti" layoutX="15.0" layoutY="509.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="khadamatk" layoutX="229.0" layoutY="509.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات کاربر" />
-      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="43.0" layoutY="272.0" onAction="#setRamz" promptText="password" />
+      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="43.0" layoutY="293.0" promptText="password" />
       <Label layoutX="225.0" layoutY="167.0" opacity="0.5" text="کدملی خود را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
       <TextField fx:id="codemelli" alignment="CENTER" layoutX="43.0" layoutY="163.0" promptText="کدملی" />
+      <Label layoutX="11.0" layoutY="254.0" text="قرض الحسنه جاری/قرض الحسنه پس انداز/سپرده بلند مدت/سپرده کوتاه مدت" textFill="#3266e1">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TextField fx:id="noeAcc" layoutX="43.0" layoutY="217.0" />
    </children>
 </Pane>

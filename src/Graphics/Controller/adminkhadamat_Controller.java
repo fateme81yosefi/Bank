@@ -28,7 +28,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(EditInfoUser)) {
             stage = (Stage) EditInfoUser.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCode.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/editUserInfoA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -38,7 +38,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(editMojodi)) {
             stage = (Stage) editMojodi.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCodeEditMojod.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/editMojoodiPage.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -48,7 +48,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(enteghalVajh)) {
             stage = (Stage) enteghalVajh.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCodeEnteghalVajh.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/entehalvajhA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -58,7 +58,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(closeAcc)) {
             stage = (Stage) closeAcc.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/enterUserCodeClose.fxml"));
+            fxmlLoader.setLocation(App.class.getResource("Fxml/closeAccbyA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

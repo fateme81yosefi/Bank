@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,8 @@ public class entehalvajhA_Controller  implements Initializable {
     public Button conti;
     public TextField Mablagh;
     public Button menuAdmin;
+    public TextField accNumMabda;
+    public TextField accNumMaghsad;
 
     public void validate(ActionEvent event) throws IOException {
         String codeMabdaText=codeMabda.getText();
@@ -31,14 +34,42 @@ public class entehalvajhA_Controller  implements Initializable {
         String passMabdaText=passMabda.getText();
         String passMaghsadText=passMaghsad.getText();
         String mablaghText=Mablagh.getText();
+        String accNumMabdaText=accNumMabda.getText();
+        String accNumMaghsadText=accNumMaghsad.getText();
+        Stage stage;
+        Parent root;
 
-
-        if (codeMabdaText.isEmpty()||codeMaghsadText.isEmpty()||passMabdaText.isEmpty()||passMaghsadText.isEmpty()||mablaghText.isEmpty()){
+        if (codeMabdaText.isEmpty()||codeMaghsadText.isEmpty()||passMabdaText.isEmpty()||passMaghsadText.isEmpty()
+                ||mablaghText.isEmpty()||accNumMabdaText.isEmpty()||accNumMaghsadText.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }}
+        }else {
+            int x= Bank.enteghalVajhByAdmin(codeMabdaText,codeMaghsadText,accNumMabdaText,accNumMaghsadText,mablaghText);
+            if (x==0){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("شماره حسابی که وارد کردید اشتباه است!");
+                alert.showAndWait();
+            }else if (x==-1){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("کد ملی کاربر اشتباه است!");
+                alert.showAndWait();
+            }else {
+                System.out.println("عملیات با موفقیت انجام شد");
+                stage = (Stage) conti.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                root = fxmlLoader.load();
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+        }
+    }
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;

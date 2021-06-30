@@ -24,12 +24,12 @@ public class Bank {
         }return -1;
     }
 
-    public void addUser(String name, String codemelli, String password, String phoneNum, String email) {
+    public static void addUser(String name, String codemelli, String password, String phoneNum, String email) {
         User user = new User(name, Long.parseLong(codemelli), password, Integer.parseInt(phoneNum), email);
         users.add(user);
     }
 
-    public int addAcc(String codemelli, Account.AccType type,String pass) {
+    public static int addAcc(String codemelli, Account.AccType type,String pass) {
         int idex=getIndexUser(codemelli);
         if (idex==-1){
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -41,7 +41,7 @@ public class Bank {
     }
 
 
-    public int mashahede(String AccNum,String codemelli){
+    public static int mashahede(String AccNum,String codemelli){
         int idex=getIndexUser(codemelli);
         if (idex==-1){
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -61,12 +61,12 @@ public class Bank {
         } return 1;
     }
 //////////////////////////////////////IN TEKRARIYE METHOD HASH///////////////////////////////////
-    public void manageAcc(){
+    public static void manageAcc(){
 ////////////SWITCH CASE /////////
         }
 
 
-    public int setAlias(String alias, String accNum,String codemelli) {
+    public static int setAlias(String alias, String accNum,String codemelli) {
         int idex=getIndexUser(codemelli);
         if (idex==-1){
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -80,7 +80,7 @@ public class Bank {
         } return 0;
     }
 
-    public int enteghalVajh(String mablagh,String accNumMaghsad,String accNumMabda , String codemelliMaghsad, String codemelliMada) {
+    public static int enteghalVajh(String mablagh,String accNumMaghsad,String accNumMabda , String codemelliMaghsad, String codemelliMada) {
         int idex=getIndexUser(codemelliMada);
         int idex1=getIndexUser(codemelliMaghsad);
         int mabda=getIndexAcc(codemelliMada,accNumMabda);
@@ -101,7 +101,7 @@ public class Bank {
             }
 
 
-    public int pardakhtGhoboz(String shenaseGhabz,String ShenasePardakht,String mablagh,String codemelli,String accNum) {
+    public static int pardakhtGhoboz(String shenaseGhabz,String ShenasePardakht,String mablagh,String codemelli,String accNum) {
         int idex=getIndexUser(codemelli);
         int mabda=getIndexAcc(codemelli,accNum);
         if (idex==-1){
@@ -126,7 +126,7 @@ public class Bank {
     }
 /////////////////////////IN METHOD CHECK BESHE FALSE/////////////////////////////////
 
-    public int darkhastVam(String mablagh,String month,String codemelli,String accNum) {
+    public static int darkhastVam(String mablagh,String month,String codemelli,String accNum) {
         int idex=getIndexUser(codemelli);
         int mabda=getIndexAcc(codemelli,accNum);
         if (idex==-1){
@@ -144,7 +144,7 @@ public class Bank {
                 users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh2);
                 return 1;
     }
-    public void checkVamTime(Date date, double mablaghBardashtiMahane,String codemelli,String accNum){
+    public static void checkVamTime(Date date, double mablaghBardashtiMahane,String codemelli,String accNum){
         int idex=getIndexUser(codemelli);
         int mabda=getIndexAcc(codemelli,accNum);
         Date dateGozashteShode=new Date();
@@ -162,7 +162,7 @@ public class Bank {
 
 
 
-    public int closeAcc(String accNum,String accNumMaghsad,String pass,String codemelli,String codemelliMaghsad) {
+    public static int closeAcc(String accNum,String accNumMaghsad,String pass,String codemelli,String codemelliMaghsad) {
         int idex = getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -187,7 +187,7 @@ public class Bank {
 
 ///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
 
-    public void printInfoUsers(){
+    public static void printInfoUsers(){
     for(User user:users){
         System.out.println(user.name+" , "+user.codemelli+" , "+user.password+" , "
                           +user.email+" , "+user.phoneNum+" , "+user.accounts);
@@ -207,7 +207,7 @@ public class Bank {
         return 1;
     }
 
-    public int editUserMojodi(String codemelli,String accNum,String newMojodi){
+    public static int editUserMojodi(String codemelli,String accNum,String newMojodi){
         long newMojo=Long.parseLong(newMojodi);
         int idex=getIndexUser(codemelli);
         if (idex == -1) {
@@ -227,7 +227,7 @@ public class Bank {
         return 1;
     }
 
-    public int enteghalVajhByAdmin(String codemelliMada,String codemelliMaghsad,String accNumMabda,String accNumMaghsad,String mablagh){
+    public static int enteghalVajhByAdmin(String codemelliMada,String codemelliMaghsad,String accNumMabda,String accNumMaghsad,String mablagh){
         int idex=getIndexUser(codemelliMada);
         int idex1=getIndexUser(codemelliMaghsad);
         int mabda=getIndexAcc(codemelliMada,accNumMabda);
@@ -250,7 +250,7 @@ public class Bank {
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
         return 1;
     }
-    public int clossAccByAdmin(String codemelli,String accNum){
+    public static int clossAccByAdmin(String codemelli,String accNum){
         int idex=getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -266,7 +266,7 @@ public class Bank {
         return 1;
     }
 
-    public int creatAccByAdmin(String codemelli, String pass, Account.AccType Type){
+    public static int creatAccByAdmin(String codemelli, String pass, Account.AccType Type){
         int idex=getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");

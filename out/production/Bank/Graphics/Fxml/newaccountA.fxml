@@ -23,12 +23,12 @@
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </MenuButton>
-      <Label layoutX="202.0" layoutY="217.0" opacity="0.51" text="نوع حساب را انتخاب کنید:">
+      <Label layoutX="210.0" layoutY="217.0" opacity="0.51" text="نوع حساب را انتخاب کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="222.0" layoutY="270.0" opacity="0.57" text="رمز عبور خود را وارد کنید:">
+      <Label layoutX="217.0" layoutY="270.0" opacity="0.57" text="رمز عبور خود را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
@@ -36,5 +36,11 @@
       <Button fx:id="conti" layoutX="16.0" layoutY="510.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="adminMenu" layoutX="236.0" layoutY="505.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادمین" />
       <PasswordField fx:id="ramz" alignment="CENTER" layoutX="43.0" layoutY="268.0" onAction="#setRamz" promptText="password" />
+      <Label layoutX="213.0" layoutY="172.0" opacity="0.49" text="کد ملی کاربر را وارد کنید:">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codemelli" alignment="CENTER" layoutX="43.0" layoutY="168.0" promptText="کدملی" />
    </children>
 </Pane>

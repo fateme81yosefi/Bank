@@ -1,9 +1,10 @@
 package Core;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Account {
-    String passwordAcc;
+public class Account implements Serializable {
+    transient String passwordAcc;
     long accNumber;
     String alias;
     double mojodi=0;
@@ -22,5 +23,10 @@ public class Account {
         this.passwordAcc=passwordAcc;
         this.accType=accType;
         createAccNum++;
+    }
+
+    @Override
+    public String toString() {
+        return "accNumber:" + accNumber + "\nalias: " + alias + "\nmojodi: " + mojodi+ "\nAccType: " + accType;
     }
 }

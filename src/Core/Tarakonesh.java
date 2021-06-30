@@ -1,9 +1,10 @@
 package Core;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Tarakonesh {
+public class Tarakonesh implements Serializable {
 
     double mablagh;
     Date time;
@@ -26,4 +27,9 @@ public class Tarakonesh {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
     }
 
+
+    @Override
+    public String toString() {
+        return "tarakoneshType:" + tarakoneshType + "\ntime: " + time ;
+    }
 }

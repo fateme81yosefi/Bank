@@ -20,7 +20,7 @@
       <Label layoutX="256.0" layoutY="349.0" opacity="0.56" text="مبلغ را وارد کنید:" />
       <Label layoutX="247.0" layoutY="314.0" opacity="0.62" text="کد ملی را وارد کنید:" />
       <Label layoutX="201.0" layoutY="275.0" opacity="0.54" text="شماره حساب خود را وارد کنید:" />
-      <TextField fx:id="accNum" layoutX="38.0" layoutY="272.0" />
+      <TextField fx:id="accNum" layoutX="38.0" layoutY="272.0"/>
       <TextField fx:id="codemelli" layoutX="38.0" layoutY="310.0" />
       <TextField fx:id="mablagh" layoutX="38.0" layoutY="345.0" />
    </children>

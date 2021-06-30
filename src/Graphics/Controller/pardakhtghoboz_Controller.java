@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,9 @@ public class pardakhtghoboz_Controller  implements Initializable {
     public TextField shenasePardakht;
     public Button conti;/////////////////
     public Button khadamatk;
+    public TextField accNum;
+    public TextField codemelli;
+    public TextField mablagh;
 
     public void setAllButten(ActionEvent event)throws IOException {
         Stage stage;
@@ -35,25 +39,49 @@ public class pardakhtghoboz_Controller  implements Initializable {
             stage.show();
         }
     }
-    public void setShenaseghabz(ActionEvent event){
-        String shenaseghabzText=shenaseghabz.getText();
-    }
-    public void setShenasePardakht(ActionEvent event){
-        String shenasePardakhtText=shenasePardakht.getText();
-    }
 
     public void validate(ActionEvent event) throws IOException {
         String shenaseghabzText=shenaseghabz.getText();
         String shenasePardakhtText=shenasePardakht.getText();
+        String accNumText=accNum.getText();
+        String codemelliText=codemelli.getText();
+        String mablaghText=mablagh.getText();
+        Stage stage;
+        Parent root;
 
-        if (shenaseghabzText.isEmpty()||shenasePardakhtText.isEmpty()){
+        if (shenaseghabzText.isEmpty()||shenasePardakhtText.isEmpty()||accNumText.isEmpty()||
+                codemelliText.isEmpty()||mablaghText.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
+        }else {
+            int x= Bank.pardakhtGhoboz(shenaseghabzText,shenasePardakhtText,mablaghText,codemelliText,accNumText);
+            if (x==0){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("موجودی کافی نیست!!");
+                alert.showAndWait();
+            }else if (x==-1){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("حسابی با این مشخصات موجود نیست!");
+                alert.showAndWait();
+            }else {
+                System.out.println("عملیات با موفقیت انجام شد");
+                stage = (Stage) conti.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                root = fxmlLoader.load();
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
-        //ELSE{}
-    }
+        }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

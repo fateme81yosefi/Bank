@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,47 @@ public class dakhastvam_Controller   implements Initializable {
     public TextField dorepardakht;
     public Button khadamatk;
     public Button conti;
+    public TextField accNum;
+    public TextField codemelli;
 
+    public void validate(ActionEvent event) throws IOException {
+        String mablagh1=mablagh.getText();
+        String dorepardakhtText=dorepardakht.getText();
+        String accNumText=accNum.getText();
+        String codemelliText=codemelli.getText();
+        Stage stage;
+        Parent root;
+
+        if (mablagh1.isEmpty()||dorepardakhtText.isEmpty()||accNumText.isEmpty()||codemelliText.isEmpty()){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+            alert.showAndWait();
+        }else {
+            int x= Bank.darkhastVam(mablagh1,dorepardakhtText,codemelliText,accNumText);
+            if (x==0){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("شماره حسابی که وارد کردید اشتباه است!");
+                alert.showAndWait();
+            }else if (x==-1){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("کد ملی کاربر اشتباه است!");
+                alert.showAndWait();
+            }else {
+                System.out.println("عملیات با موفقیت انجام شد");
+                stage = (Stage) conti.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                root = fxmlLoader.load();
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+        }
+    }
     public void setAllButten(ActionEvent event)throws IOException {
         Stage stage;
         Parent root;
@@ -35,26 +76,8 @@ public class dakhastvam_Controller   implements Initializable {
             stage.show();
         }
 }
-    public void setMablagh(ActionEvent event) {
-        String mablaghText = mablagh.getText();
-    }
-    public void setDorepardakht(ActionEvent event) {
-        String dorepardakhtText = dorepardakht.getText();
-    }
-
-    public void validate(ActionEvent event) throws IOException {
-        String mablagh1=mablagh.getText();
-        String shomareMaghsadText=dorepardakht.getText();
 
 
-        if (mablagh1.isEmpty()||shomareMaghsadText.isEmpty()){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
-            alert.showAndWait();
-        }
-        //ELSE{}
-    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

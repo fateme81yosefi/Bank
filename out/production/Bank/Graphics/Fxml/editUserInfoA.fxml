@@ -12,12 +12,12 @@
       <Label layoutX="273.0" layoutY="234.0" text="شماره تلفن" />
       <Label layoutX="298.0" layoutY="280.0" text="ایمیل" />
       <Label layoutX="253.0" layoutY="322.0" text="موجودی حساب" />
-      <TextField fx:id="name" layoutX="53.0" layoutY="106.0" onAction="#setName" />
-      <TextField fx:id="phone" layoutX="54.0" layoutY="230.0" onAction="#setPhone" />
-      <TextField fx:id="email" layoutX="54.0" layoutY="276.0" onAction="#setEmail" />
-      <TextField fx:id="mojodi" layoutX="54.0" layoutY="318.0" onAction="#setMojodi" />
-      <TextField fx:id="pass" layoutX="54.0" layoutY="183.0" onAction="#setRamz" />
-      <TextField fx:id="codemelli" layoutX="54.0" layoutY="142.0" onAction="#setCodemeli" />
+      <TextField fx:id="name" layoutX="53.0" layoutY="106.0" />
+      <TextField fx:id="phone" layoutX="54.0" layoutY="230.0" />
+      <TextField fx:id="email" layoutX="54.0" layoutY="276.0" />
+      <TextField fx:id="mojodi" layoutX="54.0" layoutY="318.0" />
+      <TextField fx:id="pass" layoutX="54.0" layoutY="183.0" />
+      <TextField fx:id="codemelli" layoutX="54.0" layoutY="142.0" />
       <Label layoutX="132.0" layoutY="55.0" text="تغییر اطلاعات کاربر:" textFill="#bc0707">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />

@@ -31,9 +31,9 @@ public class Client {
             Thread t=new Thread(new Server(reader,app));
             t.start();
         } catch (UnknownHostException e) {
-            e.printStackTrace();
+            System.out.println("UnknownHostException");
         } catch (IOException exception) {
-            exception.printStackTrace();
+            System.out.println("خطا در جریان داده ها");
         }
     }
 }

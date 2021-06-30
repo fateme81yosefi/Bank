@@ -13,13 +13,13 @@
       </Label>
       <Label layoutX="151.0" layoutY="154.0" text="کد ملی و شماره حساب مبدا را وارد کنید:" />
       <Label layoutX="145.0" layoutY="236.0" text="کد ملی و شماره حساب مقصد را وارد کنید:" />
-      <TextField fx:id="codeMabda" alignment="CENTER" layoutX="27.0" layoutY="178.0" onAction="#setCodeMabda" promptText="کدملی مبدا" />
-      <TextField fx:id="codeMaghsad" alignment="CENTER" layoutX="26.0" layoutY="259.0" onAction="#setCodeMaghsad" promptText="کدملی مقصد" />
-      <PasswordField fx:id="accNumMabda" alignment="CENTER" layoutX="26.0" layoutY="209.0" onAction="#setPassMabda" promptText="شماره حساب مبدا" />
-      <PasswordField fx:id="accNumMaghsad" alignment="CENTER" layoutX="26.0" layoutY="291.0" onAction="#setPassMaghsad" promptText="شماره حساب مقصد" />
+      <TextField fx:id="codeMabda" alignment="CENTER" layoutX="27.0" layoutY="178.0" promptText="کدملی مبدا" />
+      <TextField fx:id="codeMaghsad" alignment="CENTER" layoutX="26.0" layoutY="259.0" promptText="کدملی مقصد" />
       <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Label layoutX="211.0" layoutY="343.0" text="مبلغ مورد نظر را وارد کنید:" />
-      <TextField fx:id="Mablagh" alignment="CENTER" layoutX="28.0" layoutY="341.0" onAction="#setMablagh" promptText="تومان" />
+      <TextField fx:id="Mablagh" alignment="CENTER" layoutX="28.0" layoutY="341.0" promptText="تومان" />
       <Button fx:id="menuAdmin" layoutX="233.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادامین" />
+      <TextField fx:id="accNumMabda" alignment="CENTER" layoutX="27.0" layoutY="211.0" promptText="شماره حساب مبدا" />
+      <TextField fx:id="accNumMaghsad" alignment="CENTER" layoutX="26.0" layoutY="293.0" promptText="شماره حساب مقصد" />
    </children>
 </Pane>

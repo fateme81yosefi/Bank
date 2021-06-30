@@ -10,7 +10,7 @@
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="mojodiJadid" alignment="CENTER" layoutX="36.0" layoutY="252.0" onAction="#setMojodiJadid" promptText="تومان" />
+      <TextField fx:id="mojodiJadid" alignment="CENTER" layoutX="36.0" layoutY="252.0" promptText="تومان" />
       <Button fx:id="conti" layoutX="19.0" layoutY="506.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="adminMenu" layoutX="229.0" layoutY="507.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو ادامین" />
       <Label layoutX="103.0" layoutY="94.0" text="تغییر موجودی حساب کاربر:" textFill="#d31f1f">

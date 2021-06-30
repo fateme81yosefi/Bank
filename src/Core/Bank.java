@@ -32,10 +32,11 @@ public class Bank {
         }return -1;
     }
 
-    public static void addUser(String name, String codemelli, String password, String phoneNum, String email) {
+    public static int addUser(String name, String codemelli, String password, String phoneNum, String email) {
         User user = new User(name, Long.parseLong(codemelli), password, Integer.parseInt(phoneNum), email);
         users.add(user);
         WriteObjectToFile(user);
+        return 1;
     }
 
     public static int addAcc(String codemelli, Account.AccType type,String pass) {

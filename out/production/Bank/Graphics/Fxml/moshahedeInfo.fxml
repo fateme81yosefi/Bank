@@ -11,7 +11,7 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="conti" layoutX="14.0" layoutY="504.0" mnemonicParsing="false" text="ادامه" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="504.0" mnemonicParsing="false" onAction="#validate" text="ادامه" />
       <Button fx:id="khadamatk" layoutX="226.0" layoutY="503.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
       <Label layoutX="233.0" layoutY="126.0" text="کدملی خود را وارد کنید:" />
       <Label layoutX="205.0" layoutY="177.0" text="شماره حساب خود را وارد کنید:" />

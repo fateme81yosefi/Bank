@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -26,35 +27,36 @@ public class addUserA_Controller  implements Initializable {
         public PasswordField ramz;
         public Button menuAdmin;
         public Button adminmenu;
+
     public void validate(ActionEvent event) throws IOException {
         String codemeliText=codemeli.getText();
         String phone1=phone.getText();
         String name1=name.getText();
         String email1=email.getText();
         String ramz1=ramz.getText();
-
+        Stage stage;
+        Parent root;
 
         if (codemeliText.isEmpty()||phone1.isEmpty()||name1.isEmpty()||email1.isEmpty()||ramz1.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }}
-    public void setRamz(ActionEvent event) {
-        String ramzText = ramz.getText();
-    }
-    public void setEmail(ActionEvent event) {
-        String emailText = email.getText();
-    }
-    public void setPhone(ActionEvent event) {
-        String phoneText = phone.getText();
-    }
-    public void setCodemeli(ActionEvent event) {
-        String codemeliText = codemeli.getText();
-    }
-    public void setName(ActionEvent event) {
-        String nameText= name.getText();
-    }
+        }else {
+         Bank.addUser(name1,codemeliText,ramz1,phone1,email1);
+            System.out.println("عملیات با موفقیت انجام شد");
+            stage = (Stage) conti.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+            root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        }
+
+
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
@@ -68,6 +70,7 @@ public class addUserA_Controller  implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
+
     }
 
     @Override

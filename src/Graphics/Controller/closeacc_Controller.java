@@ -24,35 +24,52 @@ public class closeacc_Controller  implements Initializable {
     public Button conti;///////
     public Button khadamatk;
     public TextField accNum;
-    User login;
+    public TextField codemelli;
+    public TextField codemelliMaghsad;
+
     public void validate(ActionEvent event) throws IOException {
+        String code1=codemelli.getText();
+        String code2=codemelliMaghsad.getText();
         String ramz1=ramz.getText();
         String shomareHasabMaghsadText=shomareHasabMaghsad.getText();
         String accNum1=accNum.getText();
+        Stage stage;
+        Parent root;
 
-
-        if (ramz1.isEmpty()||shomareHasabMaghsadText.isEmpty()||accNum1.isEmpty()){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        if (ramz1.isEmpty()||shomareHasabMaghsadText.isEmpty()||accNum1.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }//else if(Bank.getIndexAcc()){
-//
-//                Alert alert=new Alert(Alert.AlertType.ERROR);
-//                alert.setHeaderText(null);
-//                alert.setContentText("حساب نامعتبراست!!!!");
-//                alert.showAndWait();
+        }else {
+            int x=Bank.closeAcc(accNum1,shomareHasabMaghsadText,ramz1,code1,code2);
+            if (x==0){
+                System.out.println("اطلاعات حساب مقصد نامعتبر است!");
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("اطلاعات حساب مقصد نامعتبر است!");
+                alert.showAndWait();
+            }else if (x==-1){
+                System.out.println("کاربر با این مشخصات نداریم!");
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("کاربر با این مشخصات نداریم!");
+                alert.showAndWait();
+            }
+            else {
+                System.out.println("عملیات با موفقیت انجام شد");
+                stage = (Stage) conti.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                root = fxmlLoader.load();
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
-   // }
-    public void setRamz(ActionEvent event) {
-        String ramzText = ramz.getText();
-    }
-    public void setShomareHasabMaghsad(ActionEvent event) {
-        String shomareHasabMaghsadText = shomareHasabMaghsad.getText();
-    }
-    public void setAccNum(ActionEvent event){
-        String accNum1=accNum.getText();
-    }
+        }
+
 
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;

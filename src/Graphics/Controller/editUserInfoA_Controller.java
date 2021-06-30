@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -32,31 +33,36 @@ public class editUserInfoA_Controller implements Initializable {
         String email1=email.getText();
         String ramz1=pass.getText();
         String mojodiText1=mojodi.getText();
+        Stage stage;
+        Parent root;
 
         if (codemeliText.isEmpty()||phone1.isEmpty()||name1.isEmpty()||email1.isEmpty()||ramz1.isEmpty()||mojodiText1.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }}
-    public void setName(ActionEvent event){
-        String nameText=name.getText();
-    }
-    public void setRamz(ActionEvent event){
-        String ramzText=pass.getText();
-    }
-    public void setMojodi(ActionEvent event){
-        String mojodiText=mojodi.getText();
-    }
-    public void setCodemeli(ActionEvent event){
-        String codemeliText=codemelli.getText();
-    }
-    public void setPhone(ActionEvent event){
-        String phoneText=phone.getText();
-    }
-    public void setEmail(ActionEvent event){
-        String emailText=email.getText();
-    }
+        }else {
+        int x= Bank.editUserInfo(name1,codemeliText,ramz1,phone1,email1);
+            if (x==-1){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("کد ملی کاربر اشتباه است!");
+                alert.showAndWait();
+            }else {
+                System.out.println("عملیات با موفقیت انجام شد");
+                stage = (Stage) conti.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                root = fxmlLoader.load();
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+        }
+        }
+
+
 
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;

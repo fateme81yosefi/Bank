@@ -194,7 +194,7 @@ public class Bank {
     }
     }
 
-    public int editUserInfo(String name,  String codemelli, String password, int phoneNum, String email){
+    public static int editUserInfo(String name,  String codemelli, String password, String phoneNum, String email){
         int idex=getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -202,7 +202,7 @@ public class Bank {
         }
         users.get(idex).name=name;
         users.get(idex).password=password;
-        users.get(idex).phoneNum=phoneNum;
+        users.get(idex).phoneNum=Integer.parseInt(phoneNum);
         users.get(idex).email=email;
         return 1;
     }

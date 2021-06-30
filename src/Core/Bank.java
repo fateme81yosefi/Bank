@@ -250,8 +250,11 @@ public class Bank {
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
         return 1;
     }
-    public static int clossAccByAdmin(String codemelli,String accNum){
+    public static int clossAccByAdmin(String codemelli,String accNum,String accNumMaghsad,String codemelliMaghsad){
         int idex=getIndexUser(codemelli);
+        int idex1 = getIndexUser(codemelliMaghsad);
+        int mabda = getIndexAcc(codemelli, accNum);
+        int maghsad = getIndexAcc(codemelliMaghsad, accNumMaghsad);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
             return -1;
@@ -262,8 +265,19 @@ public class Bank {
             System.out.println("اکانتی با این شماره حساب موجود نیست!!");
             return 0;
         }
+        if (users.get(idex).accounts.get(mabda).mojodi != 0) {
+            if (idex1 == -1 || maghsad == -1) {
+                System.out.println("اطلاعات حساب مقصد معتبر نیست !");
+                return 0;
+            }
+            String s = String.valueOf(users.get(idex).accounts.get(mabda).mojodi);
+            enteghalVajh(s, accNumMaghsad, accNum, codemelli, codemelliMaghsad);
         users.get(idex).accounts.remove(indexAcc);
         return 1;
+    }else {
+            users.get(idex).accounts.remove(indexAcc);
+        return 1;
+        }
     }
 
     public static int creatAccByAdmin(String codemelli, String pass, Account.AccType Type){

@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -22,18 +23,45 @@ public class closeAccbyA_Controller  implements Initializable {
     public Button AdminMenu;//
     public Button conti;
     public TextField accNum;
+    public TextField codemelli;
+    public TextField codemelliMaghsad;
 
     public void validate(ActionEvent event) throws IOException {
         String ramz1=pass.getText();
         String shomareHasabMaghsadText=shomaremaghsad.getText();
         String accNum1=accNum.getText();
-
-
-        if (ramz1.isEmpty()||shomareHasabMaghsadText.isEmpty()||accNum1.isEmpty()){
+        String codemelliText=codemelli.getText();
+        String codemelliMaghsadText=codemelliMaghsad.getText();
+        Stage stage;
+        Parent root;
+        if (ramz1.isEmpty()||shomareHasabMaghsadText.isEmpty()||accNum1.isEmpty()||codemelliText.isEmpty()||codemelliMaghsadText.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
+        }else {
+            int x= Bank.clossAccByAdmin(codemelliText,accNum1,shomareHasabMaghsadText,codemelliMaghsadText);
+            if (x==0){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("شماره حسابی که وارد کردید اشتباه است!");
+                alert.showAndWait();
+            }else if (x==-1){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("کد ملی کاربر اشتباه است!");
+                alert.showAndWait();
+            }else {
+                System.out.println("عملیات با موفقیت انجام شد");
+                stage = (Stage) conti.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                root = fxmlLoader.load();
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
     }
     public void setAllButten(ActionEvent event) throws IOException {

@@ -12,14 +12,15 @@
          </font>
       </Label>
       <Label layoutX="230.0" layoutY="152.0" opacity="0.69" text="رمز خود را وارد کنید:" />
-      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="53.0" layoutY="149.0" onAction="#setRamz" promptText="رمز عبور" />
-      <TextField fx:id="accNum" layoutX="53.0" layoutY="191.0" onAction="#setAccNum" />
+      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="53.0" layoutY="149.0" promptText="رمز عبور" />
+      <TextField fx:id="accNum" layoutX="53.0" layoutY="191.0" />
       <Label layoutX="247.0" layoutY="195.0" opacity="0.75" text="شماره حساب :" />
       <Label layoutX="35.0" layoutY="251.0" text="درصورت خالی نبودن حساب شماره حساب مقصد را وارد کنید:" textFill="#b51d1d" />
-      <TextField fx:id="shomareHasabMaghsad" alignment="CENTER" layoutX="107.0" layoutY="291.0" onAction="#setShomareHasabMaghsad" promptText="شماره حساب مقصد" />
+      <TextField fx:id="shomareHasabMaghsad" alignment="CENTER" layoutX="107.0" layoutY="291.0" promptText="شماره حساب مقصد" />
       <Button fx:id="conti" layoutX="17.0" layoutY="513.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="khadamatk" layoutX="228.0" layoutY="510.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
       <Label layoutX="211.0" layoutY="113.0" opacity="0.6" prefHeight="17.0" prefWidth="125.0" text="کدملی خود را وارد کنید:" />
       <TextField fx:id="codemelli" layoutX="53.0" layoutY="111.0" />
+      <TextField fx:id="codemelliMaghsad" alignment="CENTER" layoutX="109.0" layoutY="328.0" promptText="کدملی مقصد" />
    </children>
 </Pane>

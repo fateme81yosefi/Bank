@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -27,41 +28,25 @@ public class modiriyatHesab_Controller  implements Initializable {
     public Button newAcc;
     public Button conti;
     public Button khadamatUser;
-    public void validate(ActionEvent event) throws IOException {
-        String codemeliText=codemeli.getText();
-        String phone1=phone.getText();
-        String name1=name.getText();
-        String email1=email.getText();
-        String ramz1=ramz.getText();
-        String mojodiText1=mojodi.getText();
+    public Button profile;
+    public TextField accNum;
+    public TextField codemelli;
+    public Button setAlias;
 
-        if (codemeliText.isEmpty()||phone1.isEmpty()||name1.isEmpty()||email1.isEmpty()||ramz1.isEmpty()||mojodiText1.isEmpty()){
+    public void validate(ActionEvent event) throws IOException {
+
+        String codemelliText=codemelli.getText();
+        String accNumText=accNum.getText();
+
+        if (codemelliText.isEmpty()||accNumText.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }}
-    public void setName(ActionEvent event){
-        String nameText=name.getText();
+        }
+
     }
-    public void setRamz(ActionEvent event){
-        String ramzText=ramz.getText();
-    }
-    public void setMojodi(ActionEvent event){
-        String mojodiText=mojodi.getText();
-    }
-    public void setCodemeli(ActionEvent event){
-        String codemeliText=codemeli.getText();
-    }
-    public void setPhone(ActionEvent event){
-        String phoneText=phone.getText();
-    }
-    public void setAlias(ActionEvent event){
-        String aliasText=alias.getText();
-    }
-    public void setEmail(ActionEvent event){
-        String emailText=email.getText();
-    }
+
 
     public void setAllButten(ActionEvent event)throws IOException {
         Stage stage;
@@ -86,6 +71,27 @@ public class modiriyatHesab_Controller  implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
+        if (event.getSource().equals(setAlias)){
+            stage=(Stage) setAlias.getScene().getWindow();
+            FXMLLoader fxmlLoader=new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/alias.fxml"));
+            root=fxmlLoader.load();
+
+            Scene scene=new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (event.getSource().equals(profile)){
+            stage=(Stage) profile.getScene().getWindow();
+            FXMLLoader fxmlLoader=new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/moshahedeInfo.fxml"));
+            root=fxmlLoader.load();
+
+            Scene scene=new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
 }
 
     @Override

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.movafagh_Controller">
+   <children>
+      <Label layoutX="97.0" layoutY="132.0" text="عملیات با موفقیت پایان یافت!" textFill="#9a126b">
+         <font>
+            <Font name="Nirmala UI Bold" size="13.0" />
+         </font></Label>
+      <Button fx:id="menuUser" layoutX="115.0" layoutY="192.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="111.0" text="صفحه خدمات کاربر" />
+      <Button fx:id="exit" layoutX="115.0" layoutY="228.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="111.0" text="خروج" />
+   </children>
+</Pane>

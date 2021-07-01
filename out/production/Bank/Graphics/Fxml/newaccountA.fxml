@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.newaccountA_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" styleClass="darkhastha" stylesheets="@../Css/backTarakonesh.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.newaccountA_Controller">
    <children>
       <Label layoutX="92.0" layoutY="79.0" opacity="0.65" prefHeight="20.0" prefWidth="254.0" text=" باز کردن حساب جدید توسط ادمین:">
          <font>

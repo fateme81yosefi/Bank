@@ -1,34 +1,39 @@
 package Core;
 
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class FileManager {
-    private static final String filePath = "F:\\payanterm\\BankInfo.txt";
 
-    public static void WriteObjectToFile(User user) {
+
+    public static void WriteUserToFile(User user) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(filePath);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(user);
-            objectOutputStream.close();
+            FileWriter fileWriter=new FileWriter("F:\\payanterm\\user.txt");
+            fileWriter.write(user.name);
+            fileWriter.write(user.email);
+            fileWriter.write(String.valueOf(user.phoneNum));
+            fileWriter.write(String.valueOf(user.codemelli));
             System.out.println("کاربر با موفقیت در فایل ثبت شد");
+            fileWriter.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("فایل یافت نشد!");
         } catch (IOException exception) {
-            exception.printStackTrace();
-        }
+            System.out.println("خطا در شناسایی جریان داده ها!!");        }
     }
-    public static void WriteObjectToFile(User user,Account account) {
+
+
+    public static void WriteAccToFile(User user,Account account) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(filePath);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(user);
-            objectOutputStream.writeObject(account);
-            objectOutputStream.close();
+            FileWriter fileWriter=new FileWriter("F:\\payanterm\\Acc.txt");
+            fileWriter.write(user.name);
+            fileWriter.write(user.email);
+            fileWriter.write(String.valueOf(user.phoneNum));
+            fileWriter.write(String.valueOf(user.codemelli));
+            fileWriter.write(String.valueOf(account.accNumber));
+            fileWriter.write(String.valueOf(account.mojodi));
+            fileWriter.write(String.valueOf(account.alias));
+            fileWriter.write(account.accType.name());
+            fileWriter.close();
             System.out.println("حساب با موفقیت در فایل ثبت شد");
         } catch (FileNotFoundException e) {
             System.out.println("فایل یافت نشد!");
@@ -36,14 +41,21 @@ public class FileManager {
             System.out.println("خطا در شناسایی جریان داده ها!!");
         }
     }
-    public static void WriteObjectToFile(User user,Account account,Tarakonesh tarakonesh) {
+    public static void WriteTarakoneshToFile(User user,Account account,Tarakonesh tarakonesh) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(filePath);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(user);
-            objectOutputStream.writeObject(account);
-            objectOutputStream.writeObject(tarakonesh);
-            objectOutputStream.close();
+            FileWriter fileWriter=new FileWriter("F:\\payanterm\\Tarakonesh.txt");
+            fileWriter.write(user.name);
+            fileWriter.write(user.email);
+            fileWriter.write(String.valueOf(user.phoneNum));
+            fileWriter.write(String.valueOf(user.codemelli));
+            fileWriter.write(String.valueOf(account.accNumber));
+            fileWriter.write(String.valueOf(account.mojodi));
+            fileWriter.write(String.valueOf(account.alias));
+             fileWriter.write(account.accType.name());
+            fileWriter.write(String.valueOf(tarakonesh.mablagh));
+            fileWriter.write(tarakonesh.tarakoneshType.name());
+            fileWriter.write(tarakonesh.time.toString());
+            fileWriter.close();
             System.out.println("تراکنش با موفقیت در فایل ثبت شد");
         } catch (FileNotFoundException e) {
             System.out.println("فایل یافت نشد!");

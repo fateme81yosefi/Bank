@@ -3,7 +3,7 @@ package Core;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static Core.FileManager.WriteObjectToFile;
+
 
 public class Bank {
 
@@ -35,7 +35,7 @@ public class Bank {
     public static int addUser(String name, String codemelli, String password, String phoneNum, String email) {
         User user = new User(name, Long.parseLong(codemelli), password, Integer.parseInt(phoneNum), email);
         users.add(user);
-        WriteObjectToFile(user);
+        FileManager.WriteUserToFile(user);
         return 1;
     }
 
@@ -47,7 +47,7 @@ public class Bank {
         }
         Account account=new Account(pass,type);
         users.get(idex).accounts.add(account);
-        WriteObjectToFile(users.get(idex),account);
+        FileManager.WriteAccToFile(users.get(idex),account);
         return 1;
     }
 
@@ -108,8 +108,8 @@ public class Bank {
         Tarakonesh tarakoneshMabda=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT,date);
         users.get(idex1).accounts.get(maghsad).tarakoneshes.add(tarakoneshMaghsad);
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
-        WriteObjectToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakoneshMabda);
-        WriteObjectToFile(users.get(idex1),users.get(idex1).accounts.get(maghsad),tarakoneshMaghsad);
+        FileManager.WriteTarakoneshToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakoneshMabda);
+        FileManager.WriteTarakoneshToFile(users.get(idex1),users.get(idex1).accounts.get(maghsad),tarakoneshMaghsad);
             return 1;
             }
 
@@ -134,7 +134,7 @@ public class Bank {
             Date date=new Date();
             Tarakonesh tarakonesh=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT,date);
             users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh);
-            WriteObjectToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakonesh);
+            FileManager.WriteTarakoneshToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakonesh);
             return 1;
     }
     }
@@ -156,7 +156,7 @@ public class Bank {
            Date dateVamGerefte=new Date();
                 Tarakonesh tarakonesh2=new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ_VAM,dateVamGerefte);
                 users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh2);
-        WriteObjectToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakonesh2);
+        FileManager.WriteTarakoneshToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakonesh2);
                 return 1;
     }
     public static void checkVamTime(Date date, double mablaghBardashtiMahane,String codemelli,String accNum){
@@ -171,7 +171,7 @@ public class Bank {
 
             Tarakonesh tarakonesh=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT_MAHANE_VAM,dateGozashteShode);
             users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh);
-            WriteObjectToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakonesh);
+            FileManager.WriteTarakoneshToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakonesh);
         }
     }
 
@@ -263,8 +263,8 @@ public class Bank {
         Tarakonesh tarakoneshMabda=new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT,date);
         users.get(idex1).accounts.get(maghsad).tarakoneshes.add(tarakoneshMaghsad);
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
-        WriteObjectToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakoneshMabda);
-        WriteObjectToFile(users.get(idex1),users.get(idex1).accounts.get(maghsad),tarakoneshMaghsad);
+        FileManager.WriteTarakoneshToFile(users.get(idex),users.get(idex).accounts.get(mabda),tarakoneshMabda);
+        FileManager.WriteTarakoneshToFile(users.get(idex1),users.get(idex1).accounts.get(maghsad),tarakoneshMaghsad);
         return 1;
     }
     public static int clossAccByAdmin(String codemelli,String accNum,String accNumMaghsad,String codemelliMaghsad){
@@ -305,7 +305,7 @@ public class Bank {
         }
         Account account=new Account(pass,Type);
         users.get(idex).accounts.add(account);
-        WriteObjectToFile(users.get(idex),account);
+        FileManager.WriteAccToFile(users.get(idex),account);
         return 1;
     }
 }

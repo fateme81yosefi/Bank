@@ -4,15 +4,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.MenuAsli_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" styleClass="menuAsliBackground" stylesheets="@../Css/back.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.MenuAsli_Controller">
    <children>
-      <Label fx:id="label" alignment="CENTER" layoutX="91.0" layoutY="77.0" prefHeight="17.0" prefWidth="205.0" text="لطفا نوع دسترسی خود را انتخاب کنید" textAlignment="CENTER" textFill="#c31616c9">
+      <Label fx:id="label" alignment="CENTER" layoutX="61.0" layoutY="86.0" prefHeight="20.0" prefWidth="248.0" text="لطفا نوع دسترسی خود را انتخاب کنید" textAlignment="CENTER" textFill="#c31616c9">
          <font>
-            <Font name="Nirmala UI Bold" size="13.0" />
+            <Font name="Nirmala UI Bold" size="14.0" />
          </font></Label>
-      <Button fx:id="buttenUser" layoutX="93.0" layoutY="140.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="کاربر" />
-      <Button fx:id="bettenAdmin" layoutX="93.0" layoutY="204.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="ادمین" />
-      <Button fx:id="about" layoutX="94.0" layoutY="269.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="درباره ما" />
-      <Button fx:id="exit" layoutX="95.0" layoutY="334.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" text="خروج" />
+      <Button fx:id="buttenUser" layoutX="93.0" layoutY="140.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="karbar" stylesheets="@../Css/back.css" text="کاربر">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="bettenAdmin" layoutX="93.0" layoutY="204.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="admin" stylesheets="@../Css/back.css" text="ادمین">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="about" layoutX="94.0" layoutY="269.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="about" stylesheets="@../Css/back.css" text="درباره ما">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="exit" layoutX="95.0" layoutY="334.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="exit" stylesheets="@../Css/back.css" text="خروج">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
    </children>
 </Pane>

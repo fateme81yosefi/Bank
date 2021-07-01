@@ -1,0 +1,30 @@
+.menuAsliBackground {
+     -fx-background-image:url("file:src/Graphics/Picture/b6.jpg");
+     -fx-background-size: 100% 100%;
+}
+.karbar{
+    -fx-background-color: rgb(255, 192, 203);
+    -fx-background-radius: 50;
+    -fx-title-side: red;
+    -fx-border-radius: 50;
+}
+.admin{
+    -fx-background-color: rgb(255, 192, 203);
+    -fx-background-radius: 50;
+    -fx-title-side: red;
+    -fx-border-radius: 50;
+}
+.about {
+    -fx-background-color: rgb(255, 192, 203);
+    -fx-border-color: red;
+    -fx-border-width: 1;
+    -fx-background-radius: 50;
+    -fx-title-side: red;
+    -fx-border-radius: 50;
+}
+.exit{
+    -fx-background-color: pink;
+    -fx-background-radius: 50;
+    -fx-title-side: red;
+    -fx-border-radius: 50;
+}

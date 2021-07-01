@@ -50,7 +50,7 @@ public class newaccount_Controller implements Initializable {
             alert.showAndWait();
         }else {
             switch (noeHesab){
-                case "قرض الحسنه جاری": {
+                case "GHARZOLHASANE_JARI": {
                     int x=Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
                    if (x==-1){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -69,7 +69,7 @@ public class newaccount_Controller implements Initializable {
                         stage.show();
                     }
                 }
-                case "قرض الحسنه پس انداز": {
+                case "GHARZOLHASANE_PASANDAZ": {
                     int x=Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
                     if (x==-1){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -88,7 +88,7 @@ public class newaccount_Controller implements Initializable {
                         stage.show();
                     }
                 }
-                case "سپرده بلند مدت": {
+                case "SEPORDE_BOLANDMODAT": {
                     int x=Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
                   if (x==-1){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -107,7 +107,7 @@ public class newaccount_Controller implements Initializable {
                         stage.show();
                     }
                 }
-                case "سپرده کوتاه مدت": {
+                case "SEPORDE_KOTAHMODAT": {
                     int x=Bank.addAcc(codemelliText, SEPORDE_KOTAHMODAT, ramz1);
                     if (x==-1){
                         Alert alert=new Alert(Alert.AlertType.ERROR);

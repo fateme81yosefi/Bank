@@ -16,25 +16,30 @@
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="216.0" layoutY="295.0" opacity="0.57" text="رمز عبور خود را وارد کنید:">
+      <Label layoutX="216.0" layoutY="316.0" opacity="0.57" text="رمز عبور خود را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
       <Button fx:id="conti" layoutX="15.0" layoutY="509.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
       <Button fx:id="khadamatk" layoutX="229.0" layoutY="509.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات کاربر" />
-      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="43.0" layoutY="293.0" promptText="password" />
+      <PasswordField fx:id="ramz" alignment="CENTER" layoutX="43.0" layoutY="312.0" promptText="password" />
       <Label layoutX="225.0" layoutY="167.0" opacity="0.5" text="کدملی خود را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
       <TextField fx:id="codemelli" alignment="CENTER" layoutX="43.0" layoutY="163.0" promptText="کدملی" />
-      <Label layoutX="11.0" layoutY="254.0" text="قرض الحسنه جاری/قرض الحسنه پس انداز/سپرده بلند مدت/سپرده کوتاه مدت" textFill="#3266e1">
+      <Label layoutX="41.0" layoutY="254.0" text="GHARZOLHASANE_JARI,GHARZOLHASANE_PASANDAZ" textFill="#3266e1">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
       <TextField fx:id="noeAcc" layoutX="43.0" layoutY="217.0" />
+      <Label layoutX="45.0" layoutY="273.0" text=",SEPORDE_BOLANDMODAT,SEPORDE_KOTAHMODAT" textFill="#333fda">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

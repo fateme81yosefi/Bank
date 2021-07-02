@@ -1,5 +1,7 @@
 package Core;
 
+import javafx.scene.control.TextArea;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,10 +13,9 @@ public class Bank {
 
 
     public static int getIndexUser(String codemelli) {
-        for (int i = 0; i < users.size(); i++) {
-            if(users.get(i).codemelli==Long.parseLong(codemelli))return i;
-        }
-        return -1;
+       int x=FileManager.readFile(codemelli);
+       if (x==-1)return -1;
+        else return x;
     }
     public static int getIndexUserByPass(String codemelli,String pass) {
         for (int i = 0; i < users.size(); i++) {
@@ -24,12 +25,9 @@ public class Bank {
     }
 
     public static int getIndexAcc(String codemelli,String accNum) {
-        int g=getIndexUser(codemelli);
-        for (int i = 0; i < users.get(g).accounts.size(); i++) {
-            if (users.get(g).accounts.get(i).accNumber==Long.parseLong(accNum)) {
-                return i;
-            }
-        }return -1;
+       int x=FileManager.readFileAcc(codemelli,accNum);
+       if (x==-1)return -1;
+       else return x;
     }
 
     public static int addUser(String name, String codemelli, String password, String phoneNum, String email) {
@@ -52,29 +50,17 @@ public class Bank {
     }
 
 
-    public static int mashahede(String AccNum,String codemelli){
-        int idex=getIndexUser(codemelli);
-        if (idex==-1){
+    public static int mashahede(TextArea textArea,String AccNum, String codemelli) {
+        int idex = getIndexUser(codemelli);
+        if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
             return -1;
+        }else {
+            FileManager.readFileTarakonesh(textArea,codemelli,AccNum);
+            return 1;
         }
-        for (int i = 0; i < users.get(idex).accounts.size(); i++) {
-            if (users.get(idex).accounts.get(i).accNumber==Long.parseLong(AccNum)) {
-                System.out.println(users.get(idex).accounts.get(i).accNumber+" , "+users.get(idex).accounts.get(i).mojodi+" , "+
-                                   " , "+users.get(idex).accounts.get(i).accType);
-                for (int v=0;v<users.get(idex).accounts.size();v++){
-                    for (int a=0;a<users.get(idex).accounts.get(v).tarakoneshes.size();a++){
-                        System.out.println("tarakonesh "+a+" account "+v+" :"+users.get(idex).accounts.get(v).tarakoneshes.get(a));
-                    }
-                }
-
-            }else return 0;
-        } return 1;
     }
-//////////////////////////////////////IN TEKRARIYE METHOD HASH///////////////////////////////////
-    public static void manageAcc(){
-////////////SWITCH CASE /////////
-        }
+
 
 
     public static int setAlias(String alias, String accNum,String codemelli) {

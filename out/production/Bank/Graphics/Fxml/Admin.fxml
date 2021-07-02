@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.Admin_controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" styleClass="vorodia" stylesheets="@../Css/backTarakonesh.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.Admin_controller">
    <children>
-      <Label layoutX="66.0" layoutY="120.0" text="شما سطح دسترسی ادمین را انتخاب کردید:">
+      <Label layoutX="66.0" layoutY="142.0" text="شما سطح دسترسی ادمین را انتخاب کردید:">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>

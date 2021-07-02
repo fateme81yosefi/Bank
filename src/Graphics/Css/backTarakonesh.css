@@ -6,3 +6,16 @@
     -fx-background-size: 100% 100%;
 
 }
+.entekhab{
+    -fx-background-image:url("file:src/Graphics/Picture/b13.jpg");
+    -fx-background-size: 100% 100%;
+
+}
+.button{
+    -fx-background-image:url("file:src/Graphics/Picture/b42.jpg");
+    -fx-background-radius: 50;
+    -fx-title-side: red;
+    -fx-border-radius: 50;
+    -fx-border-color: #f65471;
+    -fx-border-width: 1;
+}

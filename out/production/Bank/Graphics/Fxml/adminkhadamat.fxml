@@ -4,24 +4,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.adminkhadamat_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" styleClass="entekhab" stylesheets="@../Css/backTarakonesh.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.adminkhadamat_Controller">
    <children>
-      <Label layoutX="106.0" layoutY="65.0" text="ادمین محترم به اپلیکیشن خوش آمدید:" textFill="#d02525">
+      <Label layoutX="95.0" layoutY="65.0" text="ادمین محترم به اپلیکیشن خوش آمدید:" textFill="#d02525">
          <font>
             <Font name="Nirmala UI Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="127.0" layoutY="119.0" text="انتخاب نوع خدمات:" textFill="#b90834">
+      <Label layoutX="142.0" layoutY="119.0" text="انتخاب نوع خدمات:" textFill="#b90834">
          <font>
             <Font name="Nirmala UI Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="moshahedeEtelaatK" layoutX="87.0" layoutY="167.0" mnemonicParsing="false" onAction="#setAllButten" text="مشاهده اطلاعات حساب های مشتریان" />
-      <Button fx:id="closeAcc" layoutX="29.0" layoutY="272.0" mnemonicParsing="false" onAction="#setAllButten" text="بستن حساب کاربری" />
-      <Button fx:id="createNewAcc" layoutX="39.0" layoutY="203.0" mnemonicParsing="false" onAction="#setAllButten" text="ایجاد حساب جدید " />
-      <Button fx:id="EditInfoUser" layoutX="220.0" layoutY="203.0" mnemonicParsing="false" onAction="#setAllButten" text="تغییر اطلاعات کاربر" />
-      <Button fx:id="editMojodi" layoutX="94.0" layoutY="238.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="193.0" text="تغییر موجودی حساب " />
-      <Button fx:id="enteghalVajh" layoutX="220.0" layoutY="272.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="111.0" text="انتقال وجه" />
-      <Button fx:id="creatNewUser" layoutX="94.0" layoutY="308.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="193.0" text="ایجاد کاربر جدید" />
+      <Button fx:id="moshahedeEtelaatK" layoutX="85.0" layoutY="177.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="مشاهده اطلاعات حساب های مشتریان" />
+      <Button fx:id="closeAcc" layoutX="87.0" layoutY="296.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="بستن حساب کاربری" />
+      <Button fx:id="createNewAcc" layoutX="85.0" layoutY="216.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="ایجاد حساب جدید " />
+      <Button fx:id="EditInfoUser" layoutX="93.0" layoutY="412.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="تغییر اطلاعات کاربر" />
+      <Button fx:id="editMojodi" layoutX="87.0" layoutY="257.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="تغییر موجودی حساب " />
+      <Button fx:id="enteghalVajh" layoutX="90.0" layoutY="335.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="انتقال وجه" />
+      <Button fx:id="creatNewUser" layoutX="91.0" layoutY="373.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="ایجاد کاربر جدید" />
    </children>
 </Pane>

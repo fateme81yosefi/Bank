@@ -2,8 +2,6 @@ package Core;
 
 
 import javafx.scene.control.TextArea;
-import jdk.nashorn.internal.ir.IdentNode;
-
 import java.io.*;
 
 public class FileManager {
@@ -176,9 +174,9 @@ public class FileManager {
                     o += v;
                     o += 2 * (index - 1);
                 }
-                while (true) {
+                while ((bufferedReader.readLine() != null)) {
                     int l = 0;
-                    if (!(bufferedReader.readLine() != null)) {
+
                         l++;
                         if (l == o + 5) {
                             PrintWriter p = new PrintWriter(new FileWriter("F:\\payanterm\\Acc.txt"));
@@ -189,7 +187,7 @@ public class FileManager {
                         }
                     }
                 }
-            }
+
 
         } catch (FileNotFoundException e) {
             System.out.println("فایل یافت نشد!");
@@ -214,6 +212,43 @@ public class FileManager {
         } catch (IOException e) {
             System.out.println("خطا در شناسایی جریان داده ها!!");
         }return -1;
+    }
+
+    public static int editInfo(String name,  String codemelli, String password, String phoneNum, String email) {
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\payanterm\\user.txt"));
+
+                int index = Bank.getIndexUser(codemelli);
+                int o = 0;
+                int v = 1;
+                for (int i = 1; i < index; i++) {
+                 o=v*4*(index-1);
+                }
+                int l = 0;
+                while (bufferedReader.readLine() != null) {
+                    PrintWriter p = new PrintWriter(new FileWriter("F:\\payanterm\\user.txt"));
+                        l++;
+                        if (l == o) {
+                            p.println(name);
+                        }else if(l==o+1){
+                            p.println(codemelli);
+                        }else if(l==o+2){
+                            p.println(password);
+                        }else if(l==o+3){
+                            p.println(phoneNum);
+                        }else if(l==o+4){
+                            p.println(email);
+                        }
+                    }
+                bufferedReader.close();
+                return 1;
+
+        } catch (FileNotFoundException e) {
+            System.out.println("فایل یافت نشد!");
+        } catch (IOException e) {
+            System.out.println("خطا در شناسایی جریان داده ها!!");
+        }
+        return 0;
     }
 }
 

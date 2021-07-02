@@ -197,11 +197,9 @@ public class Bank {
             System.out.println("کاربری با این کد ملی موجود نیست!");
             return -1;
         }
-        users.get(idex).name=name;
-        users.get(idex).password=password;
-        users.get(idex).phoneNum=Integer.parseInt(phoneNum);
-        users.get(idex).email=email;
-        return 1;
+        int x=FileManager.editInfo(name,codemelli,password,phoneNum,email);
+        if (x==-1)return -1;
+        else return 1;
     }
 
     public static int editUserMojodi(String codemelli,String accNum,String newMojodi){

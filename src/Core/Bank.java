@@ -69,12 +69,9 @@ public class Bank {
             System.out.println("کاربری با این کد ملی موجود نیست!");
             return -1;
         }
-        for (int i = 0; i < users.get(idex).accounts.size(); i++) {
-            if (users.get(idex).accounts.get(i).accNumber==Long.parseLong(accNum)) {
-                users.get(idex).accounts.get(i).alias=alias;
-                return 1;
-            }
-        } return 0;
+        int x=FileManager.setAliass(alias, accNum, codemelli);
+        if (x==-1)return -1;
+        else return 1;
     }
 
     public static int enteghalVajh(String mablagh,String accNumMaghsad,String accNumMabda , String codemelliMaghsad, String codemelliMada) {
@@ -188,11 +185,10 @@ public class Bank {
 
 ///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
 
-    public static void printInfoUsers(){
-    for(User user:users){
-        System.out.println(user.name+" , "+user.codemelli+" , "+user.password+" , "
-                          +user.email+" , "+user.phoneNum+" , "+user.accounts);
-    }
+    public static int printInfoUsers(TextArea textArea){
+        int x=FileManager.printUsers(textArea);
+        if (x==-1)return -1;
+        else return 1;
     }
 
     public static int editUserInfo(String name,  String codemelli, String password, String phoneNum, String email){

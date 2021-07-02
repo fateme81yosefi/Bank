@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.FileManager;
 import Graphics.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +34,7 @@ public class moshahedeInfo_Controller  implements Initializable {
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
         }else {
-////////////////////////////////////////////////////////
+     FileManager.printUsers(PrintInfo);
 }
     }
 

@@ -2,6 +2,7 @@ package Core;
 
 
 import javafx.scene.control.TextArea;
+import jdk.nashorn.internal.ir.IdentNode;
 
 import java.io.*;
 
@@ -32,8 +33,6 @@ public class FileManager {
             PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\Acc.txt"));
 
             printWriter.println(user.name + "\n");
-            printWriter.println(user.email + "\n");
-            printWriter.println(String.valueOf(user.phoneNum) + "\n");
             printWriter.println(String.valueOf(user.codemelli) + "\n");
             printWriter.println(String.valueOf(account.accNumber) + "\n");
             printWriter.println(String.valueOf(account.mojodi) + "\n");
@@ -94,8 +93,7 @@ public class FileManager {
                 if (u == -1) {
                     bufferedReader.close();
                     return -1;
-                }
-                else {
+                } else {
                     if (x % 5 == 0) {
                         if (reading.equals(accNum)) {
                             bufferedReader.close();
@@ -109,14 +107,15 @@ public class FileManager {
             }
         } catch (IOException e) {
             System.out.println("خطا در شناسایی جریان داده ها!!");
-        }return -1;
+        }
+        return -1;
     }
 
     public static void readVPrintInfo(TextArea textArea, String s) {
         textArea.setText(s);
     }
 
-    public static int readFileTarakonesh(TextArea textArea,String codemelli, String accNum) {
+    public static int readFileTarakonesh(TextArea textArea, String codemelli, String accNum) {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\payanterm\\Tarakonesh.txt"));
             int x = 0;
@@ -127,21 +126,20 @@ public class FileManager {
                 if (u == -1) {
                     bufferedReader.close();
                     return -1;
-                }
-                else {
+                } else {
                     if (x % 5 == 0) {
                         if (reading.equals(accNum)) {
                             int indexUser = Bank.getIndexUser(codemelli);
                             int indexAcc = Bank.getIndexAcc(codemelli, accNum);
                             int tedadghabliha = 0;
-                            for (int i = 0; i < indexUser; i++) {
+                            for (int i = 1; i < indexUser; i++) {
                                 int acc = Bank.getIndexAcc(codemelli, accNum);
                                 int a = Bank.users.get(i).accounts.get(acc).tarakoneshes.size() * 3 + 2;
                                 tedadghabliha += a;
                             }
                             while (tedadghabliha < Bank.users.get(indexUser).accounts.get(indexAcc).tarakoneshes.size() * 3 + 2) {
                                 String s = bufferedReader.readLine();
-                                readVPrintInfo(textArea,s);
+                                readVPrintInfo(textArea, s);
                                 tedadghabliha++;
                             }
                             bufferedReader.close();
@@ -158,7 +156,67 @@ public class FileManager {
         }
         return -1;
     }
+
+    public static int setAliass(String alias, String accNum, String codemelli) {
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\payanterm\\Acc.txt"));
+            int x = readFileAcc(codemelli, accNum);
+            if (x == -1) {
+                bufferedReader.close();
+                return -1;
+            } else {
+                int index = Bank.getIndexUser(codemelli);
+                int indexAcc = Bank.getIndexAcc(codemelli, accNum);
+                int o = 0;
+                int v = 0;
+                for (int i = 1; i < index; i++) {
+                    for (int j = 1; j < Bank.users.get(i).accounts.size(); j++) {
+                        v = Bank.users.get(i).accounts.size() * 4;
+                    }
+                    o += v;
+                    o += 2 * (index - 1);
+                }
+                while (true) {
+                    int l = 0;
+                    if (!(bufferedReader.readLine() != null)) {
+                        l++;
+                        if (l == o + 5) {
+                            PrintWriter p = new PrintWriter(new FileWriter("F:\\payanterm\\Acc.txt"));
+                            p.println(alias);
+                            p.close();
+                            bufferedReader.close();
+                            return 1;
+                        }
+                    }
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("فایل یافت نشد!");
+        } catch (IOException e) {
+            System.out.println("خطا در شناسایی جریان داده ها!!");
+        }
+
+        return 0;
+    }
+
+    public static int printUsers(TextArea textArea) {
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\payanterm\\user.txt"));
+            while (bufferedReader.readLine() != null) {
+                String s = bufferedReader.readLine();
+                readVPrintInfo(textArea,s);
+            }
+            bufferedReader.close();
+            return 1;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("خطا در شناسایی جریان داده ها!!");
+        }return -1;
+    }
 }
+
 
 
 

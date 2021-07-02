@@ -203,6 +203,8 @@ public class Bank {
     }
 
     public static int editUserMojodi(String codemelli,String accNum,String newMojodi){
+        int x=FileManager.editMojodi(newMojodi,accNum,codemelli);
+
         long newMojo=Long.parseLong(newMojodi);
         int idex=getIndexUser(codemelli);
         if (idex == -1) {
@@ -219,7 +221,8 @@ public class Bank {
         Tarakonesh tarakonesh=new Tarakonesh(Tarakonesh.TarakoneshType.EDIT_MOJODI_BY_ADMIN,date);
         users.get(idex).accounts.get(indexAcc1).mojodi=newMojo;
         users.get(idex).accounts.get(indexAcc1).tarakoneshes.add(tarakonesh);
-        return 1;
+        if (x==-1)return -1;
+        else return 1;
     }
 
     public static int enteghalVajhByAdmin(String codemelliMada,String codemelliMaghsad,String accNumMabda,String accNumMaghsad,String mablagh){
@@ -247,6 +250,7 @@ public class Bank {
         FileManager.WriteTarakoneshToFile(users.get(idex1),users.get(idex1).accounts.get(maghsad),tarakoneshMaghsad);
         return 1;
     }
+
     public static int clossAccByAdmin(String codemelli,String accNum,String accNumMaghsad,String codemelliMaghsad){
         int idex=getIndexUser(codemelli);
         int idex1 = getIndexUser(codemelliMaghsad);

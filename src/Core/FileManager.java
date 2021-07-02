@@ -250,6 +250,49 @@ public class FileManager {
         }
         return 0;
     }
+
+    public static int editMojodi(String mojodi, String accNum, String codemelli) {
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\payanterm\\Acc.txt"));
+            int x = readFileAcc(codemelli, accNum);
+            if (x == -1) {
+                bufferedReader.close();
+                return -1;
+            } else {
+                int index = Bank.getIndexUser(codemelli);
+                int indexAcc = Bank.getIndexAcc(codemelli, accNum);
+                int o = 0;
+                int v = 0;
+                for (int i = 1; i < index; i++) {
+                    for (int j = 1; j < Bank.users.get(i).accounts.size(); j++) {
+                        v = Bank.users.get(i).accounts.size() * 4;
+                    }
+                    o += v;
+                    o += 2 * (index - 1);
+                }
+                while ((bufferedReader.readLine() != null)) {
+                    int l = 0;
+
+                    l++;
+                    if (l == o + 4) {
+                        PrintWriter p = new PrintWriter(new FileWriter("F:\\payanterm\\Acc.txt"));
+                        p.println(mojodi);
+                        p.close();
+                        bufferedReader.close();
+                        return 1;
+                    }
+                }
+            }
+
+
+        } catch (FileNotFoundException e) {
+            System.out.println("فایل یافت نشد!");
+        } catch (IOException e) {
+            System.out.println("خطا در شناسایی جریان داده ها!!");
+        }
+
+        return 0;
+    }
 }
 
 

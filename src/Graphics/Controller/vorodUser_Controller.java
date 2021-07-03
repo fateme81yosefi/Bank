@@ -37,7 +37,7 @@ public class vorodUser_Controller implements Initializable {
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
         } else {
-            int x= Bank.getIndexUserByPass(codemelliText,ramzText);
+            int x= Bank.getIndexUser(codemelliText);
             if (x==-1) {
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);

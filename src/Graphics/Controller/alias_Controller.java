@@ -35,28 +35,28 @@ public class alias_Controller implements Initializable {
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
         }else {
-            int x= Bank.setAlias(aliassText,shomareHesabText,codemelliText);
-            if (x==0){
-                Alert alert=new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText(null);
-                alert.setContentText("شماره حسابی که وارد کردید اشتباه است!");
-                alert.showAndWait();
-            }else if (x==-1){
-                Alert alert=new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText(null);
-                alert.setContentText("کد ملی کاربر اشتباه است!");
-                alert.showAndWait();
-            }else {
-                System.out.println("new Alias:"+aliassText+"عملیات با موفقیت انجام شد");
-                stage = (Stage) conti.getScene().getWindow();
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
-                root = fxmlLoader.load();
-
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            }
+//            int x= Bank.setAlias(aliassText,shomareHesabText,codemelliText);
+//            if (x==0){
+//                Alert alert=new Alert(Alert.AlertType.ERROR);
+//                alert.setHeaderText(null);
+//                alert.setContentText("شماره حسابی که وارد کردید اشتباه است!");
+//                alert.showAndWait();
+//            }else if (x==-1){
+//                Alert alert=new Alert(Alert.AlertType.ERROR);
+//                alert.setHeaderText(null);
+//                alert.setContentText("کد ملی کاربر اشتباه است!");
+//                alert.showAndWait();
+//            }else {
+//                System.out.println("new Alias:"+aliassText+"عملیات با موفقیت انجام شد");
+//                stage = (Stage) conti.getScene().getWindow();
+//                FXMLLoader fxmlLoader = new FXMLLoader();
+//                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+//                root = fxmlLoader.load();
+//
+//                Scene scene = new Scene(root);
+//                stage.setScene(scene);
+//                stage.show();
+//            }
         }
     }
     public void setAllButten(ActionEvent event) throws IOException {

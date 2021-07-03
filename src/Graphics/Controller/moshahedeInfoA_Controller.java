@@ -37,7 +37,7 @@ public class moshahedeInfoA_Controller implements Initializable {
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
         }else {
-    int x= Bank.mashahede(PrintInfo,accNumTextabdaText,codemelliText);
+    int x= Bank.printInfoUsers(PrintInfo);
     if (x==1){
         System.out.println("مشاهده اطلاعات:");
     }else {

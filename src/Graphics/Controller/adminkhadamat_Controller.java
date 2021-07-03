@@ -35,6 +35,16 @@ public class adminkhadamat_Controller implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
+        if (event.getSource().equals(moshahedeEtelaatK)) {
+            stage = (Stage) moshahedeEtelaatK.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("Fxml/moshahedeInfoA.fxml"));
+            root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
         if (event.getSource().equals(editMojodi)) {
             stage = (Stage) editMojodi.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();

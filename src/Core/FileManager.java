@@ -10,7 +10,7 @@ public class FileManager {
 
     public static void WriteUserToFile(User user) {
         try {
-            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\" + user.codemelli + ".txt"), true);
+            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\User:" + user.codemelli + ".txt"), true);
             printWriter.println(user.name + "\n");
             printWriter.println(user.email + "\n");
             printWriter.println(user.password + "\n");
@@ -29,7 +29,7 @@ public class FileManager {
     public static void WriteAccToFile(User user, Account account) {
         try {
 
-            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\" + account.accNumber + ".txt"), true);
+            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\Acc:" + account.accNumber + ".txt"), true);
             printWriter.println(user.name);
             printWriter.println(user.codemelli);
             printWriter.println(account.accNumber);
@@ -48,7 +48,7 @@ public class FileManager {
 
     public static void WriteTarakoneshToFile(User user, Account account, Tarakonesh tarakonesh) {
         try {
-            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\tarakoneshs" + account.accNumber + ".txt"), true);
+            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\tarakonesh:" + account.accNumber + ".txt"), true);
             printWriter.println(user.codemelli);
             printWriter.println(account.accNumber);
             printWriter.println(tarakonesh.mablagh);
@@ -64,7 +64,7 @@ public class FileManager {
     }
 
     public static int deleteAcc(String accNum) {
-        File file = new File("F:\\payanterm\\" + accNum + ".txt");
+        File file = new File("F:\\payanterm\\Acc:" + accNum + ".txt");
         if (file.exists()) {
             file.delete();
             return 1;

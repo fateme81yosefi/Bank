@@ -26,7 +26,7 @@ public class addUser_Controller implements Initializable {
     public Button khadamatk;
     public PasswordField ramz;
 
-    public void validate(ActionEvent event) throws IOException {
+    public void validate() throws IOException {
         String codemeliText=codemeli.getText();
         String phone1=phone.getText();
         String name1=name.getText();
@@ -41,16 +41,25 @@ public class addUser_Controller implements Initializable {
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
         }else {
-            Bank.addUser(name1,codemeliText,ramz1,phone1,email1);
-            System.out.println("عملیات با موفقیت انجام شد");
-            stage = (Stage) conti.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
-            root = fxmlLoader.load();
+            int x=Bank.addUser(name1,codemeliText,ramz1,phone1,email1);
+            if (x==1){
+                System.out.println("عملیات با موفقیت انجام شد");
+                stage = (Stage) conti.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                root = fxmlLoader.load();
 
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }else {
+                System.out.println("عملیات موفق نبود ! لطفا دوباره تلاش کنید!");
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("عملیات موفق نبود ! لطفا دوباره تلاش کنید!");
+                alert.showAndWait();
+            }
+
         }
     }
     public void setAllButten(ActionEvent event) throws IOException {

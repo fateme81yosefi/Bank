@@ -25,10 +25,9 @@ public class addUserA_Controller  implements Initializable {
         public TextField email;
         public Button conti;
         public PasswordField ramz;
-        public Button menuAdmin;
         public Button adminmenu;
 
-    public void validate(ActionEvent event) throws IOException {
+    public void validate() throws IOException {
         String codemeliText=codemeli.getText();
         String phone1=phone.getText();
         String name1=name.getText();

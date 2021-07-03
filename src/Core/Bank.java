@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Bank {
 
-    static ArrayList users = new ArrayList<User>();
+    public static ArrayList <User>users = new ArrayList<User>();
 
     public static int getIndexUser(String codemelli) {
         for (int i = 0; i < users.size(); i++) {

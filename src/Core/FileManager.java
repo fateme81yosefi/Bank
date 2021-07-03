@@ -20,7 +20,7 @@ public class FileManager {
         try {
             FileInputStream fileInputStream = new FileInputStream("file:src/BankInfo.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-             Bank.users.add(objectInputStream.readObject());
+             Bank.users.add((User) objectInputStream.readObject());
             objectInputStream.close();
             fileInputStream.close();
 

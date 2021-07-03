@@ -1,24 +1,16 @@
 package Core;
 
 import javafx.scene.control.TextArea;
-
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Bank {
 
-    static ArrayList<User> users = new ArrayList<User>();
-
+    static ArrayList users = new ArrayList<User>();
 
     public static int getIndexUser(String codemelli) {
         for (int i = 0; i < users.size(); i++) {
             if(users.get(i).codemelli==Long.parseLong(codemelli))return i;
-        }
-        return -1;
-    }
-    public static int getIndexUserByPass(String codemelli,String pass) {
-        for (int i = 0; i < users.size(); i++) {
-            if(users.get(i).codemelli==Long.parseLong(codemelli) && users.get(i).password.equals(pass))return i;
         }
         return -1;
     }
@@ -49,7 +41,6 @@ public class Bank {
         return 1;
     }
 
-
     public static int mashahede(TextArea textArea,String AccNum, String codemelli){
         int idex=getIndexUser(codemelli);
         if (idex==-1){
@@ -60,9 +51,12 @@ public class Bank {
             if (users.get(idex).accounts.get(i).accNumber==Long.parseLong(AccNum)) {
                 System.out.println(users.get(idex).accounts.get(i).accNumber+" , "+users.get(idex).accounts.get(i).mojodi+" , "+
                         " , "+users.get(idex).accounts.get(i).accType);
+                textArea.setText(users.get(idex).accounts.get(i).accNumber+" , "+users.get(idex).accounts.get(i).mojodi+" , "+
+                        " , "+users.get(idex).accounts.get(i).accType+"\n");
                 for (int v=0;v<users.get(idex).accounts.size();v++){
                     for (int a=0;a<users.get(idex).accounts.get(v).tarakoneshes.size();a++){
                         System.out.println("tarakonesh "+a+" account "+v+" :"+users.get(idex).accounts.get(v).tarakoneshes.get(a));
+                        textArea.setText("tarakonesh "+a+" account "+v+" :"+users.get(idex).accounts.get(v).tarakoneshes.get(a));
                     }
                 }
 
@@ -71,9 +65,8 @@ public class Bank {
     }
     //////////////////////////////////////IN TEKRARIYE METHOD HASH///////////////////////////////////
     public static void manageAcc(){
-////////////SWITCH CASE /////////
+    ///////////////////////////////////////////SWITCH CASE //////////////////////////////////////////
     }
-
 
     public static int setAlias(String alias, String accNum,String codemelli) {
         int idex=getIndexUser(codemelli);
@@ -109,7 +102,6 @@ public class Bank {
         return 1;
     }
 
-
     public static int pardakhtGhoboz(String shenaseGhabz,String ShenasePardakht,String mablagh,String codemelli,String accNum) {
         int idex=getIndexUser(codemelli);
         int mabda=getIndexAcc(codemelli,accNum);
@@ -133,6 +125,7 @@ public class Bank {
             return 1;
         }
     }
+
 /////////////////////////IN METHOD CHECK BESHE FALSE/////////////////////////////////
 
     public static int darkhastVam(String mablagh,String month,String codemelli,String accNum) {
@@ -153,6 +146,7 @@ public class Bank {
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh2);
         return 1;
     }
+
     public static void checkVamTime(Date date, double mablaghBardashtiMahane,String codemelli,String accNum){
         int idex=getIndexUser(codemelli);
         int mabda=getIndexAcc(codemelli,accNum);
@@ -168,8 +162,6 @@ public class Bank {
 
         }
     }
-
-
 
     public static int closeAcc(String accNum,String accNumMaghsad,String pass,String codemelli,String codemelliMaghsad) {
         int idex = getIndexUser(codemelli);
@@ -192,7 +184,6 @@ public class Bank {
             users.get(idex).accounts.remove(mabda);
         } return 1;
     }
-
 
 ///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
 
@@ -263,6 +254,7 @@ public class Bank {
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
         return 1;
     }
+
     public static int clossAccByAdmin(String codemelli,String accNum,String accNumMaghsad,String codemelliMaghsad){
         int idex=getIndexUser(codemelli);
         int idex1 = getIndexUser(codemelliMaghsad);
@@ -291,16 +283,5 @@ public class Bank {
             users.get(idex).accounts.remove(indexAcc);
             return 1;
         }
-    }
-
-    public static int creatAccByAdmin(String codemelli, String pass, Account.AccType Type){
-        int idex=getIndexUser(codemelli);
-        if (idex == -1) {
-            System.out.println("کاربری با این کد ملی موجود نیست!");
-            return -1;
-        }
-        Account account=new Account(pass,Type);
-        users.get(idex).accounts.add(account);
-        return 1;
     }
 }

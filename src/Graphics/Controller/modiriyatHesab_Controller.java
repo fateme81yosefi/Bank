@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class modiriyatHesab_Controller  implements Initializable {
+public class modiriyatHesab_Controller implements Initializable {
     public TextField codemeli;
     public PasswordField ramz;
     public TextField phone;
@@ -35,11 +35,11 @@ public class modiriyatHesab_Controller  implements Initializable {
 
     public void validate(ActionEvent event) throws IOException {
 
-        String codemelliText=codemelli.getText();
-        String accNumText=accNum.getText();
+        String codemelliText = codemelli.getText();
+        String accNumText = accNum.getText();
 
-        if (codemelliText.isEmpty()||accNumText.isEmpty()){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        if (codemelliText.isEmpty() || accNumText.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
@@ -48,51 +48,51 @@ public class modiriyatHesab_Controller  implements Initializable {
     }
 
 
-    public void setAllButten(ActionEvent event)throws IOException {
+    public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        if (event.getSource().equals(khadamatUser)){
-            stage=(Stage) khadamatUser.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(khadamatUser)) {
+            stage = (Stage) khadamatUser.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-        if (event.getSource().equals(newAcc)){
-            stage=(Stage) newAcc.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(newAcc)) {
+            stage = (Stage) newAcc.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("Fxml/newaccount.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-        if (event.getSource().equals(setAlias)){
-            stage=(Stage) setAlias.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(setAlias)) {
+            stage = (Stage) setAlias.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("Fxml/alias.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-        if (event.getSource().equals(profile)){
-            stage=(Stage) profile.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(profile)) {
+            stage = (Stage) profile.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("Fxml/moshahedeInfo.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
 
-}
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

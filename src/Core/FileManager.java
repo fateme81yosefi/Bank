@@ -1,13 +1,12 @@
 package Core;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class FileManager {
 
     public static void serializeUser(User user){
         try {
-            FileOutputStream fileOutputStream=new FileOutputStream("F:\\payanterm\\BankInfo");
+            FileOutputStream fileOutputStream=new FileOutputStream("file:src/BankInfo.txt");
             ObjectOutputStream objectOutputStream=new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(user);
             objectOutputStream.close();
@@ -19,9 +18,9 @@ public class FileManager {
 
     public static void deserializeUser(){
         try {
-            FileInputStream fileInputStream = new FileInputStream("F:\\payanterm\\BankInfo");
+            FileInputStream fileInputStream = new FileInputStream("file:src/BankInfo.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            Bank.users = (ArrayList) objectInputStream.readObject();
+             Bank.users.add(objectInputStream.readObject());
             objectInputStream.close();
             fileInputStream.close();
 

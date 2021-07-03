@@ -1,14 +1,15 @@
 package Core;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class FileManager {
 
-    public static void serializeUser(User user){
+    public static void serializeUser(ArrayList<User> users){
         try {
             FileOutputStream fileOutputStream=new FileOutputStream("file:src/BankInfo.txt");
             ObjectOutputStream objectOutputStream=new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(user);
+            objectOutputStream.writeObject(users);
             objectOutputStream.close();
             fileOutputStream.close();
         } catch (IOException e) {

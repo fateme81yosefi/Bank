@@ -20,43 +20,57 @@ public class Bank implements Runnable {
     public static ArrayList<User> users = new ArrayList();
 
     public static int getIndexUser(String codemelli) {
+        FileManager.deserializeUser();
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).codemelli == Long.parseLong(codemelli)) return i;
-        }
-        return -1;
-    }
-
-    public static int getIndexAcc(String codemelli, String accNum) {
-        int g = getIndexUser(codemelli);
-        for (int i = 0; i < users.get(g).accounts.size(); i++) {
-            if (users.get(g).accounts.get(i).accNumber == Long.parseLong(accNum)) {
+            if (users.get(i).codemelli == Long.parseLong(codemelli)) {
+                FileManager.serializeUser(users);
                 return i;
             }
         }
         return -1;
     }
 
+    public static int getIndexAcc(String codemelli, String accNum) {
+        FileManager.deserializeUser();
+        int g = getIndexUser(codemelli);
+        for (int i = 0; i < users.get(g).accounts.size(); i++) {
+            if (users.get(g).accounts.get(i).accNumber == Long.parseLong(accNum)) {
+                FileManager.serializeUser(users);
+                return i;
+            }
+        }
+        FileManager.serializeUser(users);
+        return -1;
+    }
+
     public static int addUser(String name, String codemelli, String password, String phoneNum, String email) {
+        FileManager.deserializeUser();
         User user = new User(name, Long.parseLong(codemelli), password, Integer.parseInt(phoneNum), email);
         users.add(user);
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static int addAcc(String codemelli, Account.AccType type, String pass) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
+            FileManager.serializeUser(users);
             return -1;
         }
         Account account = new Account(pass, type);
         users.get(idex).accounts.add(account);
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static int mashahede(TextArea textArea, String AccNum, String codemelli) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
+            FileManager.serializeUser(users);
             return -1;
         }
         for (int i = 0; i < users.get(idex).accounts.size(); i++) {
@@ -72,32 +86,43 @@ public class Bank implements Runnable {
                     }
                 }
 
-            } else return 0;
+            }
+            else{
+                FileManager.serializeUser(users);
+                return 0;
+            }
         }
+        FileManager.serializeUser(users);
         return 1;
     }
 
     //////////////////////////////////////IN TEKRARIYE METHOD HASH///////////////////////////////////
     public static void manageAcc() {
+
         ///////////////////////////////////////////SWITCH CASE //////////////////////////////////////////
     }
 
     public static int setAlias(String alias, String accNum, String codemelli) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
+            FileManager.serializeUser(users);
             return -1;
         }
         for (int i = 0; i < users.get(idex).accounts.size(); i++) {
             if (users.get(idex).accounts.get(i).accNumber == Long.parseLong(accNum)) {
                 users.get(idex).accounts.get(i).alias = alias;
+                FileManager.serializeUser(users);
                 return 1;
             }
         }
+        FileManager.serializeUser(users);
         return 0;
     }
 
     public static int enteghalVajh(String mablagh, String accNumMaghsad, String accNumMabda, String codemelliMaghsad, String codemelliMada) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelliMada);
         int idex1 = getIndexUser(codemelliMaghsad);
         int mabda = getIndexAcc(codemelliMada, accNumMabda);
@@ -105,6 +130,7 @@ public class Bank implements Runnable {
 
         if (users.get(idex).accounts.get(mabda).mojodi < Integer.parseInt(mablagh)) {
             System.out.println("موجودی کافی در حساب مبدا برای انتقال وجه وجود ندارد!");
+            FileManager.serializeUser(users);
             return -1;
         }
         users.get(idex).accounts.get(mabda).mojodi -= Integer.parseInt(mablagh);
@@ -114,28 +140,34 @@ public class Bank implements Runnable {
         Tarakonesh tarakoneshMabda = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date);
         users.get(idex1).accounts.get(maghsad).tarakoneshes.add(tarakoneshMaghsad);
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static int pardakhtGhoboz(String shenaseGhabz, String ShenasePardakht, String mablagh, String codemelli, String accNum) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         int mabda = getIndexAcc(codemelli, accNum);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
+            FileManager.serializeUser(users);
             return -1;
         }
         if (mabda == -1) {
             System.out.println(" حسابی با این مشخصات موجود نیست!!");
+            FileManager.serializeUser(users);
             return 0;
         }
         if (Integer.parseInt(mablagh) > users.get(idex).accounts.get(mabda).mojodi) {
             System.out.println("موجودی کافی نیست !");
+            FileManager.serializeUser(users);
             return 0;
         } else {
             users.get(idex).accounts.get(mabda).mojodi -= Integer.parseInt(mablagh);
             Date date = new Date();
             Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date);
             users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh);
+            FileManager.serializeUser(users);
             return 1;
         }
     }
@@ -143,14 +175,17 @@ public class Bank implements Runnable {
 /////////////////////////IN METHOD CHECK BESHE FALSE/////////////////////////////////
 
     public static int darkhastVam(String mablagh, String month, String codemelli, String accNum) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         int mabda = getIndexAcc(codemelli, accNum);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
+            FileManager.serializeUser(users);
             return -1;
         }
         if (mabda == -1) {
             System.out.println(" حسابی با این مشخصات موجود نیست!!");
+            FileManager.serializeUser(users);
             return 0;
         }
         users.get(idex).accounts.get(mabda).mojodi += Integer.parseInt(mablagh);
@@ -158,10 +193,12 @@ public class Bank implements Runnable {
         Date dateVamGerefte = new Date();
         Tarakonesh tarakonesh2 = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ_VAM, dateVamGerefte);
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh2);
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static void checkVamTime(Date date, double mablaghBardashtiMahane, String codemelli, String accNum) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         int mabda = getIndexAcc(codemelli, accNum);
         Date dateGozashteShode = new Date();
@@ -174,10 +211,11 @@ public class Bank implements Runnable {
             Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT_MAHANE_VAM, dateGozashteShode);
             users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh);
 
-        }
+        }FileManager.serializeUser(users);
     }
 
     public static int closeAcc(String accNum, String accNumMaghsad, String pass, String codemelli, String codemelliMaghsad) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -190,6 +228,7 @@ public class Bank implements Runnable {
         if (users.get(idex).accounts.get(mabda).mojodi != 0) {
             if (idex1 == -1 || maghsad == -1) {
                 System.out.println("اطلاعات حساب مقصد معتبر نیست !");
+                FileManager.serializeUser(users);
                 return 0;
             }
             String s = String.valueOf(users.get(idex).accounts.get(mabda).mojodi);
@@ -197,12 +236,14 @@ public class Bank implements Runnable {
         } else {
             users.get(idex).accounts.remove(mabda);
         }
+        FileManager.serializeUser(users);
         return 1;
     }
 
 ///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
 
     public static int printInfoUsers(TextArea textArea) {
+        FileManager.deserializeUser();
         for (User user : users) {
             System.out.println(user.name + " , " + user.codemelli + " , " + user.password + " , "
                     + user.email + " , " + user.phoneNum + " , " + user.accounts);
@@ -210,10 +251,12 @@ public class Bank implements Runnable {
                     + user.email + " , " + user.phoneNum + " , " + user.accounts + "\n");
 
         }
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static int editUserInfo(String name, String codemelli, String password, String phoneNum, String email) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
@@ -223,30 +266,36 @@ public class Bank implements Runnable {
         users.get(idex).password = password;
         users.get(idex).phoneNum = Integer.parseInt(phoneNum);
         users.get(idex).email = email;
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static int editUserMojodi(String codemelli, String accNum, String newMojodi) {
+        FileManager.deserializeUser();
         long newMojo = Long.parseLong(newMojodi);
         int idex = getIndexUser(codemelli);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
+            FileManager.serializeUser(users);
             return -1;
         }
 
         int indexAcc1 = getIndexAcc(codemelli, accNum);
         if (indexAcc1 == -1) {
             System.out.println("اکانتی با این شماره حساب موجود نیست!!");
+            FileManager.serializeUser(users);
             return 0;
         }
         Date date = new Date();
         Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.EDIT_MOJODI_BY_ADMIN, date);
         users.get(idex).accounts.get(indexAcc1).mojodi = newMojo;
         users.get(idex).accounts.get(indexAcc1).tarakoneshes.add(tarakonesh);
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static int enteghalVajhByAdmin(String codemelliMada, String codemelliMaghsad, String accNumMabda, String accNumMaghsad, String mablagh) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelliMada);
         int idex1 = getIndexUser(codemelliMaghsad);
         int mabda = getIndexAcc(codemelliMada, accNumMabda);
@@ -254,10 +303,12 @@ public class Bank implements Runnable {
 
         if (idex == -1 || idex1 == -1 || mabda == -1 || maghsad == -1) {
             System.out.println("شماره حساب ها یا کد ملی ها درست نیست !");
+            FileManager.serializeUser(users);
             return 0;
         }
         if (users.get(idex).accounts.get(mabda).mojodi < Integer.parseInt(mablagh)) {
             System.out.println("موجودی کافی نیست ! ");
+            FileManager.serializeUser(users);
             return -1;
         }
         users.get(idex).accounts.get(mabda).mojodi -= Integer.parseInt(mablagh);
@@ -267,35 +318,42 @@ public class Bank implements Runnable {
         Tarakonesh tarakoneshMabda = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date);
         users.get(idex1).accounts.get(maghsad).tarakoneshes.add(tarakoneshMaghsad);
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
+        FileManager.serializeUser(users);
         return 1;
     }
 
     public static int clossAccByAdmin(String codemelli, String accNum, String accNumMaghsad, String codemelliMaghsad) {
+        FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
         int idex1 = getIndexUser(codemelliMaghsad);
         int mabda = getIndexAcc(codemelli, accNum);
         int maghsad = getIndexAcc(codemelliMaghsad, accNumMaghsad);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
+            FileManager.serializeUser(users);
             return -1;
         }
 
         int indexAcc = getIndexAcc(codemelli, accNum);
         if (indexAcc == -1) {
             System.out.println("اکانتی با این شماره حساب موجود نیست!!");
+            FileManager.serializeUser(users);
             return 0;
         }
         if (users.get(idex).accounts.get(mabda).mojodi != 0) {
             if (idex1 == -1 || maghsad == -1) {
                 System.out.println("اطلاعات حساب مقصد معتبر نیست !");
+                FileManager.serializeUser(users);
                 return 0;
             }
             String s = String.valueOf(users.get(idex).accounts.get(mabda).mojodi);
             enteghalVajh(s, accNumMaghsad, accNum, codemelli, codemelliMaghsad);
             users.get(idex).accounts.remove(indexAcc);
+            FileManager.serializeUser(users);
             return 1;
         } else {
             users.get(idex).accounts.remove(indexAcc);
+            FileManager.serializeUser(users);
             return 1;
         }
     }

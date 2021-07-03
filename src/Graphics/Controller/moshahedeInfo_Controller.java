@@ -1,5 +1,6 @@
 package Graphics.Controller;
 
+import Core.Bank;
 import Core.FileManager;
 import Graphics.App;
 import javafx.event.ActionEvent;
@@ -34,7 +35,7 @@ public class moshahedeInfo_Controller  implements Initializable {
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
         }else {
-     FileManager.printUsers(PrintInfo);
+     Bank.mashahede(PrintInfo,accNumTextabdaText,codemelliText);
 }
     }
 

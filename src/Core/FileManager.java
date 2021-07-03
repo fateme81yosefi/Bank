@@ -2,6 +2,7 @@ package Core;
 
 
 import javafx.scene.control.TextArea;
+
 import java.io.*;
 
 public class FileManager {
@@ -9,7 +10,7 @@ public class FileManager {
 
     public static void WriteUserToFile(User user) {
         try {
-            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\"+user.codemelli+".txt"),true);
+            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\" + user.codemelli + ".txt"), true);
             printWriter.println(user.name + "\n");
             printWriter.println(user.email + "\n");
             printWriter.println(user.password + "\n");
@@ -28,8 +29,8 @@ public class FileManager {
     public static void WriteAccToFile(User user, Account account) {
         try {
 
-            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\"+account.accNumber+".txt"),true);
-            printWriter.println(user.name );
+            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\" + account.accNumber + ".txt"), true);
+            printWriter.println(user.name);
             printWriter.println(user.codemelli);
             printWriter.println(account.accNumber);
             printWriter.println(account.passwordAcc);
@@ -47,11 +48,11 @@ public class FileManager {
 
     public static void WriteTarakoneshToFile(User user, Account account, Tarakonesh tarakonesh) {
         try {
-            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\tarakoneshs"+account.accNumber+".txt"),true);
+            PrintWriter printWriter = new PrintWriter(new FileWriter("F:\\payanterm\\tarakoneshs" + account.accNumber + ".txt"), true);
             printWriter.println(user.codemelli);
             printWriter.println(account.accNumber);
             printWriter.println(tarakonesh.mablagh);
-            printWriter.println(tarakonesh.tarakoneshType.name() );
+            printWriter.println(tarakonesh.tarakoneshType.name());
             printWriter.println(tarakonesh.time.toString());
             printWriter.close();
             System.out.println("تراکنش با موفقیت در فایل ثبت شد");
@@ -61,6 +62,15 @@ public class FileManager {
             System.out.println("خطا در شناسایی جریان داده ها!!");
         }
     }
+
+    public static int deleteAcc(String accNum) {
+        File file = new File("F:\\payanterm\\" + accNum + ".txt");
+        if (file.exists()) {
+            file.delete();
+            return 1;
+        } else return -1;
+    }
+
 
 
 

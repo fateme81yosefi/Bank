@@ -1,6 +1,8 @@
 package Core;
 
 import javafx.scene.control.TextArea;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,22 +13,23 @@ public class Bank {
      static ArrayList<User> users = new ArrayList<>();
 
     public static int getIndexUser(String codemelli) {
-       int x=FileManager.readFile(codemelli);
-       if (x==-1)return -1;
-        else return x;
-    }
-    public static int getIndexUserByPass(String codemelli,String pass) {
-        for (int i = 0; i < users.size(); i++) {
-            if(users.get(i).codemelli==Long.parseLong(codemelli) && users.get(i).password.equals(pass))return i;
+        File file=new File("F:\\payanterm\\"+codemelli+".txt");
+        if (file.exists()){
+            return 1;
+        }else {
+            System.out.println("کاربر وجود ندارد!");
+            return -1;
         }
-        return -1;
     }
 
     public static int getIndexAcc(String codemelli,String accNum) {
-        if(accNum.equals("-1"))return -1;
-       int x=FileManager.readFileAcc(codemelli,accNum);
-       if (x==-1)return -1;
-       else return x;
+        File file=new File("F:\\payanterm\\"+accNum+".txt");
+        if (file.exists()){
+            return 1;
+        }else {
+            System.out.println("حساب وجود ندارد!");
+            return -1;
+        }
     }
 
     public static int addUser(String name, String codemelli, String password, String phoneNum, String email) {
@@ -50,19 +53,23 @@ public class Bank {
 
 
     public static int mashahede(TextArea textArea,String AccNum, String codemelli) {
-        if(AccNum.equals("-1"))return -1;
-
-        int idex = getIndexUser(codemelli);
-        if (idex == -1) {
-            System.out.println("کاربری با این کد ملی موجود نیست!");
-            return -1;
-        }else {
-            FileManager.readFileTarakonesh(textArea,codemelli,AccNum);
-            return 1;
-        }
+   File file=new File("F:\\payanterm\\tarakoneshs"+AccNum+".txt");
+   if(file.exists()){
+       try {
+           BufferedReader br = new BufferedReader(new FileReader(file));
+           while (br.readLine()!=null){
+           String line=br.readLine();
+           textArea.setText(line);
+           }return 1;
+       } catch (IOException e) {
+           System.out.println("خطا در شناسایی جریان داده ها!!");
+       }
+   }else {
+       System.out.println("حساب یا کاربر موجود نیست !");
+       return -1;
+   }
+   return -1;
     }
-
-
 
     public static int setAlias(String alias, String accNum,String codemelli) {
         if(accNum.equals("-1"))return -1;
@@ -170,17 +177,21 @@ public class Bank {
 
 
     public static int closeAcc(String accNum,String accNumMaghsad,String pass,String codemelli,String codemelliMaghsad) {
-        if(accNum.equals("-1"))return -1;
 
         int idex = getIndexUser(codemelli);
+        int idex1 = getIndexUser(codemelliMaghsad);
+        int mabda = getIndexAcc(codemelli, accNum);
+        int maghsad = getIndexAcc(codemelliMaghsad, accNumMaghsad);
         if (idex == -1) {
             System.out.println("کاربری با این کد ملی موجود نیست!");
             return -1;
         }
 
-        int idex1 = getIndexUser(codemelliMaghsad);
-        int mabda = getIndexAcc(codemelli, accNum);
-        int maghsad = getIndexAcc(codemelliMaghsad, accNumMaghsad);
+        int indexAcc = getIndexAcc(codemelli, accNum);
+        if (indexAcc == -1) {
+            System.out.println("اکانتی با این شماره حساب موجود نیست!!");
+            return 0;
+        }
         if (users.get(idex).accounts.get(mabda).mojodi != 0) {
             if (idex1 == -1 || maghsad == -1) {
                 System.out.println("اطلاعات حساب مقصد معتبر نیست !");
@@ -188,9 +199,29 @@ public class Bank {
             }
             String s = String.valueOf(users.get(idex).accounts.get(mabda).mojodi);
             enteghalVajh(s, accNumMaghsad, accNum, codemelli, codemelliMaghsad);
-        } else {
-            users.get(idex).accounts.remove(mabda);
-        } return 1;
+            int x = FileManager.deleteAcc(accNum);
+            if (x == -1) {
+                System.out.println("چنین کاربری وجود ندارد !");
+                return -1;
+            }
+            else {
+                users.get(idex).accounts.remove(indexAcc);
+                System.out.println("کاربر با موفقیت حذف شد");
+                return 1;
+            }
+        }else {
+            int x = FileManager.deleteAcc(accNum);
+            users.get(idex).accounts.remove(indexAcc);
+            if (x == -1) {
+                System.out.println("چنین کاربری وجود ندارد !");
+                return -1;
+            }
+            else {
+                users.get(idex).accounts.remove(indexAcc);
+                System.out.println("کاربر با موفقیت حذف شد");
+                return 1;
+            }
+        }
     }
 
 
@@ -289,14 +320,29 @@ public class Bank {
             }
             String s = String.valueOf(users.get(idex).accounts.get(mabda).mojodi);
             enteghalVajh(s, accNumMaghsad, accNum, codemelli, codemelliMaghsad);
-            int x = FileManager.closeAcc(codemelli, accNum, accNumMaghsad, codemelliMaghsad);
-            if (x == -1) return -1;
+            int x = FileManager.deleteAcc(accNum);
+            if (x == -1) {
+                System.out.println("چنین کاربری وجود ندارد !");
+                return -1;
+            }
             else {
                 users.get(idex).accounts.remove(indexAcc);
+                System.out.println("کاربر با موفقیت حذف شد");
                 return 1;
             }
-        }return -1;
-    }
+        }else {
+            int x = FileManager.deleteAcc(accNum);
+            users.get(idex).accounts.remove(indexAcc);
+            if (x == -1) {
+                System.out.println("چنین کاربری وجود ندارد !");
+                return -1;
+            }
+            else {
+                users.get(idex).accounts.remove(indexAcc);
+                System.out.println("کاربر با موفقیت حذف شد");
+                return 1;
+        }
+    }}
 
     public static int creatAccByAdmin(String codemelli, String pass, Account.AccType Type){
         int idex=getIndexUser(codemelli);

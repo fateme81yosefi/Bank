@@ -38,103 +38,106 @@ public class newaccount_Controller implements Initializable {
         }
     }
     public void validate(ActionEvent event) throws IOException {
-        String ramz1=ramz.getText();
-        String codemelliText=codemelli.getText();
-        String noeHesab=noeAcc.getText();
-        Stage stage;
-        Parent root;
-        if (ramz1.isEmpty()||codemelliText.isEmpty()){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
-            alert.showAndWait();
-        }else {
-            int parseInt=Integer.parseInt(noeHesab);
-            switch (parseInt){
-                case 1: {
-                    int x=Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
-                   if (x==-1){
+        if (event.getSource().equals(conti)){
+            String ramz1=ramz.getText();
+            String codemelliText=codemelli.getText();
+            String noeHesab=noeAcc.getText();
+            Stage stage;
+            Parent root;
+            if (ramz1.isEmpty()||codemelliText.isEmpty()){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
+                alert.showAndWait();
+            }else {
+                int parseInt=Integer.parseInt(noeHesab);
+                switch (parseInt){
+                    case 1: {
+                        int x=Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
+                        if (x==-1){
+                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setContentText("کد ملی کاربر اشتباه است!");
+                            alert.showAndWait();
+                        }else {
+                            System.out.println("عملیات با موفقیت انجام شد");
+                            stage = (Stage) conti.getScene().getWindow();
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
+                            root = fxmlLoader.load();
+
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
+                            stage.show();
+                        }
+                    }
+                    case 2: {
+                        int x=Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
+                        if (x==-1){
+                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setContentText("کد ملی کاربر اشتباه است!");
+                            alert.showAndWait();
+                        }else {
+                            System.out.println("عملیات با موفقیت انجام شد");
+                            stage = (Stage) conti.getScene().getWindow();
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
+                            root = fxmlLoader.load();
+
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
+                            stage.show();
+                        }
+                    }
+                    case 3: {
+                        int x=Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
+                        if (x==-1){
+                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setContentText("کد ملی کاربر اشتباه است!");
+                            alert.showAndWait();
+                        }else {
+                            System.out.println("عملیات با موفقیت انجام شد");
+                            stage = (Stage) conti.getScene().getWindow();
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
+                            root = fxmlLoader.load();
+
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
+                            stage.show();
+                        }
+                    }
+                    case 4: {
+                        int x=Bank.addAcc(codemelliText, SEPORDE_KOTAHMODAT, ramz1);
+                        if (x==-1){
+                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setContentText("کد ملی کاربر اشتباه است!");
+                            alert.showAndWait();
+                        }else {
+                            System.out.println("عملیات با موفقیت انجام شد");
+                            stage = (Stage) conti.getScene().getWindow();
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
+                            root = fxmlLoader.load();
+
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
+                            stage.show();
+                        }
+                    }
+                    default:{
                         Alert alert=new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText(null);
-                        alert.setContentText("کد ملی کاربر اشتباه است!");
+                        alert.setContentText("نوع حساب را به درستی وارد کنید!");
                         alert.showAndWait();
-                    }else {
-                        System.out.println("عملیات با موفقیت انجام شد");
-                        stage = (Stage) conti.getScene().getWindow();
-                        FXMLLoader fxmlLoader = new FXMLLoader();
-                        fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
-                        root = fxmlLoader.load();
-
-                        Scene scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
                     }
-                }
-                case 2: {
-                    int x=Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
-                    if (x==-1){
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
-                        alert.setHeaderText(null);
-                        alert.setContentText("کد ملی کاربر اشتباه است!");
-                        alert.showAndWait();
-                    }else {
-                        System.out.println("عملیات با موفقیت انجام شد");
-                        stage = (Stage) conti.getScene().getWindow();
-                        FXMLLoader fxmlLoader = new FXMLLoader();
-                        fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
-                        root = fxmlLoader.load();
-
-                        Scene scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
-                    }
-                }
-                case 3: {
-                    int x=Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
-                  if (x==-1){
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
-                        alert.setHeaderText(null);
-                        alert.setContentText("کد ملی کاربر اشتباه است!");
-                        alert.showAndWait();
-                    }else {
-                        System.out.println("عملیات با موفقیت انجام شد");
-                        stage = (Stage) conti.getScene().getWindow();
-                        FXMLLoader fxmlLoader = new FXMLLoader();
-                        fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
-                        root = fxmlLoader.load();
-
-                        Scene scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
-                    }
-                }
-                case 4: {
-                    int x=Bank.addAcc(codemelliText, SEPORDE_KOTAHMODAT, ramz1);
-                    if (x==-1){
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
-                        alert.setHeaderText(null);
-                        alert.setContentText("کد ملی کاربر اشتباه است!");
-                        alert.showAndWait();
-                    }else {
-                        System.out.println("عملیات با موفقیت انجام شد");
-                        stage = (Stage) conti.getScene().getWindow();
-                        FXMLLoader fxmlLoader = new FXMLLoader();
-                        fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
-                        root = fxmlLoader.load();
-
-                        Scene scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
-                    }
-                }
-                default:{
-                    Alert alert=new Alert(Alert.AlertType.ERROR);
-                    alert.setHeaderText(null);
-                    alert.setContentText("نوع حساب را به درستی وارد کنید!");
-                    alert.showAndWait();
                 }
             }
         }
+
     }
 
 

@@ -23,8 +23,14 @@
       </Label>
       <TextField fx:id="mablagh" alignment="CENTER" layoutX="50.0" layoutY="268.0" onAction="#setMablagh" promptText="مبلغ(تومان)" />
       <TextField fx:id="dorepardakht" alignment="CENTER" layoutX="50.0" layoutY="323.0" onAction="#setDorepardakht" promptText="(ماه)" />
-      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
-      <Button fx:id="khadamatk" layoutX="226.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو خدمات" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="khadamatk" layoutX="226.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="برگشت به منو خدمات">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
       <Label layoutX="228.0" layoutY="217.0" opacity="0.56" text="کد ملی خود را وارد کنید:">
          <font>
             <Font name="Nirmala UI Bold" size="12.0" />

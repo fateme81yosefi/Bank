@@ -21,8 +21,14 @@
             <Font name="Nirmala UI Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="conti" layoutX="15.0" layoutY="509.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
-      <Button fx:id="khadamatk" layoutX="229.0" layoutY="509.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات کاربر" />
+      <Button fx:id="conti" layoutX="15.0" layoutY="509.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="khadamatk" layoutX="229.0" layoutY="509.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات کاربر">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
       <PasswordField fx:id="ramz" alignment="CENTER" layoutX="43.0" layoutY="312.0" promptText="password" />
       <Label layoutX="225.0" layoutY="167.0" opacity="0.5" text="کدملی خود را وارد کنید:">
          <font>

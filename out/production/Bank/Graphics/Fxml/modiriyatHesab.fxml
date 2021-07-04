@@ -11,20 +11,44 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="302.0" text="در صورت تمایل میتوانید برای حساب خود نام مستعار انتخاب کنید:" textFill="#bc0a0a">
+      <Label layoutX="30.0" layoutY="302.0" text="در صورت تمایل میتوانید برای حساب خود نام مستعار انتخاب کنید:" textFill="#bc0a0a">
          <font>
-            <Font size="11.0" />
+            <Font name="Constantia Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="217.0" layoutY="380.0" text="باز کردن حساب جدید:" />
-      <Button fx:id="newAcc" layoutX="80.0" layoutY="376.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="103.0" text="ایجاد حساب" />
-      <Button fx:id="conti" layoutX="20.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
-      <Button fx:id="khadamatUser" layoutX="224.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات" />
-      <Button fx:id="profile" layoutX="127.0" layoutY="243.0" mnemonicParsing="false" onAction="#setAllButten" text="دیدن پروفایل حساب" />
-      <Label layoutX="268.0" layoutY="139.0" text="شماره حساب:" />
-      <Label layoutX="228.0" layoutY="180.0" text="کدملی خود را وارد کنید:" />
+      <Label layoutX="217.0" layoutY="380.0" text="باز کردن حساب جدید:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="newAcc" layoutX="80.0" layoutY="376.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="25.0" prefWidth="103.0" text="ایجاد حساب">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="conti" layoutX="20.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="khadamatUser" layoutX="224.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به منو خدمات">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="profile" layoutX="127.0" layoutY="243.0" mnemonicParsing="false" onAction="#setAllButten" text="دیدن پروفایل حساب">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="268.0" layoutY="139.0" text="شماره حساب:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="228.0" layoutY="180.0" text="کدملی خود را وارد کنید:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
       <TextField fx:id="accNum" layoutX="43.0" layoutY="135.0" />
       <TextField fx:id="codemelli" layoutX="43.0" layoutY="176.0" />
-      <Button fx:id="setAlias" layoutX="156.0" layoutY="329.0" mnemonicParsing="false" onAction="#setAllButten" text="set Alias" />
+      <Button fx:id="setAlias" layoutX="156.0" layoutY="329.0" mnemonicParsing="false" onAction="#setAllButten" text="set Alias">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
    </children>
 </Pane>

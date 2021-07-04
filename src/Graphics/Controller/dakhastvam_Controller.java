@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class dakhastvam_Controller   implements Initializable {
+public class dakhastvam_Controller implements Initializable {
     public TextField mablagh;
     public TextField dorepardakht;
     public Button khadamatk;

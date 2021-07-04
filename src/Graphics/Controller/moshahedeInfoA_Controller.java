@@ -55,7 +55,7 @@ public class moshahedeInfoA_Controller implements Initializable {
         if (event.getSource().equals(khadamatk)){
             stage=(Stage) khadamatk.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(Client.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/adminkhadamat.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

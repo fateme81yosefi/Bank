@@ -21,8 +21,8 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="mablagh" alignment="CENTER" layoutX="50.0" layoutY="268.0" onAction="#setMablagh" promptText="مبلغ(تومان)" />
-      <TextField fx:id="dorepardakht" alignment="CENTER" layoutX="50.0" layoutY="323.0" onAction="#setDorepardakht" promptText="(ماه)" />
+      <TextField fx:id="mablagh" alignment="CENTER" layoutX="50.0" layoutY="268.0" promptText="مبلغ(تومان)" />
+      <TextField fx:id="dorepardakht" alignment="CENTER" layoutX="50.0" layoutY="323.0" promptText="(ماه)" />
       <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
          <font>
             <Font name="Constantia Bold" size="12.0" />

@@ -19,8 +19,8 @@
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="shenaseghabz" layoutX="39.0" layoutY="154.0" onAction="#setShenaseghabz" />
-      <TextField fx:id="shenasePardakht" layoutX="39.0" layoutY="195.0" onAction="#setShenasePardakht" />
+      <TextField fx:id="shenaseghabz" layoutX="39.0" layoutY="154.0" />
+      <TextField fx:id="shenasePardakht" layoutX="39.0" layoutY="195.0" />
       <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
          <font>
             <Font name="Constantia Bold" size="12.0" />

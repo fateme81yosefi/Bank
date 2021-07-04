@@ -2,6 +2,7 @@ package Graphics;
 
 import Core.Bank;
 
+import Core.BankManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,11 +10,14 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client extends Application {
-    Socket mSocket;
+    public  Bank server;
+
+    Socket client;
     int port=9090;
     String serverAddress="127.0.0.1";
     InputStream inputStream;
@@ -25,23 +29,26 @@ public class Client extends Application {
     public static Scene scene =null;
     public static FXMLLoader fxmlLoader=null;
 
-    public Client(){
+    public Client(Bank server, Socket client){
+        this.server=server;
+        this.client=client;
     }
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-        mSocket=new Socket(serverAddress,port);
-        inputStream=mSocket.getInputStream();
-        outputStream=mSocket.getOutputStream();
+        client=new Socket(serverAddress,port);
+        inputStream=client.getInputStream();
+        outputStream=client.getOutputStream();
         reader=new DataInputStream(inputStream);
         writer=new PrintWriter(outputStream,true);
-        Thread t=new Thread(new Bank(reader,this));
+        Thread t=new Thread(new BankManager(server,this));
         t.start();
+        Socket client=new Socket();
+        Client clientT=new Client(server,client);
 
-        Client client=new Client();
-        client.start(primaryStage);
+        clientT.start(primaryStage);
         fxmlLoader=new FXMLLoader();
         fxmlLoader.setLocation(Client.class.getResource("Fxml/MenuAsli.fxml"));
 

@@ -1,6 +1,6 @@
 package Graphics.Controller;
 
-import Graphics.App;
+import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,7 +31,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(EnteghalVajh)){
             stage=(Stage) EnteghalVajh.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/EnteghalVajh.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/EnteghalVajh.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -41,7 +41,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(ModiriyatHesab)){
             stage=(Stage) ModiriyatHesab.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/modiriyatHesab.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/modiriyatHesab.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -51,7 +51,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(BazKardanHesabJadid)){
             stage=(Stage) BazKardanHesabJadid.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/newaccount.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/newaccount.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -61,7 +61,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(MoshahedeEtelaat)){
             stage=(Stage) MoshahedeEtelaat.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/moshahedeInfo.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/moshahedeInfo.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -71,7 +71,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(PardakhtGhoboz)){
             stage=(Stage) PardakhtGhoboz.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/pardakhtghoboz.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/pardakhtghoboz.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -80,7 +80,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
             if (event.getSource().equals(SafheAsli)){
                 stage=(Stage) SafheAsli.getScene().getWindow();
                 FXMLLoader fxmlLoader=new FXMLLoader();
-                fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));
+                fxmlLoader.setLocation(Client.class.getResource("Fxml/MenuAsli.fxml"));
                 root=fxmlLoader.load();
 
                 Scene scene=new Scene(root);
@@ -90,7 +90,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(DarkhastVam)){
             stage=(Stage) DarkhastVam.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/darkhastvam.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/darkhastvam.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -100,7 +100,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(BastanHesab)){
             stage=(Stage) BastanHesab.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/closeacc.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/closeacc.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -110,7 +110,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(AfzodanKarbar)){
             stage=(Stage) AfzodanKarbar.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/addUser.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/addUser.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -120,7 +120,7 @@ public class EntekhabKhadamatUser_Controller implements Initializable {
         if (event.getSource().equals(Alias)){
             stage=(Stage) Alias.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/alias.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/alias.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

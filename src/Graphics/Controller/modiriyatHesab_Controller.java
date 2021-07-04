@@ -1,7 +1,7 @@
 package Graphics.Controller;
 
 import Core.Bank;
-import Graphics.App;
+import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -54,7 +54,7 @@ public class modiriyatHesab_Controller implements Initializable {
         if (event.getSource().equals(khadamatUser)) {
             stage = (Stage) khadamatUser.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -64,7 +64,7 @@ public class modiriyatHesab_Controller implements Initializable {
         if (event.getSource().equals(newAcc)) {
             stage = (Stage) newAcc.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/newaccount.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/newaccount.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -74,7 +74,7 @@ public class modiriyatHesab_Controller implements Initializable {
         if (event.getSource().equals(setAlias)) {
             stage = (Stage) setAlias.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/alias.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/alias.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -84,7 +84,7 @@ public class modiriyatHesab_Controller implements Initializable {
         if (event.getSource().equals(profile)) {
             stage = (Stage) profile.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/moshahedeInfo.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/moshahedeInfo.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

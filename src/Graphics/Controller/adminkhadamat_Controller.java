@@ -1,6 +1,6 @@
 package Graphics.Controller;
 
-import Graphics.App;
+import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +28,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(EditInfoUser)) {
             stage = (Stage) EditInfoUser.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/editUserInfoA.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/editUserInfoA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -38,7 +38,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(moshahedeEtelaatK)) {
             stage = (Stage) moshahedeEtelaatK.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/moshahedeInfoA.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/moshahedeInfoA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -48,7 +48,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(editMojodi)) {
             stage = (Stage) editMojodi.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/editMojoodiPage.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/editMojoodiPage.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -58,7 +58,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(enteghalVajh)) {
             stage = (Stage) enteghalVajh.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/entehalvajhA.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/entehalvajhA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -68,7 +68,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(closeAcc)) {
             stage = (Stage) closeAcc.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/closeAccbyA.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/closeAccbyA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -78,7 +78,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(createNewAcc)) {
             stage = (Stage) createNewAcc.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/newaccountA.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/newaccountA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);
@@ -88,7 +88,7 @@ public class adminkhadamat_Controller implements Initializable {
         if (event.getSource().equals(creatNewUser)) {
             stage = (Stage) creatNewUser.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/addUserA.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/addUserA.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

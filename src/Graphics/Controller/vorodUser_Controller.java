@@ -1,7 +1,7 @@
 package Graphics.Controller;
 
 import Core.Bank;
-import Graphics.App;
+import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -46,7 +46,7 @@ public class vorodUser_Controller implements Initializable {
             }else {
                 stage=(Stage) menuAsli.getScene().getWindow();
                 FXMLLoader fxmlLoader=new FXMLLoader();
-                fxmlLoader.setLocation(App.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
+                fxmlLoader.setLocation(Client.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
                 root=fxmlLoader.load();
 
                 Scene scene=new Scene(root);
@@ -62,7 +62,7 @@ public class vorodUser_Controller implements Initializable {
         if (event.getSource().equals(menuAsli)){
             stage=(Stage) menuAsli.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/MenuAsli.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

@@ -1,7 +1,7 @@
 package Graphics.Controller;
 
 import Core.Bank;
-import Graphics.App;
+import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -55,7 +55,7 @@ public class closeAccbyA_Controller  implements Initializable {
                 System.out.println("عملیات با موفقیت انجام شد");
                 stage = (Stage) conti.getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(App.class.getResource("Fxml/movafagh.fxml"));
+                fxmlLoader.setLocation(Client.class.getResource("Fxml/movafagh.fxml"));
                 root = fxmlLoader.load();
 
                 Scene scene = new Scene(root);
@@ -70,7 +70,7 @@ public class closeAccbyA_Controller  implements Initializable {
         if (event.getSource().equals(AdminMenu)) {
             stage = (Stage) AdminMenu.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/adminkhadamat.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/adminkhadamat.fxml"));
             root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

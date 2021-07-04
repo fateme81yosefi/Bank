@@ -1,6 +1,6 @@
 package Graphics.Controller;
 
-import Graphics.App;
+import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +28,7 @@ public class MenuAsli_Controller implements Initializable {
         if (event.getSource().equals(buttenUser)){
             stage=(Stage) buttenUser.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/vorodUser.fxml"));//vared kardan ramz by user
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/vorodUser.fxml"));//vared kardan ramz by user
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -38,7 +38,7 @@ public class MenuAsli_Controller implements Initializable {
         if (event.getSource().equals(bettenAdmin)){
             stage=(Stage) buttenUser.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/Admin.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/Admin.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -48,7 +48,7 @@ public class MenuAsli_Controller implements Initializable {
         if (event.getSource().equals(about)){
             stage=(Stage) about.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/aboutUs.fxml"));
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/aboutUs.fxml"));
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);

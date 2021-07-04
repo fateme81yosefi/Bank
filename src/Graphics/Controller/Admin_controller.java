@@ -1,6 +1,6 @@
 package Graphics.Controller;
 
-import Graphics.App;
+import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,7 +30,7 @@ public class Admin_controller implements Initializable{
         if (event.getSource().equals(returnToMain)){
             stage=(Stage)returnToMain.getScene().getWindow();
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("Fxml/MenuAsli.fxml"));//vared kardan ramz by user
+            fxmlLoader.setLocation(Client.class.getResource("Fxml/MenuAsli.fxml"));//vared kardan ramz by user
             root=fxmlLoader.load();
 
             Scene scene=new Scene(root);
@@ -54,7 +54,7 @@ public class Admin_controller implements Initializable{
                     Parent root;
                     stage=(Stage)returnToMain.getScene().getWindow();
                     FXMLLoader fxmlLoader=new FXMLLoader();
-                    fxmlLoader.setLocation(App.class.getResource("Fxml/adminkhadamat.fxml"));//vared kardan ramz by user
+                    fxmlLoader.setLocation(Client.class.getResource("Fxml/adminkhadamat.fxml"));//vared kardan ramz by user
                     root=fxmlLoader.load();
 
                     Scene scene=new Scene(root);

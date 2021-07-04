@@ -40,8 +40,14 @@
       <TextField fx:id="codemeli" alignment="CENTER" layoutX="34.0" layoutY="158.0" promptText="10 رقمی" />
       <TextField fx:id="phone" alignment="CENTER" layoutX="34.0" layoutY="222.0" promptText="09030000000" />
       <TextField fx:id="email" layoutX="34.0" layoutY="251.0" promptText="ftm.ysfi8888@gmail.com" />
-      <Button fx:id="conti" layoutX="23.0" layoutY="472.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
-      <Button fx:id="khadamatk" layoutX="218.0" layoutY="472.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات کاربر" />
+      <Button fx:id="conti" layoutX="13.0" layoutY="509.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="khadamatk" layoutX="221.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به خدمات کاربر">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
       <PasswordField fx:id="ramz" alignment="CENTER" layoutX="34.0" layoutY="191.0" promptText="رمز عبور" />
    </children>
 </Pane>

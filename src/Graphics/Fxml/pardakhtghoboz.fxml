@@ -11,15 +11,36 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="214.0" layoutY="154.0" opacity="0.61" text="شناسه قبض را وارد کنید:" />
-      <Label layoutX="211.0" layoutY="197.0" opacity="0.6" text="شناسه پرداخت را وارد کنید:" />
+      <Label layoutX="214.0" layoutY="154.0" opacity="0.61" text="شناسه قبض را وارد کنید:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="211.0" layoutY="197.0" opacity="0.6" text="شناسه پرداخت را وارد کنید:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
       <TextField fx:id="shenaseghabz" layoutX="39.0" layoutY="154.0" onAction="#setShenaseghabz" />
       <TextField fx:id="shenasePardakht" layoutX="39.0" layoutY="195.0" onAction="#setShenasePardakht" />
-      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
-      <Button fx:id="khadamatk" layoutX="216.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به صفحه خدمات" />
-      <Label layoutX="256.0" layoutY="349.0" opacity="0.56" text="مبلغ را وارد کنید:" />
-      <Label layoutX="247.0" layoutY="314.0" opacity="0.62" text="کد ملی را وارد کنید:" />
-      <Label layoutX="201.0" layoutY="275.0" opacity="0.54" text="شماره حساب خود را وارد کنید:" />
+      <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="khadamatk" layoutX="216.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به صفحه خدمات">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="256.0" layoutY="349.0" opacity="0.56" text="مبلغ را وارد کنید:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="247.0" layoutY="314.0" opacity="0.62" text="کد ملی را وارد کنید:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="201.0" layoutY="275.0" opacity="0.54" text="شماره حساب خود را وارد کنید:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
       <TextField fx:id="accNum" layoutX="38.0" layoutY="272.0" />
       <TextField fx:id="codemelli" layoutX="38.0" layoutY="310.0" />
       <TextField fx:id="mablagh" layoutX="38.0" layoutY="345.0" />

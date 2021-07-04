@@ -8,12 +8,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" styleClass="vorodia" stylesheets="@../Css/backTarakonesh.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.vorodUser_Controller">
    <children>
-      <Label layoutX="77.0" layoutY="153.0" text="شما سطح دسترسی کاربر را انتخاب کردید" textAlignment="CENTER">
+      <Label layoutX="77.0" layoutY="153.0" text="شما سطح دسترسی کاربر را انتخاب کردید" textAlignment="CENTER" textFill="#e83030">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
          <font>
-            <Font size="11.0" />
+            <Font name="Constantia Bold" size="12.0" />
          </font>
       </Label>
       <Label alignment="TOP_CENTER" layoutX="72.0" layoutY="180.0" nodeOrientation="LEFT_TO_RIGHT" text="لطفا کد ملی و رمز عبور خود را وارد کنید:">
@@ -23,10 +23,16 @@
          <effect>
             <Blend mode="DARKEN" />
          </effect>
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font>
       </Label>
       <PasswordField fx:id="ramz" layoutX="107.0" layoutY="296.0" prefHeight="37.0" prefWidth="155.0" promptText="رمز عبور              " />
       <Button fx:id="conti" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" prefHeight="25.0" prefWidth="54.0" text="ثبت" />
-      <Button fx:id="menuAsli" layoutX="301.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت" />
+      <Button fx:id="menuAsli" layoutX="301.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
       <PasswordField fx:id="codemelli" layoutX="108.0" layoutY="242.0" prefHeight="37.0" prefWidth="155.0" promptText="کدملی             " />
    </children>
 </Pane>

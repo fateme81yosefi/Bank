@@ -16,12 +16,33 @@
             <Font name="Nirmala UI Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="moshahedeEtelaatK" layoutX="85.0" layoutY="177.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="مشاهده اطلاعات حساب های مشتریان" />
-      <Button fx:id="closeAcc" layoutX="87.0" layoutY="296.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="بستن حساب کاربری" />
-      <Button fx:id="createNewAcc" layoutX="85.0" layoutY="216.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="ایجاد حساب جدید " />
-      <Button fx:id="EditInfoUser" layoutX="93.0" layoutY="412.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="تغییر اطلاعات کاربر" />
-      <Button fx:id="editMojodi" layoutX="87.0" layoutY="257.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="تغییر موجودی حساب " />
-      <Button fx:id="enteghalVajh" layoutX="90.0" layoutY="335.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="انتقال وجه" />
-      <Button fx:id="creatNewUser" layoutX="91.0" layoutY="373.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="ایجاد کاربر جدید" />
+      <Button fx:id="moshahedeEtelaatK" layoutX="85.0" layoutY="177.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="مشاهده اطلاعات حساب های مشتریان">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="closeAcc" layoutX="87.0" layoutY="296.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="بستن حساب کاربری">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="createNewAcc" layoutX="85.0" layoutY="216.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="ایجاد حساب جدید ">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="EditInfoUser" layoutX="93.0" layoutY="412.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="تغییر اطلاعات کاربر">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="editMojodi" layoutX="87.0" layoutY="257.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="تغییر موجودی حساب ">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="enteghalVajh" layoutX="90.0" layoutY="335.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="انتقال وجه">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="creatNewUser" layoutX="91.0" layoutY="373.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="30.0" prefWidth="220.0" stylesheets="@../Css/backTarakonesh.css" text="ایجاد کاربر جدید">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
    </children>
 </Pane>

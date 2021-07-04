@@ -11,11 +11,23 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="270.0" layoutY="213.0" text="کد ملی:" />
-      <Label layoutX="267.0" layoutY="275.0" text="رمز عبور:" />
+      <Label layoutX="270.0" layoutY="213.0" text="کد ملی:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="267.0" layoutY="275.0" text="رمز عبور:">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Label>
       <TextField fx:id="fieldCode" alignment="CENTER" layoutX="65.0" layoutY="209.0" onAction="#validate" promptText="کد ملی" />
-      <PasswordField fx:id="fieldPass" alignment="CENTER" layoutX="65.0" layoutY="271.0" onAction="#validate" promptText="حداقل 8 رقم" />
-      <Button fx:id="save" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه" />
-      <Button fx:id="returnToMain" layoutX="222.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به صفحه اصلی" />
+      <PasswordField fx:id="fieldPass" alignment="CENTER" layoutX="65.0" layoutY="271.0" onAction="#validate" />
+      <Button fx:id="save" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#validate" text="ثبت و ادامه">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="returnToMain" layoutX="222.0" layoutY="511.0" mnemonicParsing="false" onAction="#setAllButten" text="بازگشت به صفحه اصلی">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
    </children>
 </Pane>

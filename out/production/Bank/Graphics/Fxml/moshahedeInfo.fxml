@@ -29,7 +29,7 @@
          </font></Label>
       <TextField fx:id="codemelli" layoutX="42.0" layoutY="99.0" />
       <TextField fx:id="accNum" layoutX="42.0" layoutY="152.0" />
-      <TextArea fx:id="PrintInfo" layoutX="9.0" layoutY="213.0" prefHeight="248.0" prefWidth="353.0" />
+      <TextArea fx:id="PrintInfo" layoutX="9.0" layoutY="213.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="248.0" prefWidth="353.0" />
       
    </children>
 </Pane>

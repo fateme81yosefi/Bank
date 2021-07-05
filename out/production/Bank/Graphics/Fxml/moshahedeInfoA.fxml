@@ -19,7 +19,7 @@
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <TextArea fx:id="PrintInfo" layoutX="8.0" layoutY="107.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="395.0" prefWidth="354.0" />
+      <TextArea fx:id="PrintInfo" layoutX="8.0" layoutY="107.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="395.0" prefWidth="354.0" />
       <Button fx:id="print" layoutX="117.0" layoutY="73.0" mnemonicParsing="false" onAction="#validate" text="برای مشاهده اینجا کلیک کنید" />
 
    </children>

@@ -7,7 +7,7 @@ public class FileManager {
 
     public static void serializeUser(ArrayList<User> users){
         try {
-            File file = new File("F:/payanterm/BankInfo.txt");
+            File file = new File("E:\\BankInfo.txt");
             FileOutputStream fileOutputStream=new FileOutputStream(file);
             ObjectOutputStream objectOutputStream=new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(users);
@@ -20,7 +20,8 @@ public class FileManager {
 
     public static void deserializeUser(){
         try {
-            FileInputStream fileInputStream = new FileInputStream("F:/payanterm/BankInfo.txt");
+            File file = new File("E:\\BankInfo.txt");
+            FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
              Bank.users.add((User) objectInputStream.readObject());
             objectInputStream.close();

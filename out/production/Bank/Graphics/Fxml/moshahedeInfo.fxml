@@ -6,7 +6,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" styleClass="darkhastha" stylesheets="@../Css/backTarakonesh.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Graphics.Controller.moshahedeInfo_Controller">
    <children>
-      <Label layoutX="142.0" layoutY="72.0" opacity="0.76" text="مشاهده اطلاعات">
+      <Label layoutX="142.0" layoutY="52.0" opacity="0.76" text="مشاهده اطلاعات">
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
@@ -19,17 +19,17 @@
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <Label layoutX="233.0" layoutY="126.0" text="کدملی خود را وارد کنید:">
+      <Label layoutX="233.0" layoutY="104.0" text="کدملی خود را وارد کنید:">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="205.0" layoutY="177.0" text="شماره حساب خود را وارد کنید:">
+      <Label layoutX="205.0" layoutY="158.0" text="شماره حساب خود را وارد کنید:">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="codemelli" layoutX="42.0" layoutY="124.0" />
-      <TextField fx:id="accNum" layoutX="42.0" layoutY="172.0" />
-      <TextArea fx:id="PrintInfo" layoutX="31.0" layoutY="213.0" prefHeight="248.0" prefWidth="313.0" />
+      <TextField fx:id="codemelli" layoutX="42.0" layoutY="99.0" />
+      <TextField fx:id="accNum" layoutX="42.0" layoutY="152.0" />
+      <TextArea fx:id="PrintInfo" layoutX="9.0" layoutY="213.0" prefHeight="248.0" prefWidth="353.0" />
       
    </children>
 </Pane>

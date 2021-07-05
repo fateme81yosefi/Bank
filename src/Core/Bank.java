@@ -73,16 +73,22 @@ public class Bank implements Runnable {
             FileManager.serializeUser(users);
             return -1;
         }
+        String forTextArea=null;
         for (int i = 0; i < users.get(idex).accounts.size(); i++) {
             if (users.get(idex).accounts.get(i).accNumber == Long.parseLong(AccNum)) {
                 System.out.println(users.get(idex).accounts.get(i).accNumber + " , " + users.get(idex).accounts.get(i).mojodi + " , " +
                          users.get(idex).accounts.get(i).accType+"\n\n\n");
-                textArea.setText("\n شماره حساب : "+users.get(idex).accounts.get(i).accNumber + " , \n" +" موجودی : "+ users.get(idex).accounts.get(i).mojodi + " , \n" +
-                        " نوع حساب : "+users.get(idex).accounts.get(i).accType +"\n\n\n");
+
+              String str1=users.get(idex).accounts.get(i).accNumber + " , " + users.get(idex).accounts.get(i).mojodi + " , " +
+                      users.get(idex).accounts.get(i).accType+"\n\n\n";
+
                 for (int v = 0; v < users.get(idex).accounts.size(); v++) {
                     for (int a = 0; a < users.get(idex).accounts.get(v).tarakoneshes.size(); a++) {
                         System.out.println("tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a)+"\n\n\n");
-                        textArea.setText("tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a)+"\n\n\n");
+
+                        String str2="tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a)+"\n\n\n";
+                        forTextArea+=str1;
+                        forTextArea+=str2;
                     }
                 }
 
@@ -91,6 +97,7 @@ public class Bank implements Runnable {
                 FileManager.serializeUser(users);
                 return 0;
             }
+            textArea.setText(forTextArea);
         }
         FileManager.serializeUser(users);
         return 1;
@@ -244,14 +251,18 @@ public class Bank implements Runnable {
 ///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
 
     public static int printInfoUsers(TextArea textArea) {
+         String forTextArea = null;
         FileManager.deserializeUser();
         for (User user : users) {
             System.out.println(user.name + " , " + user.codemelli + " , " + user.password + " , "
                     + user.email + " , " + user.phoneNum + " , " + user.accounts+"\n\n\n");
-            textArea.setText("  نام : "+user.name+"\n" + " , " +"  کدملی : " +user.codemelli +"\n" + " , " +"  پسوورد : "+ user.password +"\n" + " , "
-                    +"  ایمیل : "+ user.email+"\n"  + " , " +" شماره تلفن : "+ user.phoneNum +"\n" + " , " + "  حساب ها :\n "+user.accounts + "\n"+"\n\n\n");
 
+            String str=user.name + " , \n" + user.codemelli + " , \n" + user.password + " ,\n " +
+                       user.email + " , \n" + user.phoneNum + " , \n" + user.accounts+"\\n\\n\\n";
+
+            forTextArea+=str;
         }
+        textArea.setText(forTextArea);
         FileManager.serializeUser(users);
         return 1;
     }

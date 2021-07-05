@@ -49,14 +49,16 @@ public class newaccountA_Controller  implements Initializable {
         Stage stage;
         Parent root;
 
+
         if (ramz1.isEmpty()||noeAccText.isEmpty()||codemelliText.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
         }else {
-            switch (noeAccText){
-                case "GHARZOLHASANE_JARI": {
+            int parseInt=Integer.parseInt(noeAccText);
+            switch (parseInt){
+                case 1: {
                     int x= Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
                     if (x==-1){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -75,7 +77,7 @@ public class newaccountA_Controller  implements Initializable {
                         stage.show();
                     }
                 }
-                case "GHARZOLHASANE_PASANDAZ": {
+                case 2: {
                     int x=Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
                     if (x==-1){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -94,7 +96,7 @@ public class newaccountA_Controller  implements Initializable {
                         stage.show();
                     }
                 }
-                case "SEPORDE_BOLANDMODAT": {
+                case 3: {
                     int x=Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
                     if (x==-1){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -113,7 +115,7 @@ public class newaccountA_Controller  implements Initializable {
                         stage.show();
                     }
                 }
-                case "SEPORDE_KOTAHMODAT": {
+                case 4: {
                     int x = Bank.addAcc(codemelliText, SEPORDE_KOTAHMODAT, ramz1);
                     if (x == -1) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);

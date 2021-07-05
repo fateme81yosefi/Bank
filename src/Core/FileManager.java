@@ -14,7 +14,7 @@ public class FileManager {
             objectOutputStream.close();
             fileOutputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("IOException");
         }
     }
 
@@ -28,7 +28,7 @@ public class FileManager {
             fileInputStream.close();
 
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("IOException | ClassNotFoundException");
         }
     }
 

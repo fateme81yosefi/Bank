@@ -20,8 +20,6 @@ import java.util.ResourceBundle;
 public class entehalvajhA_Controller  implements Initializable {
     public TextField codeMabda;
     public TextField codeMaghsad;
-    public PasswordField passMabda;
-    public PasswordField passMaghsad;
     public Button conti;
     public TextField Mablagh;
     public Button menuAdmin;
@@ -31,16 +29,13 @@ public class entehalvajhA_Controller  implements Initializable {
     public void validate(ActionEvent event) throws IOException {
         String codeMabdaText=codeMabda.getText();
         String codeMaghsadText=codeMaghsad.getText();
-        String passMabdaText=passMabda.getText();
-        String passMaghsadText=passMaghsad.getText();
         String mablaghText=Mablagh.getText();
         String accNumMabdaText=accNumMabda.getText();
         String accNumMaghsadText=accNumMaghsad.getText();
         Stage stage;
         Parent root;
 
-        if (codeMabdaText.isEmpty()||codeMaghsadText.isEmpty()||passMabdaText.isEmpty()||passMaghsadText.isEmpty()
-                ||mablaghText.isEmpty()||accNumMabdaText.isEmpty()||accNumMaghsadText.isEmpty()){
+        if (codeMabdaText.isEmpty()||codeMaghsadText.isEmpty() ||mablaghText.isEmpty()||accNumMabdaText.isEmpty()||accNumMaghsadText.isEmpty()){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
@@ -89,12 +84,6 @@ public class entehalvajhA_Controller  implements Initializable {
     }
     public void setCodeMaghsad(ActionEvent event) {
         String codeMaghsadText = codeMaghsad.getText();
-    }
-    public void setPassMabda(ActionEvent event) {
-        String passMabdaText = passMabda.getText();
-    }
-    public void setPassMaghsad(ActionEvent event) {
-        String passMaghsadText = passMaghsad.getText();
     }
     public void setMablagh(ActionEvent event) {
         String mablaghText = Mablagh.getText();

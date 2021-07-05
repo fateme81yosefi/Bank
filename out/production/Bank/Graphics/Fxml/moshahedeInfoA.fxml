@@ -11,7 +11,7 @@
             <Font name="Nirmala UI Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="conti" layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#validate" text="ادامه">
+      <Button fx:id="conti" layoutX="14.0" layoutY="514.0" mnemonicParsing="false" text="ادامه">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
@@ -19,17 +19,8 @@
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <Label layoutX="91.0" layoutY="149.0" text="شماره حساب کاربر مورد نظر را وارد کنید:">
-         <font>
-            <Font name="Constantia Bold" size="12.0" />
-         </font></Label>
-      <TextField fx:id="accNum" layoutX="107.0" layoutY="174.0" />
-      <TextArea fx:id="PrintInfo" layoutX="31.0" layoutY="213.0" prefHeight="280.0" prefWidth="313.0" />
-      <Label layoutX="102.0" layoutY="89.0" text="کد ملی کاربر مورد نظر را وارد کنید:">
-         <font>
-            <Font name="Constantia Bold" size="12.0" />
-         </font></Label>
-      <TextField fx:id="codemelli" layoutX="111.0" layoutY="115.0" />
-      
+      <TextArea fx:id="PrintInfo" layoutX="31.0" layoutY="122.0" prefHeight="371.0" prefWidth="313.0" />
+      <Button fx:id="print" layoutX="111.0" layoutY="83.0" mnemonicParsing="false" onAction="#validate" text="برای مشاهده اینجا کلیک کنید" />
+
    </children>
 </Pane>

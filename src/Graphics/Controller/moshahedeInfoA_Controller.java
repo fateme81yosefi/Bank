@@ -20,23 +20,15 @@ import java.util.ResourceBundle;
 public class moshahedeInfoA_Controller implements Initializable {
     public Button conti;
     public Button khadamatk;
-    public TextField codemelli;
-    public TextField accNum;
-    public TextArea PrintInfo;
-    public void validate(ActionEvent event) throws IOException {
 
-        String accNumTextabdaText=accNum.getText();
-        String codemelliText=codemelli.getText();
+    public TextArea PrintInfo;
+    public Button print;
+
+    public void validate(ActionEvent event) throws IOException {
 
         Stage stage;
         Parent root;
 
-        if (accNumTextabdaText.isEmpty()||codemelliText.isEmpty()){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
-            alert.showAndWait();
-        }else {
     int x= Bank.printInfoUsers(PrintInfo);
     if (x==1){
         System.out.println("مشاهده اطلاعات:");
@@ -47,7 +39,7 @@ public class moshahedeInfoA_Controller implements Initializable {
         alert.showAndWait();
     }
 }
-    }
+
 
             public void setAllButten(ActionEvent event)throws IOException {
         Stage stage;

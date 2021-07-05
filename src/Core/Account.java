@@ -7,7 +7,7 @@ public class Account implements Serializable {
     transient String passwordAcc;
     long accNumber;
     String alias;
-    double mojodi=0;
+    long mojodi=0;
     public AccType accType;
     private static long createAccNum=1000000;
     public enum AccType {

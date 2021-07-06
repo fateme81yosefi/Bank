@@ -8,12 +8,12 @@ public class User implements Serializable {
     String name;
     long codemelli;
     transient String password;
-    int phoneNum;
+    long phoneNum;
     String email;
 
     ArrayList<Account> accounts = new ArrayList<Account>();
 
-    public User(String name,long codemelli,String password, int phoneNum, String email){
+    public User(String name,long codemelli,String password, long phoneNum, String email){
         this.name=name;
         this.codemelli=codemelli;
         this.password=password;
@@ -22,6 +22,6 @@ public class User implements Serializable {
     }
     @Override
     public String toString() {
-        return "Name:" + name + "\ncodemelli: " + codemelli + "\nphoneNum: " + phoneNum+ "\nemail: " + email;
+        return "\n\nName:" + name + "\ncodemelli: " + codemelli + "\nphoneNum: " + phoneNum+ "\nemail: " + email+"\n";
     }
 }

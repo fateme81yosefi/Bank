@@ -20,6 +20,7 @@ public class moshahedeInfo_Controller implements Initializable {
     public TextField codemelli;
     public TextField accNum;
     public TextArea PrintInfo;
+    public TextArea tarakonesh;
 
     public void validate(ActionEvent event) throws IOException {
 
@@ -34,6 +35,7 @@ public class moshahedeInfo_Controller implements Initializable {
             alert.showAndWait();
         } else {
             int x = Bank.mashahede(PrintInfo, accNumTextabdaText, codemelliText);
+
             if (x == 1) {
                 System.out.println("مشاهده اطلاعات:");
             } else {

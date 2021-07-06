@@ -17,9 +17,10 @@ public class Tarakonesh implements Serializable {
         VARIZ_VAM;
     }
 
-    public Tarakonesh(TarakoneshType tarakoneshType,Date date) {
+    public Tarakonesh(TarakoneshType tarakoneshType,Date date,double mablagh) {
         this.tarakoneshType=tarakoneshType;
         this.time=date;
+        this.mablagh=mablagh;
     }
 
     public static void setSimpleDateFormat() {
@@ -30,6 +31,6 @@ public class Tarakonesh implements Serializable {
 
     @Override
     public String toString() {
-        return "tarakoneshType:" + tarakoneshType + "\ntime: " + time ;
+        return "\ntarakoneshType:" + tarakoneshType + "\ntime: " + time +"\nmablagh: " + mablagh+"\n";
     }
 }

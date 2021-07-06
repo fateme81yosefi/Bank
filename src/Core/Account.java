@@ -27,6 +27,6 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "accNumber:" + accNumber + "\nalias: " + alias + "\nmojodi: " + mojodi+ "\nAccType: " + accType;
+        return "\naccNumber:" + accNumber + "\nalias: " + alias + "\nmojodi: " + mojodi+ "\nAccType: " + accType+"\n";
     }
 }

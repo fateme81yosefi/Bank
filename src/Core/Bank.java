@@ -49,7 +49,7 @@ public class Bank extends Thread {
 
     public static int addUser(String name, String codemelli, String password, String phoneNum, String email) {
         FileManager.deserializeUser();
-        User user = new User(name, Long.parseLong(codemelli), password, Integer.parseInt(phoneNum), email);
+        User user = new User(name, Long.parseLong(codemelli), password, Long.parseLong(phoneNum), email);
         users.add(user);
         FileManager.serializeUser(users);
         return 1;
@@ -80,32 +80,30 @@ public class Bank extends Thread {
             return -1;
         }
         String forTextArea = null;
+        String str=null;
+        String str1=null;
+        String str2=null;
         for (int i = 0; i < users.get(idex).accounts.size(); i++) {
             if (users.get(idex).accounts.get(i).accNumber == Long.parseLong(AccNum)) {
-                System.out.println(users.get(idex).accounts.get(i).accNumber + " , " + users.get(idex).accounts.get(i).mojodi + " , " +
-                        users.get(idex).accounts.get(i).accType + "\n\n\n");
-
-                String str1 = users.get(idex).accounts.get(i).accNumber + " , " + users.get(idex).accounts.get(i).mojodi + " , " +
-                        users.get(idex).accounts.get(i).accType + "\n\n\n";
-
-                for (int v = 0; v < users.get(idex).accounts.size(); v++) {
-                    for (int a = 0; a < users.get(idex).accounts.get(v).tarakoneshes.size(); a++) {
-                        System.out.println("tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a) + "\n\n\n");
-
-                        String str2 = "tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a) + "\n\n\n";
-                        forTextArea += str1;
-                        forTextArea += str2;
-                    }
-                }
-
+            for(Tarakonesh tarakonesh:users.get(idex).accounts.get(i).tarakoneshes){
+                System.out.println(tarakonesh);
+                str+=tarakonesh.toString();
+            }
+                str1=users.get(idex).toString();
+                str2=users.get(idex).accounts.get(i).toString();
+                forTextArea+=str1;
+                forTextArea+=str2;
+                forTextArea+=str;
+                textArea.setText(forTextArea);
             } else {
                 FileManager.serializeUser(users);
                 return 0;
             }
-            textArea.setText(forTextArea);
-        }
-        FileManager.serializeUser(users);
-        return 1;
+
+
+            FileManager.serializeUser(users);
+            return 1;
+        }return 1;
     }
 
 
@@ -144,8 +142,8 @@ public class Bank extends Thread {
         users.get(idex).accounts.get(mabda).mojodi -= Integer.parseInt(mablagh);
         users.get(idex1).accounts.get(maghsad).mojodi += Integer.parseInt(mablagh);
         Date date = new Date();
-        Tarakonesh tarakoneshMaghsad = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ, date);
-        Tarakonesh tarakoneshMabda = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date);
+        Tarakonesh tarakoneshMaghsad = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ, date,Double.parseDouble(mablagh));
+        Tarakonesh tarakoneshMabda = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date,Double.parseDouble(mablagh));
         users.get(idex1).accounts.get(maghsad).tarakoneshes.add(tarakoneshMaghsad);
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
         FileManager.serializeUser(users);
@@ -174,7 +172,7 @@ public class Bank extends Thread {
         } else {
             users.get(idex).accounts.get(mabda).mojodi -= Integer.parseInt(mablagh);
             Date date = new Date();
-            Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date);
+            Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date,Double.parseDouble(mablagh));
             users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh);
             FileManager.serializeUser(users);
             return 1;
@@ -203,7 +201,7 @@ public class Bank extends Thread {
         System.out.println("new mojodi:" + users.get(idex).accounts.get(mabda).mojodi);
         double mablaghBardashtiMahane = Integer.parseInt(mablagh) / Integer.parseInt(month);
         Date dateVamGerefte = new Date();
-        Tarakonesh tarakonesh2 = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ_VAM, dateVamGerefte);
+        Tarakonesh tarakonesh2 = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ_VAM, dateVamGerefte,Double.parseDouble(mablagh));
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh2);
         FileManager.serializeUser(users);
         return 1;
@@ -221,12 +219,13 @@ public class Bank extends Thread {
 
             users.get(idex).accounts.get(mabda).mojodi -= mablaghBardashtiMahane;
 
-            Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT_MAHANE_VAM, dateGozashteShode);
+            Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT_MAHANE_VAM, dateGozashteShode,mablaghBardashtiMahane);
             users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh);
 
         }
         FileManager.serializeUser(users);
     }
+
 
     public static int closeAcc(String accNum, String accNumMaghsad, String pass, String codemelli, String codemelliMaghsad) {
         FileManager.deserializeUser();
@@ -259,15 +258,24 @@ public class Bank extends Thread {
 
     public static int printInfoUsers(TextArea textArea) {
         String forTextArea = null;
+        String str2=null;
+        String str1=null;
+        String str=null;
         FileManager.deserializeUser();
         for (User user : users) {
-            System.out.println(user.name + " , " + user.codemelli + " , " + user.password + " , "
-                    + user.email + " , " + user.phoneNum + " , " + user.accounts + "\n\n\n");
-
-            String str = user.name + " , \n" + user.codemelli + " , \n" + user.password + " ,\n " +
-                    user.email + " , \n" + user.phoneNum + " , \n" + user.accounts + "\\n\\n\\n";
-
-            forTextArea += str;
+            System.out.println(user);
+            str1=user.toString();
+            for (Account account:user.accounts){
+                System.out.println(account);
+                str2=account.toString();
+                for (Tarakonesh tarakonesh: account.tarakoneshes){
+                    System.out.println(tarakonesh);
+                    str=tarakonesh.toString();
+                    str2+=str;
+                }
+                str1+=str2;
+            }
+            forTextArea+=str1;
         }
         textArea.setText(forTextArea);
         FileManager.serializeUser(users);
@@ -308,7 +316,7 @@ public class Bank extends Thread {
             return 0;
         }
         Date date = new Date();
-        Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.EDIT_MOJODI_BY_ADMIN, date);
+        Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.EDIT_MOJODI_BY_ADMIN, date,Double.parseDouble(newMojodi));
         users.get(idex).accounts.get(indexAcc1).mojodi = newMojo;
         users.get(idex).accounts.get(indexAcc1).tarakoneshes.add(tarakonesh);
         FileManager.serializeUser(users);
@@ -336,8 +344,8 @@ public class Bank extends Thread {
         users.get(idex).accounts.get(mabda).mojodi -= Integer.parseInt(mablagh);
         users.get(idex1).accounts.get(maghsad).mojodi += Integer.parseInt(mablagh);
         Date date = new Date();
-        Tarakonesh tarakoneshMaghsad = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ, date);
-        Tarakonesh tarakoneshMabda = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date);
+        Tarakonesh tarakoneshMaghsad = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ, date,Double.parseDouble(mablagh));
+        Tarakonesh tarakoneshMabda = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT, date,Double.parseDouble(mablagh));
         users.get(idex1).accounts.get(maghsad).tarakoneshes.add(tarakoneshMaghsad);
         users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakoneshMabda);
         FileManager.serializeUser(users);

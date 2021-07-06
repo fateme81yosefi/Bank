@@ -2,30 +2,9 @@
      -fx-background-image:url("file:src/Graphics/Picture/b44.jpg");
      -fx-background-size: 100% 100%;
 }
-.karbar{
-    -fx-background-image:url("file:src/Graphics/Picture/b42.jpg");
+.menu-button{
+    -fx-background-image:url("file:src/Graphics/Picture/b55.png");
     -fx-background-radius: 50;
-    -fx-title-side: red;
-    -fx-border-color: #f65471;
-    -fx-border-width: 1;
-}
-.admin{
-    -fx-background-image:url("file:src/Graphics/Picture/b42.jpg");
-    -fx-background-radius: 50;
-    -fx-title-side: red;
-    -fx-border-color: #f65471;
-    -fx-border-width: 1;
-}
-.about {
-    -fx-background-image:url("file:src/Graphics/Picture/b42.jpg");
-    -fx-border-color: #f65471;
-    -fx-border-width: 1;
-    -fx-title-side: red;
-}
-.exit{
-    -fx-background-image:url("file:src/Graphics/Picture/b42.jpg");
-    -fx-background-radius: 50;
-    -fx-title-side: red;
-    -fx-border-color: #f65471;
-    -fx-border-width: 1;
+    -fx-background-size: 100% 100%;
+
 }

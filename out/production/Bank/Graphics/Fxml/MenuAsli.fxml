@@ -10,19 +10,19 @@
          <font>
             <Font name="Nirmala UI Bold" size="14.0" />
          </font></Label>
-      <Button fx:id="buttenUser" layoutX="93.0" layoutY="174.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="karbar" stylesheets="@../Css/back.css" text="کاربر">
+      <Button fx:id="buttenUser" layoutX="93.0" layoutY="174.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../Css/back.css" text="کاربر">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="bettenAdmin" layoutX="93.0" layoutY="233.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="admin" stylesheets="@../Css/back.css" text="ادمین">
+      <Button fx:id="bettenAdmin" layoutX="93.0" layoutY="233.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../Css/back.css" text="ادمین">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="about" layoutX="94.0" layoutY="292.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="about" stylesheets="@../Css/back.css" text="درباره ما">
+      <Button fx:id="about" layoutX="94.0" layoutY="292.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../Css/back.css" text="درباره ما">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="exit" layoutX="95.0" layoutY="349.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="exit" stylesheets="@../Css/back.css" text="خروج">
+      <Button fx:id="exit" layoutX="95.0" layoutY="349.0" mnemonicParsing="false" onAction="#setAllButten" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../Css/back.css" text="خروج">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>

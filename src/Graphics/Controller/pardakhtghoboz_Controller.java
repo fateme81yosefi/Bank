@@ -1,6 +1,7 @@
 package Graphics.Controller;
 
 import Core.Bank;
+
 import Graphics.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -17,9 +18,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class pardakhtghoboz_Controller  implements Initializable {
+
     public TextField shenaseghabz;
     public TextField shenasePardakht;
-    public Button conti;/////////////////
+    public Button conti;
     public Button khadamatk;
     public TextField accNum;
     public TextField codemelli;
@@ -41,6 +43,7 @@ public class pardakhtghoboz_Controller  implements Initializable {
     }
 
     public void validate(ActionEvent event) throws IOException {
+
         String shenaseghabzText=shenaseghabz.getText();
         String shenasePardakhtText=shenasePardakht.getText();
         String accNumText=accNum.getText();

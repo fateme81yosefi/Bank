@@ -17,8 +17,9 @@ import java.util.ResourceBundle;
 import static Core.Account.AccType.*;
 
 public class newaccount_Controller implements Initializable {
+
     public PasswordField ramz;
-    public Button conti;/////////////////////
+    public Button conti;
     public Button khadamatk;
     public TextField codemelli;
     public TextField noeAcc;
@@ -37,29 +38,32 @@ public class newaccount_Controller implements Initializable {
             stage.show();
         }
     }
+
     public void validate(ActionEvent event) throws IOException {
-        if (event.getSource().equals(conti)){
-            String ramz1=ramz.getText();
-            String codemelliText=codemelli.getText();
-            String noeHesab=noeAcc.getText();
+
+        if (event.getSource().equals(conti)) {
+
+            String ramz1 = ramz.getText();
+            String codemelliText = codemelli.getText();
+            String noeHesab = noeAcc.getText();
             Stage stage;
             Parent root;
-            if (ramz1.isEmpty()||codemelliText.isEmpty()){
-                Alert alert=new Alert(Alert.AlertType.ERROR);
+            if (ramz1.isEmpty() || codemelliText.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
                 alert.showAndWait();
-            }else {
-                int parseInt=Integer.parseInt(noeHesab);
-                switch (parseInt){
+            } else {
+                int parseInt = Integer.parseInt(noeHesab);
+                switch (parseInt) {
                     case 1: {
-                        int x=Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
-                        if (x==-1){
-                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                        int x = Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
+                        if (x == -1) {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setHeaderText(null);
                             alert.setContentText("کد ملی کاربر اشتباه است!");
                             alert.showAndWait();
-                        }else {
+                        } else {
                             System.out.println("عملیات با موفقیت انجام شد");
                             stage = (Stage) conti.getScene().getWindow();
                             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -72,13 +76,13 @@ public class newaccount_Controller implements Initializable {
                         }
                     }
                     case 2: {
-                        int x=Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
-                        if (x==-1){
-                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                        int x = Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
+                        if (x == -1) {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setHeaderText(null);
                             alert.setContentText("کد ملی کاربر اشتباه است!");
                             alert.showAndWait();
-                        }else {
+                        } else {
                             System.out.println("عملیات با موفقیت انجام شد");
                             stage = (Stage) conti.getScene().getWindow();
                             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -91,13 +95,13 @@ public class newaccount_Controller implements Initializable {
                         }
                     }
                     case 3: {
-                        int x=Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
-                        if (x==-1){
-                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                        int x = Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
+                        if (x == -1) {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setHeaderText(null);
                             alert.setContentText("کد ملی کاربر اشتباه است!");
                             alert.showAndWait();
-                        }else {
+                        } else {
                             System.out.println("عملیات با موفقیت انجام شد");
                             stage = (Stage) conti.getScene().getWindow();
                             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -110,13 +114,13 @@ public class newaccount_Controller implements Initializable {
                         }
                     }
                     case 4: {
-                        int x=Bank.addAcc(codemelliText, SEPORDE_KOTAHMODAT, ramz1);
-                        if (x==-1){
-                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                        int x = Bank.addAcc(codemelliText, SEPORDE_KOTAHMODAT, ramz1);
+                        if (x == -1) {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setHeaderText(null);
                             alert.setContentText("کد ملی کاربر اشتباه است!");
                             alert.showAndWait();
-                        }else {
+                        } else {
                             System.out.println("عملیات با موفقیت انجام شد");
                             stage = (Stage) conti.getScene().getWindow();
                             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -128,8 +132,8 @@ public class newaccount_Controller implements Initializable {
                             stage.show();
                         }
                     }
-                    default:{
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
+                    default: {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText(null);
                         alert.setContentText("نوع حساب را به درستی وارد کنید!");
                         alert.showAndWait();

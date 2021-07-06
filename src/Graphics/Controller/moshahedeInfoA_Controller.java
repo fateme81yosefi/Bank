@@ -18,9 +18,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class moshahedeInfoA_Controller implements Initializable {
+
     public Button conti;
     public Button khadamatk;
-
     public TextArea PrintInfo;
     public Button print;
 
@@ -29,32 +29,32 @@ public class moshahedeInfoA_Controller implements Initializable {
         Stage stage;
         Parent root;
 
-    int x= Bank.printInfoUsers(PrintInfo);
-    if (x==1){
-        System.out.println("مشاهده اطلاعات:");
-    }else {
-        Alert alert=new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(null);
-        alert.setContentText("مشکلی رخ داده! لطفا مجددا تلاش کنید!");
-        alert.showAndWait();
+        int x = Bank.printInfoUsers(PrintInfo);
+        if (x == 1) {
+            System.out.println("مشاهده اطلاعات:");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("مشکلی رخ داده! لطفا مجددا تلاش کنید!");
+            alert.showAndWait();
+        }
     }
-}
 
 
-            public void setAllButten(ActionEvent event)throws IOException {
+    public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        if (event.getSource().equals(khadamatk)){
-            stage=(Stage) khadamatk.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(khadamatk)) {
+            stage = (Stage) khadamatk.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(Client.class.getResource("Fxml/adminkhadamat.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-}
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
 
 public class EnteghalVajh_Controller implements Initializable {
 
-
     public TextField mablagh;
     public TextField shomareMaghsad;
     public PasswordField password;
@@ -30,33 +29,35 @@ public class EnteghalVajh_Controller implements Initializable {
     public TextField codemelliMaghsad;
 
     public void validate(ActionEvent event) throws IOException {
-        String mablagh1=mablagh.getText();
-        String shomareMaghsadText=shomareMaghsad.getText();
-        String passwordText=password.getText();
-        String codemelliMabdaText=codemelliMabda.getText();
-        String codemelliMaghsadText=codemelliMaghsad.getText();
-        String accNumMabdaText=accNumMabda.getText();
+
+        String mablagh1 = mablagh.getText();
+        String shomareMaghsadText = shomareMaghsad.getText();
+        String passwordText = password.getText();
+        String codemelliMabdaText = codemelliMabda.getText();
+        String codemelliMaghsadText = codemelliMaghsad.getText();
+        String accNumMabdaText = accNumMabda.getText();
         Stage stage;
         Parent root;
-        if (mablagh1.isEmpty()||passwordText.isEmpty()||shomareMaghsadText.isEmpty()||
-            codemelliMabdaText.isEmpty()||codemelliMaghsadText.isEmpty()||accNumMabdaText.isEmpty()){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+
+        if (mablagh1.isEmpty() || passwordText.isEmpty() || shomareMaghsadText.isEmpty() ||
+                codemelliMabdaText.isEmpty() || codemelliMaghsadText.isEmpty() || accNumMabdaText.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else {
-            int x= Bank.enteghalVajh(mablagh1,shomareMaghsadText,accNumMabdaText,codemelliMaghsadText,codemelliMabdaText);
-            if (x==0){
-                Alert alert=new Alert(Alert.AlertType.ERROR);
+        } else {
+            int x = Bank.enteghalVajh(mablagh1, shomareMaghsadText, accNumMabdaText, codemelliMaghsadText, codemelliMabdaText);
+            if (x == 0) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setContentText("شماره حسابی که وارد کردید اشتباه است!");
                 alert.showAndWait();
-            }else if (x==-1){
-                Alert alert=new Alert(Alert.AlertType.ERROR);
+            } else if (x == -1) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setContentText("کد ملی کاربر اشتباه است!");
                 alert.showAndWait();
-            }else {
+            } else {
                 System.out.println("عملیات با موفقیت انجام شد");
                 stage = (Stage) conti.getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -72,21 +73,20 @@ public class EnteghalVajh_Controller implements Initializable {
 
     }
 
-    public void setAllButten(ActionEvent event)throws IOException {
+    public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        if (event.getSource().equals(khadamatPage)){
-            stage=(Stage) khadamatPage.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(khadamatPage)) {
+            stage = (Stage) khadamatPage.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(Client.class.getResource("Fxml/EntekhabKhadamatUser.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
     }
-    /////////////////FOR CONTI//////////////////////////////////////
 
 
     @Override

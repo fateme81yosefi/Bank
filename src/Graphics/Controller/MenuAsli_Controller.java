@@ -22,43 +22,44 @@ public class MenuAsli_Controller implements Initializable {
     public Button exit;
     public Label label;
 
-    public void setAllButten(ActionEvent event)throws IOException {
+    public void setAllButten(ActionEvent event) throws IOException {
+
         Stage stage;
         Parent root;
-        if (event.getSource().equals(buttenUser)){
-            stage=(Stage) buttenUser.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(buttenUser)) {
+            stage = (Stage) buttenUser.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(Client.class.getResource("Fxml/vorodUser.fxml"));//vared kardan ramz by user
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-        if (event.getSource().equals(bettenAdmin)){
-            stage=(Stage) buttenUser.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(bettenAdmin)) {
+            stage = (Stage) buttenUser.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(Client.class.getResource("Fxml/Admin.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-        if (event.getSource().equals(about)){
-            stage=(Stage) about.getScene().getWindow();
-            FXMLLoader fxmlLoader=new FXMLLoader();
+        if (event.getSource().equals(about)) {
+            stage = (Stage) about.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(Client.class.getResource("Fxml/aboutUs.fxml"));
-            root=fxmlLoader.load();
+            root = fxmlLoader.load();
 
-            Scene scene=new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-        if (event.getSource().equals(exit)){
+        if (event.getSource().equals(exit)) {
             System.exit(0);
         }
-}
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

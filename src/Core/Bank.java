@@ -1,23 +1,25 @@
 package Core;
 
+import java.util.Date;
+
 import Graphics.Client;
+
+import java.util.ArrayList;
+import java.io.DataInputStream;
+
 import javafx.scene.control.TextArea;
 
-import java.io.DataInputStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-public class Bank implements Runnable {
+public class Bank extends Thread {
+
     DataInputStream reader;
 
-    public Bank(DataInputStream reader, Client client){
-        this.reader=reader;
-    }
-    ExecutorService executorService= Executors.newCachedThreadPool();
+    public static ArrayList<User> users = new ArrayList<>();
 
-    public static ArrayList<User> users = new ArrayList();
+
+    public Bank(DataInputStream reader, Client client) {
+        this.reader = reader;
+    }
 
     public static int getIndexUser(String codemelli) {
         FileManager.deserializeUser();
@@ -29,6 +31,7 @@ public class Bank implements Runnable {
         }
         return -1;
     }
+
 
     public static int getIndexAcc(String codemelli, String accNum) {
         FileManager.deserializeUser();
@@ -43,6 +46,7 @@ public class Bank implements Runnable {
         return -1;
     }
 
+
     public static int addUser(String name, String codemelli, String password, String phoneNum, String email) {
         FileManager.deserializeUser();
         User user = new User(name, Long.parseLong(codemelli), password, Integer.parseInt(phoneNum), email);
@@ -50,6 +54,7 @@ public class Bank implements Runnable {
         FileManager.serializeUser(users);
         return 1;
     }
+
 
     public static int addAcc(String codemelli, Account.AccType type, String pass) {
         FileManager.deserializeUser();
@@ -65,6 +70,7 @@ public class Bank implements Runnable {
         return 1;
     }
 
+
     public static int mashahede(TextArea textArea, String AccNum, String codemelli) {
         FileManager.deserializeUser();
         int idex = getIndexUser(codemelli);
@@ -73,27 +79,26 @@ public class Bank implements Runnable {
             FileManager.serializeUser(users);
             return -1;
         }
-        String forTextArea=null;
+        String forTextArea = null;
         for (int i = 0; i < users.get(idex).accounts.size(); i++) {
             if (users.get(idex).accounts.get(i).accNumber == Long.parseLong(AccNum)) {
                 System.out.println(users.get(idex).accounts.get(i).accNumber + " , " + users.get(idex).accounts.get(i).mojodi + " , " +
-                         users.get(idex).accounts.get(i).accType+"\n\n\n");
+                        users.get(idex).accounts.get(i).accType + "\n\n\n");
 
-              String str1=users.get(idex).accounts.get(i).accNumber + " , " + users.get(idex).accounts.get(i).mojodi + " , " +
-                      users.get(idex).accounts.get(i).accType+"\n\n\n";
+                String str1 = users.get(idex).accounts.get(i).accNumber + " , " + users.get(idex).accounts.get(i).mojodi + " , " +
+                        users.get(idex).accounts.get(i).accType + "\n\n\n";
 
                 for (int v = 0; v < users.get(idex).accounts.size(); v++) {
                     for (int a = 0; a < users.get(idex).accounts.get(v).tarakoneshes.size(); a++) {
-                        System.out.println("tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a)+"\n\n\n");
+                        System.out.println("tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a) + "\n\n\n");
 
-                        String str2="tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a)+"\n\n\n";
-                        forTextArea+=str1;
-                        forTextArea+=str2;
+                        String str2 = "tarakonesh " + a + " account " + v + " :\n" + users.get(idex).accounts.get(v).tarakoneshes.get(a) + "\n\n\n";
+                        forTextArea += str1;
+                        forTextArea += str2;
                     }
                 }
 
-            }
-            else{
+            } else {
                 FileManager.serializeUser(users);
                 return 0;
             }
@@ -103,11 +108,6 @@ public class Bank implements Runnable {
         return 1;
     }
 
-    //////////////////////////////////////IN TEKRARIYE METHOD HASH///////////////////////////////////
-    public static void manageAcc() {
-
-        ///////////////////////////////////////////SWITCH CASE //////////////////////////////////////////
-    }
 
     public static int setAlias(String alias, String accNum, String codemelli) {
         FileManager.deserializeUser();
@@ -127,6 +127,7 @@ public class Bank implements Runnable {
         FileManager.serializeUser(users);
         return 0;
     }
+
 
     public static int enteghalVajh(String mablagh, String accNumMaghsad, String accNumMabda, String codemelliMaghsad, String codemelliMada) {
         FileManager.deserializeUser();
@@ -150,6 +151,7 @@ public class Bank implements Runnable {
         FileManager.serializeUser(users);
         return 1;
     }
+
 
     public static int pardakhtGhoboz(String shenaseGhabz, String ShenasePardakht, String mablagh, String codemelli, String accNum) {
         FileManager.deserializeUser();
@@ -179,7 +181,9 @@ public class Bank implements Runnable {
         }
     }
 
-/////////////////////////IN METHOD CHECK BESHE FALSE/////////////////////////////////
+
+    /////////////////////////IN METHOD CHECK BESHE FALSE/////////////////////////////////
+
 
     public static int darkhastVam(String mablagh, String month, String codemelli, String accNum) {
         FileManager.deserializeUser();
@@ -196,7 +200,7 @@ public class Bank implements Runnable {
             return 0;
         }
         users.get(idex).accounts.get(mabda).mojodi += Integer.parseInt(mablagh);
-        System.out.println("new mojodi:"+ users.get(idex).accounts.get(mabda).mojodi);
+        System.out.println("new mojodi:" + users.get(idex).accounts.get(mabda).mojodi);
         double mablaghBardashtiMahane = Integer.parseInt(mablagh) / Integer.parseInt(month);
         Date dateVamGerefte = new Date();
         Tarakonesh tarakonesh2 = new Tarakonesh(Tarakonesh.TarakoneshType.VARIZ_VAM, dateVamGerefte);
@@ -204,6 +208,7 @@ public class Bank implements Runnable {
         FileManager.serializeUser(users);
         return 1;
     }
+
 
     public static void checkVamTime(Date date, double mablaghBardashtiMahane, String codemelli, String accNum) {
         FileManager.deserializeUser();
@@ -219,7 +224,8 @@ public class Bank implements Runnable {
             Tarakonesh tarakonesh = new Tarakonesh(Tarakonesh.TarakoneshType.BARDASHT_MAHANE_VAM, dateGozashteShode);
             users.get(idex).accounts.get(mabda).tarakoneshes.add(tarakonesh);
 
-        }FileManager.serializeUser(users);
+        }
+        FileManager.serializeUser(users);
     }
 
     public static int closeAcc(String accNum, String accNumMaghsad, String pass, String codemelli, String codemelliMaghsad) {
@@ -248,24 +254,26 @@ public class Bank implements Runnable {
         return 1;
     }
 
-///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
+
+    ///////////////////////////////////////ADMIN METHODS/////////////////////////////////////////
 
     public static int printInfoUsers(TextArea textArea) {
-         String forTextArea = null;
+        String forTextArea = null;
         FileManager.deserializeUser();
         for (User user : users) {
             System.out.println(user.name + " , " + user.codemelli + " , " + user.password + " , "
-                    + user.email + " , " + user.phoneNum + " , " + user.accounts+"\n\n\n");
+                    + user.email + " , " + user.phoneNum + " , " + user.accounts + "\n\n\n");
 
-            String str=user.name + " , \n" + user.codemelli + " , \n" + user.password + " ,\n " +
-                       user.email + " , \n" + user.phoneNum + " , \n" + user.accounts+"\\n\\n\\n";
+            String str = user.name + " , \n" + user.codemelli + " , \n" + user.password + " ,\n " +
+                    user.email + " , \n" + user.phoneNum + " , \n" + user.accounts + "\\n\\n\\n";
 
-            forTextArea+=str;
+            forTextArea += str;
         }
         textArea.setText(forTextArea);
         FileManager.serializeUser(users);
         return 1;
     }
+
 
     public static int editUserInfo(String name, String codemelli, String password, String phoneNum, String email) {
         FileManager.deserializeUser();
@@ -281,6 +289,7 @@ public class Bank implements Runnable {
         FileManager.serializeUser(users);
         return 1;
     }
+
 
     public static int editUserMojodi(String codemelli, String accNum, String newMojodi) {
         FileManager.deserializeUser();
@@ -305,6 +314,7 @@ public class Bank implements Runnable {
         FileManager.serializeUser(users);
         return 1;
     }
+
 
     public static int enteghalVajhByAdmin(String codemelliMada, String codemelliMaghsad, String accNumMabda, String accNumMaghsad, String mablagh) {
         FileManager.deserializeUser();
@@ -333,6 +343,7 @@ public class Bank implements Runnable {
         FileManager.serializeUser(users);
         return 1;
     }
+
 
     public static int clossAccByAdmin(String codemelli, String accNum, String accNumMaghsad, String codemelliMaghsad) {
         FileManager.deserializeUser();
@@ -369,6 +380,7 @@ public class Bank implements Runnable {
             return 1;
         }
     }
+
 
     @Override
     public void run() {

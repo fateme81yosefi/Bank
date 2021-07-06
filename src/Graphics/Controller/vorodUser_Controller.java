@@ -25,7 +25,6 @@ public class vorodUser_Controller implements Initializable {
 
     public void validate(ActionEvent event) throws IOException {
 
-
         String ramzText=ramz.getText();
         String codemelliText=codemelli.getText();
         Stage stage;
@@ -55,6 +54,8 @@ public class vorodUser_Controller implements Initializable {
             }
     }
     }
+
+
     public void setAllButten(ActionEvent event)throws IOException {
         Stage stage;
         Parent root;

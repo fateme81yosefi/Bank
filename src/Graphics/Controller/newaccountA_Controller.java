@@ -20,7 +20,8 @@ import java.util.ResourceBundle;
 import static Core.Account.AccType.*;
 import static Core.Account.AccType.SEPORDE_KOTAHMODAT;
 
-public class newaccountA_Controller  implements Initializable {
+public class newaccountA_Controller implements Initializable {
+
     public Button conti;
     public PasswordField ramz;
     public Button adminMenu;
@@ -41,31 +42,32 @@ public class newaccountA_Controller  implements Initializable {
             stage.show();
         }
     }
+
     public void validate(ActionEvent event) throws IOException {
-        String ramz1=ramz.getText();
-        String noeAccText=noeAcc.getText();
-        String codemelliText=codemelli.getText();
+        String ramz1 = ramz.getText();
+        String noeAccText = noeAcc.getText();
+        String codemelliText = codemelli.getText();
 
         Stage stage;
         Parent root;
 
 
-        if (ramz1.isEmpty()||noeAccText.isEmpty()||codemelliText.isEmpty()){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        if (ramz1.isEmpty() || noeAccText.isEmpty() || codemelliText.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("لطفا تمام فیلد ها را پر کنید!");
             alert.showAndWait();
-        }else {
-            int parseInt=Integer.parseInt(noeAccText);
-            switch (parseInt){
+        } else {
+            int parseInt = Integer.parseInt(noeAccText);
+            switch (parseInt) {
                 case 1: {
-                    int x= Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
-                    if (x==-1){
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
+                    int x = Bank.addAcc(codemelliText, GHARZOLHASANE_JARI, ramz1);
+                    if (x == -1) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText(null);
                         alert.setContentText("کد ملی کاربر اشتباه است!");
                         alert.showAndWait();
-                    }else {
+                    } else {
                         System.out.println("عملیات با موفقیت انجام شد");
                         stage = (Stage) conti.getScene().getWindow();
                         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -78,13 +80,13 @@ public class newaccountA_Controller  implements Initializable {
                     }
                 }
                 case 2: {
-                    int x=Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
-                    if (x==-1){
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
+                    int x = Bank.addAcc(codemelliText, GHARZOLHASANE_PASANDAZ, ramz1);
+                    if (x == -1) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText(null);
                         alert.setContentText("کد ملی کاربر اشتباه است!");
                         alert.showAndWait();
-                    }else {
+                    } else {
                         System.out.println("عملیات با موفقیت انجام شد");
                         stage = (Stage) conti.getScene().getWindow();
                         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -97,13 +99,13 @@ public class newaccountA_Controller  implements Initializable {
                     }
                 }
                 case 3: {
-                    int x=Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
-                    if (x==-1){
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
+                    int x = Bank.addAcc(codemelliText, SEPORDE_BOLANDMODAT, ramz1);
+                    if (x == -1) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText(null);
                         alert.setContentText("کد ملی کاربر اشتباه است!");
                         alert.showAndWait();
-                    }else {
+                    } else {
                         System.out.println("عملیات با موفقیت انجام شد");
                         stage = (Stage) conti.getScene().getWindow();
                         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -134,7 +136,11 @@ public class newaccountA_Controller  implements Initializable {
                         stage.show();
                     }
 
-                }}}}
+                }
+            }
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

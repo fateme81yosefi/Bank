@@ -17,6 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class alias_Controller implements Initializable {
+
     public TextField aliass;
     public TextField shomareHesab;
     public Button khadamatk;
@@ -24,11 +25,13 @@ public class alias_Controller implements Initializable {
     public TextField codemelli;
 
     public void validate(ActionEvent event) throws IOException {
+
         String aliassText = aliass.getText();
         String shomareHesabText = shomareHesab.getText();
         String codemelliText = codemelli.getText();
         Stage stage;
         Parent root;
+
         if (aliassText.isEmpty() || shomareHesabText.isEmpty() || codemelliText.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -57,8 +60,10 @@ public class alias_Controller implements Initializable {
     }
 
     public void setAllButten(ActionEvent event) throws IOException {
+
         Stage stage;
         Parent root;
+
         if (event.getSource().equals(khadamatk)) {
             stage = (Stage) khadamatk.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();

@@ -15,12 +15,12 @@ import java.util.ResourceBundle;
 
 public class adminkhadamat_Controller implements Initializable {
     public Button moshahedeEtelaatK;
-    public Button closeAcc;//
-    public Button createNewAcc;//
-    public Button EditInfoUser;//
-    public Button editMojodi;//
-    public Button enteghalVajh;//
-    public Button creatNewUser;//
+    public Button closeAcc;
+    public Button createNewAcc;
+    public Button EditInfoUser;
+    public Button editMojodi;
+    public Button enteghalVajh;
+    public Button creatNewUser;
 
     public void setAllButten(ActionEvent event) throws IOException {
         Stage stage;

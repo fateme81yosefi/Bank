@@ -14,7 +14,9 @@ public class movafagh_Controller {
 
     public Button menuUser;
     public Button exit;
+
     public void setAllButten(ActionEvent event) throws IOException {
+
         Stage stage;
         Parent root;
         if (event.getSource().equals(menuUser)) {

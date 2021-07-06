@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -27,6 +26,7 @@ public class entehalvajhA_Controller  implements Initializable {
     public TextField accNumMaghsad;
 
     public void validate(ActionEvent event) throws IOException {
+
         String codeMabdaText=codeMabda.getText();
         String codeMaghsadText=codeMaghsad.getText();
         String mablaghText=Mablagh.getText();
@@ -79,15 +79,7 @@ public class entehalvajhA_Controller  implements Initializable {
             stage.show();
         }
     }
-    public void setCodeMabda(ActionEvent event) {
-        String codeMabdaText = codeMabda.getText();
-    }
-    public void setCodeMaghsad(ActionEvent event) {
-        String codeMaghsadText = codeMaghsad.getText();
-    }
-    public void setMablagh(ActionEvent event) {
-        String mablaghText = Mablagh.getText();
-    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

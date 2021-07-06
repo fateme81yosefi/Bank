@@ -1,5 +1,8 @@
 package Core;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Date;
 
 import Graphics.Client;
@@ -12,14 +15,37 @@ import javafx.scene.control.TextArea;
 
 public class Bank extends Thread {
 
+    ServerSocket mServer;
+    int serverPort = 9090;
+    ArrayList<Thread> threads = new ArrayList<Thread>();
+    int limit = 40;
     DataInputStream reader;
 
     public static ArrayList<User> users = new ArrayList<>();
 
+    public Bank() {
+        try {
 
-    public Bank(DataInputStream reader, Client client) {
-        this.reader = reader;
+            mServer = new ServerSocket(serverPort);
+            System.out.println("Server Created!");
+
+            while (true) {
+
+                Socket client = mServer.accept();
+
+                System.out.println("Connected to New Client!");
+
+               // Thread t = new Thread(new ClientManager(this,client));
+               // threads.add(t);
+                if (threads.size() > limit) {
+                    currentThread().join();
+                }
+                // start thread
+                //  t.start();
+            }
+        } catch (IOException | InterruptedException e) {}
     }
+
 
     public static int getIndexUser(String codemelli) {
         FileManager.deserializeUser();
@@ -245,7 +271,7 @@ public class Bank extends Thread {
                 return 0;
             }
             String s = String.valueOf(users.get(idex).accounts.get(mabda).mojodi);
-            enteghalVajh(s, accNumMaghsad, accNum, codemelli, codemelliMaghsad);
+            enteghalVajh(s, accNumMaghsad, accNum,codemelliMaghsad, codemelli);
         } else {
             users.get(idex).accounts.remove(mabda);
         }
@@ -378,7 +404,7 @@ public class Bank extends Thread {
                 return 0;
             }
             String s = String.valueOf(users.get(idex).accounts.get(mabda).mojodi);
-            enteghalVajh(s, accNumMaghsad, accNum, codemelli, codemelliMaghsad);
+            enteghalVajh(s, accNumMaghsad, accNum, codemelliMaghsad, codemelli);
             users.get(idex).accounts.remove(indexAcc);
             FileManager.serializeUser(users);
             return 1;

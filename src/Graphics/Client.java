@@ -26,18 +26,15 @@ public class Client extends Application {
         try {
             mSocket = new Socket(serverAddress, port);
             System.out.println("connect to server ....");
-            // input stream (stream from server)
-            fromServerStream = mSocket.getInputStream();
-            // output stream (stream to server)
-            toServerStream = mSocket.getOutputStream();
-            reader = new DataInputStream(fromServerStream);
-            writer = new PrintWriter(toServerStream, true);
-            // first : read server message
-            //String msg = reader.readLine();
-            //System.out.println("Server :" + msg);
-            //Manage other server message by a Thread
-           // Thread t=new Thread(new ServerMessagesManager(reader));
-           // t.start();
+//            input stream (stream from server)
+//            fromServerStream = mSocket.getInputStream();
+//            output stream (stream to server)
+//            toServerStream = mSocket.getOutputStream();
+//            reader = new DataInputStream(fromServerStream);
+//            writer = new PrintWriter(toServerStream, true);
+
+//            Thread t=new Thread(///);
+//            t.start();
 
         } catch (UnknownHostException e) {
             System.out.println("UnknownHostException");
